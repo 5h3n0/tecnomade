@@ -1,0 +1,144 @@
+$password = "MySecurePassword123!";
+
+// Password should be at least 8 characters long
+// Should contain at least one uppercase letter
+// Should contain at least one lowercase letter
+// Should contain at least one digit
+// Should contain at least one special character
+// You can add more conditions based on your requirements
+
+if (
+    strlen($password) >= 8 &&
+    preg_match('/[A-Z]/', $password) &&
+    preg_match('/[a-z]/', $password) &&
+    preg_match('/[0-9]/', $password) &&
+    preg_match('/[^A-Za-z0-9]/', $password)
+) {
+    echo "Password is valid.";
+} else {
+    echo "Password must meet the specified criteria.";
+}
+
+
+
+
+
+$password = "MySecurePassword123";
+
+// Password should be at least 8 characters long
+// Should contain at least one uppercase letter
+// Should contain at least one lowercase letter
+// Should contain at least one digit
+// You can add more conditions based on your requirements
+
+if (strlen($password) >= 8 && preg_match('/[A-Z]/', $password) && preg_match('/[a-z]/', $password) && preg_match('/[0-9]/', $password)) {
+    echo "Password is valid.";
+} else {
+    echo "Password must meet the specified criteria.";
+}
+
+
+
+
+$phoneNumber = "+55 (11) 98765-4321"; // Replace with the actual phone number
+
+// Remove non-numeric characters
+$phoneNumber = preg_replace('/[^0-9]/', '', $phoneNumber);
+
+// Validate phone number length and format
+if (strlen($phoneNumber) == 11 && is_numeric($phoneNumber)) {
+    echo "Phone number is valid.";
+} else {
+    echo "Invalid phone number format.";
+}
+
+
+
+$cnpj = "12.345.678/0001-09"; // Replace with the actual CNPJ
+
+// Remove non-numeric characters
+$cnpj = preg_replace('/[^0-9]/', '', $cnpj);
+
+// Validate CNPJ length and format
+if (strlen($cnpj) == 14 && is_numeric($cnpj)) {
+    // Validate CNPJ algorithm (using a common algorithm)
+    $sum = 0;
+    $mul = 2;
+
+    for ($i = 11; $i >= 0; $i--) {
+        $sum += $cnpj[$i] * $mul;
+        $mul = ($mul == 9) ? 2 : $mul + 1;
+    }
+
+    $remainder = $sum % 11;
+    $digit = ($remainder < 2) ? 0 : 11 - $remainder;
+
+    if ($digit == $cnpj[12]) {
+        echo "CNPJ is valid.";
+    } else {
+        echo "Invalid CNPJ.";
+    }
+} else {
+    echo "Invalid CNPJ format.";
+}
+
+
+
+$cpf = "123.456.789-09"; // Replace with the actual CPF
+
+// Remove non-numeric characters
+$cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+// Validate CPF length and format
+if (strlen($cpf) == 11 && is_numeric($cpf)) {
+    // Validate CPF algorithm (using a common algorithm)
+    $sum = 0;
+    for ($i = 0; $i < 9; $i++) {
+        $sum += ($cpf[$i] * (10 - $i));
+    }
+
+    $remainder = $sum % 11;
+    $digit = ($remainder < 2) ? 0 : (11 - $remainder);
+
+    if ($digit == $cpf[9]) {
+        echo "CPF is valid.";
+    } else {
+        echo "Invalid CPF.";
+    }
+} else {
+    echo "Invalid CPF format.";
+}
+
+
+
+
+$dateOfBirth = "1990-01-01"; // Replace with the actual date of birth
+
+// Validate the date format
+if (preg_match("/^\d{4}-\d{2}-\d{2}$/", $dateOfBirth) && strtotime($dateOfBirth)) {
+    // Calculate age based on the provided date of birth
+    $birthDate = new DateTime($dateOfBirth);
+    $today = new DateTime();
+    $age = $today->diff($birthDate)->y;
+
+    // Check if age is between 18 and 99
+    if ($age >= 18 && $age <= 99) {
+        echo "Date of Birth is valid, and age is within the allowed range.";
+    } else {
+        echo "Age must be between 18 and 99 years.";
+    }
+} else {
+    echo "Invalid Date of Birth format.";
+}
+
+
+
+
+$name = "John Doe";
+
+// Name should only contain letters and spaces
+if (preg_match("/^[a-zA-Z ]+$/", $name)) {
+    echo "Name is valid.";
+} else {
+    echo "Invalid name format. Use only letters and spaces.";
+}

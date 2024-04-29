@@ -1,0 +1,616 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap");
+
+@font-face {
+  font-family: "ttfors";
+  src: url("/Fonts/TT\ Fors\ Trial\ Bold.ttf") format("truetype");
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  color: rgb(255, 255, 255);
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: #000000;
+  background: #0d6a5a;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+body,
+html {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+*::placeholder, label{
+font-weight: bold;
+letter-spacing: 1px;
+}
+.screenOptionlogin {
+  /* background: linear-gradient(5deg, #000000, rgba(0, 123, 111, 0.111), rgb(0, 0, 0)); */
+  background-color: #000000;
+  height: 550px;
+  width: 450px;
+  padding: 50px;
+  display: flex;
+  text-align: center;
+  align-items: normal;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 35px 0 35px 0;
+  border: 2px solid rgb(0, 148, 128);
+  position: relative;
+  z-index: 10;
+}
+
+.screenOptionlogin h2 {
+  text-align: center;
+  /* text-shadow: -2px 2px 10px rgba(0, 219, 208, 0.603); */
+  color: rgb(0, 79, 68);
+  font-family: "ttfors";
+  font-weight: bold;
+  font-size: 36pt;
+  margin-top: 60px;
+  z-index: 10;
+}
+
+.screenOptionlogin p {
+  text-align: center;
+  margin: 25px 0;
+  color: rgb(0, 148, 128);
+  text-shadow: 0px 0px 15px rgb(20, 220, 193);
+  font-family: "League Spartan", sans-serif;
+  font-size: 18pt;
+  z-index: 10;
+}
+
+.animation_rotate,
+.animation_rotate2 {
+  width: 900px;
+  height: 5px;
+  background: linear-gradient(45deg, #000000a6, rgb(20 220 193 / 25%));
+  background-size: 200% 200%;
+  animation: rotating 10s infinite, neonLine 5s backwards infinite;
+  position: relative;
+  top: -150px;
+  left: -120px;
+}
+
+.animation_rotate2 {
+  animation: rotating2 10s infinite, neonLine 5s backwards infinite;
+}
+
+@keyframes rotating2 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes neonLine {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 25% 25%;
+  }
+
+  50% {
+    background-position: 50%, 50%;
+  }
+
+  75% {
+    background-position: 75% 75%;
+  }
+
+  100% {
+    background-position: 100%, 100%;
+  }
+}
+
+
+.btn-screenOptionlogin, input[type="submit"]{
+  --green: rgb(0, 128, 111);
+  font-size: 20px;
+  height: 45px;
+  letter-spacing: 0.06em;
+  position: relative;
+  border-radius: 0.6em;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  margin: 10px 0;
+  border: 2px solid var(--green);
+  background: black;
+  /* background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%); */
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.685), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.btn-screenOptionlogin, input[type="submit"],
+button[type="reset"]:hover {
+  color: rgb(0, 160, 157);
+  text-shadow: -2px 2px 10px #22a6ad;
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.btn-screenOptionlogin:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+}
+
+.btn-screenOptionlogin:hover:before {
+  transform: translateX(30em);
+}
+
+.containerTitle {
+  margin: 5% 0% 0% 0%;
+  padding: 0;
+  height: 13pt;
+  width: 100%;
+
+}
+
+.text-container {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.lgUsr,
+.cdUsr,
+.lgPf,
+.cdPf,
+.endPf,
+.endUsr {
+  padding: 20px;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 10px;
+  min-height: 400px;
+  min-width: 450px;
+  overflow-y: auto;
+  text-align: center;
+  display: grid;
+  border: 3px solid #19a58e;
+  border-radius: 30px;
+  transition: opacity 1s ease;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.required::after {
+  content: "* Required Field";
+  color: #0d6a5a;
+}
+
+.lgUsr,
+.cdUsr,
+.endUsr {
+  position: relative;
+  margin-left: -10px;
+
+
+
+  transition: opacity 2s ease;
+}
+
+.lgUsr::before,
+.cdUsr::before,
+.endUsr::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: opacity 2s ease;
+}
+
+.lgPf,
+.cdPf,
+.endPf {
+
+  position: relative;
+  margin-left: -10px;
+
+
+  transition: opacity 2s ease;
+}
+
+.lgPf::before,
+.cdPf::before,
+.endPf::before {
+  content: "";
+  position: absolute;
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  transition: opacity 2s ease;
+}
+
+.endPf,
+.endUsr {
+  width: 600px;
+}
+
+.lgUsr,
+.lgPf,
+.cdPf,
+.cdUsr {
+  display: none;
+}
+
+.titleForms {
+  text-align: center;
+  color: #11846f;
+  font-family: "ttfors";
+  font-weight: bold;
+}
+
+.buttonsForm input[type="submit"] {
+  left: 0px;
+}
+
+label,
+input[type="submit"]{
+  display: block;
+
+}
+
+input:not([type="submit"]) {
+  width: 80%;
+  min-height: 25px;
+  color: rgb(255, 255, 255);
+  padding: 0px 10px 0px 15px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #49c5b0;
+  outline: none;
+  line-height: 25px;
+  margin-bottom: 5px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 25px;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #ffffff;
+  font-size: 20px;
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+input::-webkit-input-placeholder {
+  font-family: "League Spartan", sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+input[type="submit"]{
+  text-align: center;
+  cursor: pointer;
+  width: 82%;
+  left: 35px;
+  margin: 20px 0px;
+}
+
+.btn_cdst_sub{
+  left: 0;
+}
+
+label,
+#gender {
+  text-align: left;
+  margin-left: 11%;
+  font-size: 20px;
+  font-family: "ttfors";
+  color: #49c5b0;
+  margin-top: 2%;
+}
+
+#gender {
+  display: block;
+  margin-left: 11%;
+}
+
+.gender {
+  /* margin: auto; */
+  border: 2px solid transparent;
+  padding: 15px;
+  margin: 10px 0 10px 5px;
+  display: flex;
+  position: relative;
+  border-radius: 7px;
+  padding: 5px;
+  width: 70%;
+}
+
+.label_fem {
+  margin-left: 20px;
+}
+
+.option {
+  position: relative;
+  top: 15px;
+  left: 12px;
+}
+
+.custom-legend {
+  font-weight: bold;
+  margin-bottom: -1px;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 20px;
+  padding: 5px;
+}
+
+.gender label {
+  margin-top: 9%;
+}
+
+.buttonsForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 8%;
+}
+
+
+input[type="date"]::-webkit-datetime-edit-text {
+  color: rgb(18, 151, 131);
+}
+
+.red-text-container input[type="date"]::-webkit-datetime-edit-text {
+  color: red !important;
+}
+.green-text-container input[type="date"]::-webkit-datetime-edit-text {
+  color: rgb(18, 151, 131) !important;
+}
+
+input[type="date"] {
+  border: 3px  solid #49c5b0;
+  width: 42%;
+  text-align: center;
+  border-radius: 8px;
+  margin: -2% -15% 0% 11%;
+  display: block;
+  font-family: "ttfors";
+  font-size: 20px;
+  line-height: 25px;
+}
+
+input[type="date"]::selection {
+  color: #12c5a7;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+
+#lblDtNas {
+  margin: 2% 0 2% 11%;
+  width: 100%;
+  font-family: "ttfors";
+}
+.dtNas{
+  margin-top: 5px !important;
+}
+input:focus::-webkit-input-placeholder {
+  color: rgb(160, 158, 158);
+  font-size: 20px;
+  transform: translateX(-300px);
+  transition: all 1.5s ease-in-out;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+input::-webkit-input-placeholder {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: rgb(159, 159, 159);
+  font-size: 20px;
+}
+
+.btn-login {
+  margin: 5% auto 2% 42%;
+}
+
+.boxForOpt {
+  margin: 0;
+}
+
+.contentBoxUsr,
+.contentBoxPf {
+  border-radius: 35px 0 35px 0;
+  padding: 20px;
+  background: rgb(0 0 0);
+  text-align: center;
+  width: 500px;
+  height: 450px;
+  margin: 0;
+  border: 3px solid rgb(0 123 111);
+  overflow: hidden;
+}
+
+.btn_back_ini_esc-opcs {
+  position: relative;
+  top: 0;
+  right: 205px;
+  height: 40px;
+  width: 90px;
+  z-index: 10;
+}
+
+.btn_back_ini_esc-opcsUser{
+  right: 187px;
+}
+
+.btn_back_ini_esc-opcs:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px #00fffb);
+  scale: 1.2;
+}
+
+.contentBoxTitle {
+  font-family: "ttfors";
+  font-weight: bold;
+  color: rgb(0, 148, 128);
+  text-transform: uppercase;
+  text-align: center;
+  filter: drop-shadow(2px 2px 15px black);
+  margin: 15px 0 0 0;
+  z-index: 10;
+  position: relative;
+}
+
+.ajst_contentBoxTitle_usr {
+  margin-top: 40px;
+}
+
+.quest {
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 22pt;
+  width: 425px;
+  font-family: "ttfors";
+  color: rgb(0, 148, 128);
+  z-index: 10;
+  position: relative;
+}
+
+.optUsr,
+.optPf {
+  --green: rgb(0, 128, 111);
+  font-size: 20px;
+  height: 45px;
+  width: 80%;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin: 10px 0;
+  border: 2px solid var(--green);
+  background: black;
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.685), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+  z-index: 10;
+  position: relative;
+}
+
+.optUsr:hover,
+.optPf:hover {
+  scale: 1.1;
+  transition: 0.5s;
+  color: aquamarine;
+}
+
+.backForOpt {
+  font-size: 25px;
+  position: relative;
+  margin-top: 5px;
+  display: flex;
+  color: #ffffff;
+}
+
+.backForOpt:hover {
+  transform: scale(1.05);
+  transition: 1s;
+  position: relative;
+  color: #87ffe1;
+  text-decoration: underline;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.backForOpt img {
+  width: 25px;
+  margin: 10px;
+  display: block;
+  box-shadow: 0 0 10px #ffffff, inset 15px 15px 10px #bdbdbd;
+  border-radius: 50%;
+}
+
+.backForOpt:hover img {
+  box-shadow: inset 5px 5px 15px #87ffe1;
+  border-radius: 50%;
+}
+
+.endPf label,
+.endUsr label {
+  margin-left: -60%;
+  text-align: left;
+  padding: 10px;
+}
+
+.endPf .lbls,
+.endUsr .lbls {
+  margin-left: -65%;
+  text-align: left;
+}
+
+.endPf .lblComp,
+.endUsr .lblComp {
+  margin-left: -50%;
+  text-align: left;
+}
+
+.span-require, .span-requirepf {
+  display: none;
+  color: #e63636;
+}
+
+.titleEnd {
+  margin: 10px auto -10px auto;
+}

@@ -1,0 +1,12 @@
+<label for="usrName">Nome:</label>
+<input type="text" name="usrName" id="usrName" placeholder="Digite seu nome:" required
+    value="<?php echo isset($_POST['usrName']) ? htmlspecialchars($_POST['usrName']) : ''; ?>">
+<div id="errorUsrName" class="error-message">
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (empty($_POST['usrName'])) {
+                echo "Campo obrigatório!";
+            }
+        }
+    ?>
+</div>
