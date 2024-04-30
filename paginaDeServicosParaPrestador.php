@@ -32,7 +32,9 @@
     right: 10px;
     cursor: pointer;
 }
-
+.jailson li{
+    font-size:50px;
+}
     </style>
 </head>
 
@@ -78,7 +80,7 @@ while ($row_services = mysqli_fetch_assoc($result_services)) {
     $all_categories_filled = mysqli_num_rows($result) == count($services_categories);
     ?>
 
-<ul>
+<ul class="jailson">
     <li><a href="#" onclick="loadPage('servicesInsert.php')">Inserir Serviços</a></li>
     <li><a href="#" onclick="loadPage('servicosInseridos.php')">Meus serviços</a></li>
     <li><a href="#" onclick="loadPage('contato.php')">Novas contratações</a></li>

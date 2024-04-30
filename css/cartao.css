@@ -137,8 +137,7 @@ body {
   color: rgb(39, 182, 158);
   text-shadow: 0 0 10px black;
   text-align: center;
-  background: linear-gradient(90deg,rgb(11, 48, 45), transparent,transparent,rgb(11, 48, 45) );
-
+  background: rgb(11, 48, 45);
   margin-top: 4%;
   margin-bottom: -5%;
   padding: 2%;

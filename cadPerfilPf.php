@@ -36,6 +36,10 @@ require_once 'navPf.php';
         #fecharCats{
             display: none;
         }
+        .btn_back_ini_esc-opcs {
+            display: none;
+
+        }
     </style>
 </head>
 
@@ -48,21 +52,7 @@ require_once 'navPf.php';
             <?php
             if (isset($_SESSION['id_Pf'])) {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-                        $temp_name = $_FILES['imagem']['tmp_name'];
-
-                        // Criptografa o nome da imagem em MD5
-                        $nome_imagem = md5(uniqid()) . '.' . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
-                        $caminho = "caminho/para/seu/diretorio/" . $nome_imagem;
-
-                        if (move_uploaded_file($temp_name, $caminho)) {
-                            // Se o upload for bem-sucedido, atualiza o nome da imagem no banco de dados
-                            $updateImagem = "UPDATE users SET nome_imagem = '$nome_imagem' WHERE id_Usr = $_SESSION[id_Usr]";
-                            $conn->query($updateImagem);
-                        } else {
-                            echo "<script>alert('Erro ao fazer o upload da imagem.');</script>";
-                        }
-                    }
+                    
 
                     if (isset($_POST['usrName'], $_POST['email'])) {
                         $nome = $_POST['UsrName'];
@@ -81,14 +71,6 @@ require_once 'navPf.php';
                 if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
                     $_SESSION['pfLogado'] = true;
-                    unset($_SESSION['pfCadastro']);
-                    if (!empty($row['imgData'])) {
-                        $imgData = $row['imgData'];
-                        $imgBase64 = base64_encode($imgData);
-                        echo "<div class='sel_imgPf'>";
-                        echo"</div>";
-                        $_SESSION['imgPf'] = $imgBase64;
-                    }
                     echo "<form method='POST' class='form_pf form_pf_edit' enctype='multipart/form-data'>";
                     echo "<div class='input_file input_file_cad'>";
                     echo "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-upload' viewBox='0 0 16 16'>

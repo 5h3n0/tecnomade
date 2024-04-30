@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/servicesInsert.css">
 </head>
-
+<style>
+    *{
+    font-size:50px;}
+    .servico{
+        background:gray;
+        margin:5px;
+    }
+</style>
 <body>
 <?php
     if(!isset($_SESSION)) 
@@ -35,9 +42,11 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // Exibe os serviços
     while ($row = $result->fetch_assoc()) {
+        echo"<div class='servico'>";
         echo "Nome do Serviço: " . $row['nomeService'] . "<br>";
         echo "Descrição do Serviço: " . $row['descService'] . "<br><br>";
         echo "valor: " . $row['vlrService'] . "<br><br>";
+        echo"</div>";
     }
 } else {
     echo "Nenhum serviço encontrado para este usuário.";

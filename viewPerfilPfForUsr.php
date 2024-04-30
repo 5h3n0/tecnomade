@@ -36,7 +36,7 @@ require_once 'navUsr.php';
 
                 if ($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
-                    if(!empty($imgPf = $row['imgName'])){
+                    if(!empty($row['imgName'])){
                         $imgPf = 'upload/' . $row['imgName'];
                     }
                     

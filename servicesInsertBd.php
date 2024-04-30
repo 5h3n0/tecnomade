@@ -12,6 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $descricao = $_POST["desc"];
     $preco = $_POST["preco"];
+  
+
+
+    // Remove o símbolo de moeda e quaisquer separadores de milhar
+    $preco = preg_replace('/[^0-9]/', '', $preco);
+    
+
+
     $categoria = $_POST["categoria"];
 
     $sql = "INSERT INTO services (nomeService, descService, vlrService, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
@@ -27,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
         if ($stmt->execute()) {
             $_SESSION['servicoInserido'] = true;
-            $stmt->close();
-            $conn->close();
             header('location: paginaDeServicosParaPrestador.php');
             exit(); 
         } else {
@@ -42,8 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn->close();
 }
-if(isset($_SESSION['servicoInserido']) && $_SESSION['servicoInserido']) {
-    $_SESSION['servicoInserido'] = false;
-}
+
 
 ?>

@@ -52,10 +52,13 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+                $valor =$row['vlrService'];
+                $valor = substr($valor,0,-2);
+                $valor = number_format($valor,2,',','.');
                 echo "<div class='service'>";
                 echo "<h3>{$row['nomeService']}</h3>";
                 echo "<p>{$row['descService']}</p>";
-                echo "<p>Preço: R$ {$row['vlrService']}</p>";
+                echo "<p>Preço: R$ {$valor}</p>";
                 echo "<p>Profissional: {$row['pfName']}</p>";
                 echo "<h4>Categoria de serviço: {$row['catName']}</h4>";
                 echo "<p>ID da Categoria: {$row['id_Cat']}</p>";
