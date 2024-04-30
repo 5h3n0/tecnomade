@@ -29,6 +29,7 @@
     $id_Pf = $_SESSION['id_Pf'];
 
 
+    
    
 
     // Consulta para obter as categorias disponíveis para o profissional
@@ -52,10 +53,12 @@
     $all_categories_filled = mysqli_num_rows($result) == count($services_categories);
     ?>
 
-    <section class="container py-5">
-        <?php if ($all_categories_filled) { ?>
-            <h1 class="top">Você já inseriu todos os serviços disponíveis.</h1>
-        <?php } else { ?>
+<?php if ($all_categories_filled) { ?>
+    <div class="semServicos">
+        <h1 class="top">Você já inseriu todos os serviços disponíveis.</h1>
+    </div>
+    <?php } else { ?>
+        <section class="container py-5">
             <h1 class="top">Inserir Serviços</h1>
 
             <form class="cadService" action="servicesInsertBd.php" method="POST">

@@ -43,9 +43,15 @@ if ($result->num_rows > 0) {
     // Exibe os serviços
     while ($row = $result->fetch_assoc()) {
         echo"<div class='servico'>";
+        $valor = $row['vlrService'];
+                $valor = substr($valor,0,-2);
+                $valor = number_format($valor,2,',','.');
         echo "Nome do Serviço: " . $row['nomeService'] . "<br>";
         echo "Descrição do Serviço: " . $row['descService'] . "<br><br>";
-        echo "valor: " . $row['vlrService'] . "<br><br>";
+        echo "valor: R$ $valor <br><br>";
+        echo "<form action='deleteService.php' method='post'>";
+            echo "<input type='hidden' name='id_service' value='" . $row['id_Service'] . "'>";
+            echo "<button type='submit' class='btn btn-danger delete-btn'>Delete</button>";
         echo"</div>";
     }
 } else {

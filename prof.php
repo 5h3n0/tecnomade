@@ -97,7 +97,6 @@ while ($row = $result->fetch_assoc()) {
         <p id="profDescription"></p>
         <?php
         echo "<form action='viewPerfilPfForUsr.php' method='post'>";
-        $_SESSION['id_Pf'] = $professional['id_Pf'];
         echo "<input type='button' name='verPerfil' value='Ver Perfil' onclick='redirectToNewPage()'>";
         echo "</form>";
         ?>
