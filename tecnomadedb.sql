@@ -69,8 +69,7 @@ CREATE TABLE `services` (
   `id_Service` int(11) NOT NULL,
   `nomeService` varchar(60) NOT NULL,
   `descService` longtext NOT NULL,
-  `vlrHora` decimal(9,2) NOT NULL,
-  `vlrService` decimal(9,2) NOT NULL,
+  `vlrService` decimal(10) NOT NULL,
   `tempoEstimado` int(11) NOT NULL,
   `id_Pf` int(11) NOT NULL,
   `id_Cat` int(11) NOT NULL
