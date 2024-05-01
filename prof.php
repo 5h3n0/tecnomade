@@ -43,18 +43,17 @@ while ($row = $result->fetch_assoc()) {
                                 WHERE id_Pf = {$professional['id_Pf']}";
             $catCheckResult = $conn->query($catCheckSql);
             $catCheckRow = $catCheckResult->fetch_assoc();
-            if (empty($professional['id_Pf']) || empty($professional['imgName']) || empty($professional['pfName']) || empty($catCheckRow['count'])) {
+            if (empty($professional['id_Pf']) || empty($professional['imgName']) || empty($professional['pfName']) || empty($catCheckRow['count'])) 
+            {
+                $imgPf = 'upload/'.$professional['imgName'];
                 continue;
             }
 
 
             ?>
             <div class="col-md-4 professional" data-id="<?= $professional['id_Pf'] ?>">
-                <?php
-                 if(!empty($professional['imgName'])){
-                    $imgPf = 'upload/'.$professional['imgName'];
-                    }?>
-                <img src='<?php echo $imgPf?>'
+
+                <img src='<?php echo "upload/".$professional['imgName']?>'
                 alt="Imagem do Profissional"><br><br>
                 <h3>
                     <?= $professional['pfName'] ?>
@@ -123,7 +122,8 @@ while ($row = $result->fetch_assoc()) {
                     var data = JSON.parse(response);
 
                     // Exibir a imagem do profissional na caixa flutuante
-                    $profDetails.find('#profImage').attr('src', '<?php echo $imgPf; ?>');
+                    $profDetails.find('#profImage').attr('src', 'upload/' + data.imgName);
+
 
 
                     // Exibir as especialidades do profissional na caixa flutuante

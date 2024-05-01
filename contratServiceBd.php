@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iiids", $id_service, $id_Pf, $id_Usr, $vlrService, $descService);
     if ($stmt->execute()) {
-        echo "Dados inseridos com sucesso.";
+        header("Location:cartao.php");
     } else {
         echo "Erro ao inserir os dados: " . $stmt->error;
     }
