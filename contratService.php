@@ -11,7 +11,9 @@
         .container {
             margin-top: 50px;
         }
-        .card-text, .card-title{
+
+        .card-text,
+        .card-title {
             color: black;
         }
     </style>
@@ -20,15 +22,18 @@
 <body>
     <div class="container">
         <?php
-        if(!isset($_SESSION)) 
-        { 
-            session_start(); 
-        } 
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         require_once 'connect.php';
         include_once 'navUsr.php';
-        if(isset($_POST['id_servico'])) {
+        if (isset($_POST['id_servico'])) {
             $servico_id = $_POST['id_servico'];
-            $sql = "SELECT * FROM services WHERE id_Service = $servico_id";
+            $sql = "SELECT services.*, prof.pfName 
+        FROM services 
+        INNER JOIN prof ON services.id_Pf = prof.id_Pf 
+        WHERE services.id_Service = $servico_id";
+
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
@@ -36,14 +41,19 @@
                 <h1>Detalhes do Serviço</h1>
                 <div class="card">
                     <div class="card-body">
+                        <?php
+                        $valor = $row['vlrService'];
+                        $valor = substr($valor, 0, -2);
+                        $valor = number_format($valor, 2, ',', '.');
+                        ?>
                         <h5 class="card-title"><?php echo $row['nomeService']; ?></h5>
                         <p class="card-text"><?php echo $row['descService']; ?></p>
-                        <p class="card-text">Preço: R$ <?php echo $row['vlrService']; ?></p>
-                        <p class="card-text">Profissional: <?php echo $row['id_Pf']; ?></p>
+                        <p class="card-text">Preço: R$ <?php echo $valor; ?></p>
+                        <p class="card-text">Profissional: <?php echo $row['pfName']; ?></p>
                         <p class="card-text">data de Contratação: <?php echo date("d-m-Y"); ?></p>
-                  
+
                         <form action="contratServiceBd.php" method="POST">
-                        <input type="hidden" name="id_Service" value="<?php echo $row['id_Service']; ?>">
+                            <input type="hidden" name="id_Service" value="<?php echo $row['id_Service']; ?>">
                             <input type="hidden" name="descService" value="<?php echo $row['descService']; ?>">
                             <input type="hidden" name="vlrService" value="<?php echo $row['vlrService']; ?>">
                             <input type="hidden" name="id_Pf" value="<?php echo $row['id_Pf']; ?>">

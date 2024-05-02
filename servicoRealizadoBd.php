@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("iiiss", $id_contratacao, $id_Pf, $id_Usr, $id_Service, $data_realizacao);
 
     if ($stmt->execute()) {
+        $_SESSION['nova_contratacao'] = false;
         header("Location: homePf.php");
     } else {
         echo "Erro ao inserir os dados: " . $stmt->error;
