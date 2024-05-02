@@ -121,8 +121,8 @@ $all_categories_filled = mysqli_num_rows($result) == count($services_categories)
     <ul class="navServices">
         <li><a href="#" onclick="loadPage('servicesInsert.php')">Inserir Serviços</a></li>
         <li><a href="#" onclick="loadPage('servicosInseridos.php')">Meus serviços</a></li>
-        <li><a href="#" onclick="loadPage('contato.php')">Novas contratações</a></li>
-        <li><a href="#" onclick="loadPage('contato.php')">realizados</a></li>
+        <li><a href="#" onclick="loadPage('novasContratacoes.php')">Novas contratações</a></li>
+        <li><a href="#" onclick="loadPage('servicosRealizados.php')">realizados</a></li>
 
     </ul>
 

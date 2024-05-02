@@ -65,6 +65,7 @@ error_reporting(E_ALL);
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="perfilUsr.php">Perfil</a></li>
         <li><a class="dropdown-item" href="infPeUsr.php">Informações Pessoais</a></li>
+        <li><a class="dropdown-item" href="servicosContratadosUsr.php">serviços contratados</a></li>
         <li><a href="#" class=" dropdown-item">Contato</a></li>
         <li><a href="#" class="dropdown-item">Sobre Nós</a></li>
           <li><a class="dropdown-item" href="logout.php">Log out</a></li>

@@ -61,7 +61,6 @@
                 echo "<p>Preço: R$ {$valor}</p>";
                 echo "<p>Profissional: {$row['pfName']}</p>";
                 echo "<h4>Categoria de serviço: {$row['catName']}</h4>";
-                echo "<p>ID da Categoria: {$row['id_Cat']}</p>";
                 if($imgData = $row['imgName']){
                     $imgPf = 'upload/' . $row['imgName'];
                 }

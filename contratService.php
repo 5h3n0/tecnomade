@@ -40,6 +40,7 @@
                         <p class="card-text"><?php echo $row['descService']; ?></p>
                         <p class="card-text">Preço: R$ <?php echo $row['vlrService']; ?></p>
                         <p class="card-text">Profissional: <?php echo $row['id_Pf']; ?></p>
+                        <p class="card-text">data de Contratação: <?php echo date("d-m-Y"); ?></p>
                   
                         <form action="contratServiceBd.php" method="POST">
                         <input type="hidden" name="id_Service" value="<?php echo $row['id_Service']; ?>">

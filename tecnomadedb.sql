@@ -3,9 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Abr-2024 às 21:56
+-- Tempo de geração: 02-Maio-2024 às 02:19
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
+CREATE DATABASE tecnomadedb;
+USE tecnomadedb;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -102,7 +104,8 @@ CREATE TABLE `contratacoes` (
   `id_Contratacao` int(11) NOT NULL,
   `id_Usr` int(11) NOT NULL,
   `id_Service` int(11) NOT NULL,
-  `valor` decimal(9,2) NOT NULL,
+  `valor` decimal(10,0) NOT NULL,
+  `data_Contratacao` date NOT NULL,
   `descricao` text NOT NULL,
   `id_Pf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -135,7 +138,8 @@ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro
 (2, 2, NULL, '08580-070', 'Rua dos Arquitetos', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '12', ''),
 (3, 3, NULL, '08580-050', 'Rua dos Engenheiros', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '554', ''),
 (4, 4, NULL, '07190065', 'Rua Cristobal Claudio Elillo', 'Parque Cecap', 'Guarulhos', 'SP', '1721', ''),
-(5, NULL, 1, '05022-000', 'Avenida Pompéia', 'Vila Pompéia', 'São Paulo', 'SP', '445', '');
+(5, NULL, 1, '05022-000', 'Avenida Pompéia', 'Vila Pompéia', 'São Paulo', 'SP', '445', ''),
+(6, NULL, 2, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '119', '');
 
 -- --------------------------------------------------------
 
@@ -185,15 +189,20 @@ CREATE TABLE `services` (
   `id_Cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `services`
+-- Estrutura da tabela `servicos_realizados`
 --
 
-INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `vlrService`, `tempoEstimado`, `id_Pf`, `id_Cat`) VALUES
-(26, 'fdsfsd', 'fsdfsdfsd', 90000, 0, 1, 2),
-(27, 'fsfsdfsdfsd', 'gfdgdfgdfd', 4000, 0, 1, 3),
-(28, 'fdfdsfsdfsd', 'dsfsdfsd', 30000, 0, 1, 7),
-(29, 'adsadasdsa', 'adsadasdass', 90000, 0, 1, 8);
+CREATE TABLE `servicos_realizados` (
+  `id_ServicoRealizado` int(11) NOT NULL,
+  `id_contratacao` int(11) NOT NULL,
+  `id_Pf` int(11) NOT NULL,
+  `id_Usr` int(11) NOT NULL,
+  `id_Service` int(11) NOT NULL,
+  `data_realizacao` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -219,7 +228,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgData`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
-(1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'f', '', 'e72633b9a8a6d240ac6d4e35a776a3ce.jpg', '(21) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '987.654.321-00');
+(1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'f', '', 'e72633b9a8a6d240ac6d4e35a776a3ce.jpg', '(21) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '987.654.321-00'),
+(2, 'Marina Oliveira Costa', '1999-12-05', 'marinacosta@email.com', 'f', '', 'a4e0ecf02edfccb879b16304838888fd.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
 
 --
 -- Índices para tabelas despejadas
@@ -278,6 +288,13 @@ ALTER TABLE `services`
   ADD KEY `fk_services_categoria` (`id_Cat`);
 
 --
+-- Índices para tabela `servicos_realizados`
+--
+ALTER TABLE `servicos_realizados`
+  ADD PRIMARY KEY (`id_ServicoRealizado`),
+  ADD KEY `id_contratacao` (`id_contratacao`);
+
+--
 -- Índices para tabela `users`
 --
 ALTER TABLE `users`
@@ -315,7 +332,7 @@ ALTER TABLE `contratacoes`
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `prof`
@@ -327,13 +344,19 @@ ALTER TABLE `prof`
 -- AUTO_INCREMENT de tabela `services`
 --
 ALTER TABLE `services`
-  MODIFY `id_Service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_Service` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `servicos_realizados`
+--
+ALTER TABLE `servicos_realizados`
+  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -365,6 +388,12 @@ ALTER TABLE `contratacoes`
 --
 ALTER TABLE `services`
   ADD CONSTRAINT `fk_services_categoria` FOREIGN KEY (`id_Cat`) REFERENCES `categorias` (`id_Cat`);
+
+--
+-- Limitadores para a tabela `servicos_realizados`
+--
+ALTER TABLE `servicos_realizados`
+  ADD CONSTRAINT `servicos_realizados_ibfk_1` FOREIGN KEY (`id_contratacao`) REFERENCES `contratacoes` (`id_Contratacao`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
