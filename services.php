@@ -54,6 +54,9 @@
         if (!isset($_SESSION)) {
             session_start();
         }
+        if(!isset($_SESSION['usrLogado'])){
+            header("Location:lgcd.php");
+        }
 
         require_once 'connect.php';
         include_once 'navUsr.php';
