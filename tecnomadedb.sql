@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Maio-2024 às 22:29
+-- Tempo de geração: 03-Maio-2024 às 20:47
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -29,12 +29,10 @@ USE `tecnomadedb`;
 -- Estrutura da tabela `avaliacoes`
 --
 
-CREATE TABLE IF NOT EXISTS `avaliacoes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `avaliacoes` (
+  `id` int(11) NOT NULL,
   `id_Pf` int(11) DEFAULT NULL,
-  `avaliacao` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_Pf` (`id_Pf`)
+  `avaliacao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -43,11 +41,10 @@ CREATE TABLE IF NOT EXISTS `avaliacoes` (
 -- Estrutura da tabela `categorias`
 --
 
-CREATE TABLE IF NOT EXISTS `categorias` (
-  `id_Cat` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_Cat`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `categorias` (
+  `id_Cat` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `categorias`
@@ -73,14 +70,11 @@ INSERT INTO `categorias` (`id_Cat`, `nome`) VALUES
 -- Estrutura da tabela `cat_sel`
 --
 
-CREATE TABLE IF NOT EXISTS `cat_sel` (
-  `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cat_sel` (
+  `id_Cat_Sel` int(11) NOT NULL,
   `id_Pf` int(11) DEFAULT NULL,
-  `id_Cat` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_Cat_Sel`),
-  KEY `id_Pf` (`id_Pf`),
-  KEY `id_Cat` (`id_Cat`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_Cat` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Extraindo dados da tabela `cat_sel`
@@ -106,19 +100,15 @@ INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
 -- Estrutura da tabela `contratacoes`
 --
 
-CREATE TABLE IF NOT EXISTS `contratacoes` (
-  `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contratacoes` (
+  `id_Contratacao` int(11) NOT NULL,
   `id_Usr` int(11) NOT NULL,
   `id_Service` int(11) NOT NULL,
   `valor` decimal(10,0) NOT NULL,
   `data_Contratacao` date NOT NULL,
   `descricao` text NOT NULL,
-  `id_Pf` int(11) NOT NULL,
-  PRIMARY KEY (`id_Contratacao`),
-  KEY `fk_contratacoes_users` (`id_Usr`),
-  KEY `fk_contratacoes_services` (`id_Service`),
-  KEY `fk_contratacoes_prof` (`id_Pf`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id_Pf` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `contratacoes`
@@ -128,7 +118,9 @@ INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `
 (1, 1, 1, 35000, '2024-05-02', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 1),
 (2, 1, 2, 65000, '2024-05-02', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 1),
 (3, 1, 4, 15000, '2024-05-02', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente. ', 1),
-(4, 1, 3, 250000, '2024-05-02', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 1);
+(4, 1, 3, 250000, '2024-05-02', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 1),
+(5, 2, 5, 350000, '2024-05-03', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. Maximize a eficiência e o desempenho da sua empresa com nossos serviços de desenvolvimento de sistemas em Java.', 2),
+(6, 2, 6, 48000, '2024-05-03', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 2);
 
 -- --------------------------------------------------------
 
@@ -136,8 +128,8 @@ INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `
 -- Estrutura da tabela `enderecos`
 --
 
-CREATE TABLE IF NOT EXISTS `enderecos` (
-  `id_Endereco` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `enderecos` (
+  `id_Endereco` int(11) NOT NULL,
   `id_Pf` int(11) DEFAULT NULL,
   `id_Usr` int(11) DEFAULT NULL,
   `cep` varchar(9) NOT NULL,
@@ -146,11 +138,8 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
   `cidade` varchar(255) NOT NULL,
   `uf` varchar(2) NOT NULL,
   `num` varchar(10) NOT NULL,
-  `comp` text DEFAULT NULL,
-  PRIMARY KEY (`id_Endereco`),
-  UNIQUE KEY `id_Pf` (`id_Pf`),
-  UNIQUE KEY `id_Usr` (`id_Usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `comp` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `enderecos`
@@ -170,8 +159,8 @@ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro
 -- Estrutura da tabela `prof`
 --
 
-CREATE TABLE IF NOT EXISTS `prof` (
-  `id_Pf` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `prof` (
+  `id_Pf` int(11) NOT NULL,
   `pfName` varchar(100) NOT NULL,
   `dtNasPf` date NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -182,9 +171,8 @@ CREATE TABLE IF NOT EXISTS `prof` (
   `imgName` varchar(255) NOT NULL,
   `categorias` varchar(20) DEFAULT NULL,
   `descPf` text NOT NULL,
-  `avaliacao_media` float DEFAULT NULL,
-  PRIMARY KEY (`id_Pf`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `avaliacao_media` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `prof`
@@ -202,28 +190,29 @@ INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `h
 -- Estrutura da tabela `services`
 --
 
-CREATE TABLE IF NOT EXISTS `services` (
-  `id_Service` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `services` (
+  `id_Service` int(11) NOT NULL,
   `nomeService` varchar(60) NOT NULL,
   `descService` longtext NOT NULL,
   `vlrService` decimal(10,0) NOT NULL,
+  `vlrServiceHr` decimal(10,0) NOT NULL,
   `tempoEstimado` int(11) NOT NULL,
   `id_Pf` int(11) NOT NULL,
-  `id_Cat` int(11) NOT NULL,
-  PRIMARY KEY (`id_Service`),
-  KEY `fk_services_prof` (`id_Pf`),
-  KEY `fk_services_categoria` (`id_Cat`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id_Cat` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `services`
 --
 
-INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `vlrService`, `tempoEstimado`, `id_Pf`, `id_Cat`) VALUES
-(1, 'Manutenção/Suporte para servidores', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 35000, 0, 1, 7),
-(2, 'Instalação de Câmeras/Alarmes', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 65000, 0, 1, 8),
-(3, 'Instalação de Infraestrutura de rede', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 250000, 0, 1, 2),
-(4, 'Manutenção/Instalação de rede sem fio', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente. ', 15000, 0, 1, 3);
+INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `vlrService`, `vlrServiceHr`, `tempoEstimado`, `id_Pf`, `id_Cat`) VALUES
+(1, 'Manutenção/Suporte para servidores', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 35000, 0, 0, 1, 7),
+(2, 'Instalação de Câmeras/Alarmes', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 65000, 0, 0, 1, 8),
+(3, 'Instalação de Infraestrutura de rede', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 250000, 0, 0, 1, 2),
+(4, 'Manutenção/Instalação de rede sem fio', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente. ', 15000, 0, 0, 1, 3),
+(5, 'Desenvolvimento de Sistemas Java', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. Maximize a eficiência e o desempenho da sua empresa com nossos serviços de desenvolvimento de sistemas em Java.', 350000, 0, 0, 2, 6),
+(6, 'Analise de Dados com Power BI', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 48000, 0, 0, 2, 9),
+(7, 'Cloud Computing com AWS', 'Armazenamento seguro, processamento eficiente e escalabilidade flexível são apenas o começo com os serviços de cloud computing AWS. De startups a grandes corporações, esses serviços oferecem as ferramentas necessárias para impulsionar sua empresa para o futuro. Aproveite ao máximo recursos, reduza custos e aumente a agilidade com esta solução de cloud computing líder de mercado. Entre em contato para saber mais sobre como podemos ajudar a impulsionar o sucesso na nuvem com a AWS.', 36500, 0, 0, 2, 12);
 
 -- --------------------------------------------------------
 
@@ -231,16 +220,14 @@ INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `vlrService`
 -- Estrutura da tabela `servicos_realizados`
 --
 
-CREATE TABLE IF NOT EXISTS `servicos_realizados` (
-  `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `servicos_realizados` (
+  `id_ServicoRealizado` int(11) NOT NULL,
   `id_contratacao` int(11) NOT NULL,
   `id_Pf` int(11) NOT NULL,
   `id_Usr` int(11) NOT NULL,
   `id_Service` int(11) NOT NULL,
-  `data_realizacao` date NOT NULL,
-  PRIMARY KEY (`id_ServicoRealizado`),
-  KEY `id_contratacao` (`id_contratacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `data_realizacao` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `servicos_realizados`
@@ -250,7 +237,9 @@ INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_
 (1, 1, 1, 1, 1, '2024-05-02'),
 (2, 2, 1, 1, 2, '2024-05-02'),
 (3, 3, 1, 1, 4, '2024-05-02'),
-(4, 4, 1, 1, 3, '2024-05-02');
+(4, 4, 1, 1, 3, '2024-05-02'),
+(5, 5, 2, 2, 5, '2024-05-03'),
+(6, 6, 2, 2, 6, '2024-05-03');
 
 -- --------------------------------------------------------
 
@@ -258,8 +247,8 @@ INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_
 -- Estrutura da tabela `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id_Usr` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id_Usr` int(11) NOT NULL,
   `usrName` varchar(100) NOT NULL,
   `dtNasUsr` date NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -268,9 +257,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `imgName` varchar(255) NOT NULL,
   `celUsr` varchar(20) NOT NULL,
   `hashPass` varchar(255) NOT NULL,
-  `cpf` varchar(14) NOT NULL,
-  PRIMARY KEY (`id_Usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `cpf` varchar(14) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `users`
@@ -279,6 +267,133 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgData`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
 (1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'f', '', 'e72633b9a8a6d240ac6d4e35a776a3ce.jpg', '(21) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '987.654.321-00'),
 (2, 'Marina Oliveira Costa', '1999-12-05', 'marinacosta@email.com', 'f', '', 'a4e0ecf02edfccb879b16304838888fd.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `avaliacoes`
+--
+ALTER TABLE `avaliacoes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_Pf` (`id_Pf`);
+
+--
+-- Índices para tabela `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id_Cat`);
+
+--
+-- Índices para tabela `cat_sel`
+--
+ALTER TABLE `cat_sel`
+  ADD PRIMARY KEY (`id_Cat_Sel`),
+  ADD KEY `id_Pf` (`id_Pf`),
+  ADD KEY `id_Cat` (`id_Cat`);
+
+--
+-- Índices para tabela `contratacoes`
+--
+ALTER TABLE `contratacoes`
+  ADD PRIMARY KEY (`id_Contratacao`),
+  ADD KEY `fk_contratacoes_users` (`id_Usr`),
+  ADD KEY `fk_contratacoes_services` (`id_Service`),
+  ADD KEY `fk_contratacoes_prof` (`id_Pf`);
+
+--
+-- Índices para tabela `enderecos`
+--
+ALTER TABLE `enderecos`
+  ADD PRIMARY KEY (`id_Endereco`),
+  ADD UNIQUE KEY `id_Pf` (`id_Pf`),
+  ADD UNIQUE KEY `id_Usr` (`id_Usr`);
+
+--
+-- Índices para tabela `prof`
+--
+ALTER TABLE `prof`
+  ADD PRIMARY KEY (`id_Pf`);
+
+--
+-- Índices para tabela `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id_Service`),
+  ADD KEY `fk_services_prof` (`id_Pf`),
+  ADD KEY `fk_services_categoria` (`id_Cat`);
+
+--
+-- Índices para tabela `servicos_realizados`
+--
+ALTER TABLE `servicos_realizados`
+  ADD PRIMARY KEY (`id_ServicoRealizado`),
+  ADD KEY `id_contratacao` (`id_contratacao`);
+
+--
+-- Índices para tabela `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_Usr`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `avaliacoes`
+--
+ALTER TABLE `avaliacoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id_Cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `cat_sel`
+--
+ALTER TABLE `cat_sel`
+  MODIFY `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de tabela `contratacoes`
+--
+ALTER TABLE `contratacoes`
+  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `enderecos`
+--
+ALTER TABLE `enderecos`
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `prof`
+--
+ALTER TABLE `prof`
+  MODIFY `id_Pf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `services`
+--
+ALTER TABLE `services`
+  MODIFY `id_Service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `servicos_realizados`
+--
+ALTER TABLE `servicos_realizados`
+  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas

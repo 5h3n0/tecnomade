@@ -50,4 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
+    // $categoria = $_POST["categoria"];
+    // $tipo_preco = $_POST["tipo_preco"];
+
+    // if ($tipo_preco == "valor_unico") {
+    //     $sql = "INSERT INTO services (nomeService, descService, vlrService, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
+    // } elseif ($tipo_preco == "por_hora") {
+    //     $sql = "INSERT INTO services (nomeService, descService, vlrServiceHr, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
+    // }
+
 ?>

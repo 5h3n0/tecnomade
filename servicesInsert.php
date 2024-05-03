@@ -91,6 +91,14 @@
     <script src="./js/formatDin.js"></script>
 
 </body>
+ <!-- <label>Escolha o tipo de preço:</label><br>
+                <input type="radio" id="por_hora" name="tipo_preco" value="por_hora" checked>
+                <label for="por_hora">Por hora</label><br>
+                <input type="radio" id="valor_unico" name="tipo_preco" value="valor_unico">
+                <label for="valor_unico">Valor único</label><br><br>
 
+                <label for="preco">Preço:</label><br>
+                <input type="number" id="preco" name="preco" min="0" step="0.01" required><br><br>
+                -->
 
 </html>

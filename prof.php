@@ -12,17 +12,17 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if(!$_SESSION['usrLogado']){
+if (!$_SESSION['usrLogado']) {
     require_once 'navHome.php';
 }
-if($_SESSION['usrLogado']){
+if ($_SESSION['usrLogado']) {
     require_once 'navUsr.php';
 }
 require_once 'connect.php';
 
 
 
-$sql = "SELECT * FROM prof";
+$sql = "SELECT * FROM prof ORDER BY RAND()";
 $result = $conn->query($sql);
 
 $profissionals = array();
@@ -31,21 +31,24 @@ while ($row = $result->fetch_assoc()) {
 }
 
 ?>
-            
- 
+
+
 
 <section class="container">
     <div class="row profissionals">
         <?php foreach ($profissionals as $professional): ?>
             <?php
-            $catCheckSql = "SELECT COUNT(*) AS count
-                                FROM cat_sel
-                                WHERE id_Pf = {$professional['id_Pf']}";
-            $catCheckResult = $conn->query($catCheckSql);
-            $catCheckRow = $catCheckResult->fetch_assoc();
-            if (empty($professional['id_Pf']) || empty($professional['imgName']) || empty($professional['pfName']) || empty($catCheckRow['count'])) 
-            {
-                $imgPf = 'upload/'.$professional['imgName'];
+            $serviceCountQuery = "SELECT COUNT(*) AS service_count FROM services WHERE id_Pf = ?";
+            $serviceCountStmt = $conn->prepare($serviceCountQuery);
+            $serviceCountStmt->bind_param('i', $professional['id_Pf']);
+            $serviceCountStmt->execute();
+            $serviceCountResult = $serviceCountStmt->get_result();
+            $serviceCountRow = $serviceCountResult->fetch_assoc();
+
+            // Verificar se o profissional possui pelo menos um serviço
+            if (empty($serviceCountRow['service_count']) || $serviceCountRow['service_count'] == 0) {
+                // Se não houver serviços, defina $imgPf como a imagem do profissional e continue para o próximo profissional
+                $imgPf = 'upload/' . $professional['imgName'];
                 continue;
             }
 
@@ -53,8 +56,7 @@ while ($row = $result->fetch_assoc()) {
             ?>
             <div class="col-md-4 professional" data-id="<?= $professional['id_Pf'] ?>">
 
-                <img src='<?php echo "upload/".$professional['imgName']?>'
-                alt="Imagem do Profissional"><br><br>
+                <img src='<?php echo "upload/" . $professional['imgName'] ?>' alt="Imagem do Profissional"><br><br>
                 <h3>
                     <?= $professional['pfName'] ?>
                 </h3>
@@ -86,7 +88,7 @@ while ($row = $result->fetch_assoc()) {
     </div>
 </section>
 
-<div class="profDetails"> 
+<div class="profDetails">
     <div class="details">
         <button class="closeBtn">X</button><br>
         <img src="" alt="Imagem do Profissional" id="profImage"><br><br>
