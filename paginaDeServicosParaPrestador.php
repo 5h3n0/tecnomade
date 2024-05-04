@@ -31,6 +31,23 @@ $all_categories_filled = mysqli_num_rows($result) == count($services_categories)
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+ $sql_notification = "SELECT c.id_contratacao, s.nomeService, s.descService, c.valor, c.descricao, c.data_Contratacao, u.usrName AS nome_usuario, c.id_Usr, c.id_Service
+ FROM contratacoes c 
+ INNER JOIN services s ON c.id_Service = s.id_Service 
+ INNER JOIN users u ON c.id_Usr = u.id_Usr
+ WHERE c.id_Pf = $id_Pf
+ AND NOT EXISTS (
+     SELECT 1
+     FROM servicos_realizados sr
+     WHERE sr.id_contratacao = c.id_contratacao
+ )";
+ $result_notification = $conn->query($sql_notification);
+ if ($result_notification->num_rows > 0) {
+    $row_notification = $result->fetch_assoc();
+         $_SESSION['nova_contratacao'] = true;
+ }
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -115,6 +132,7 @@ $all_categories_filled = mysqli_num_rows($result) == count($services_categories)
 <body>
 
     <?php
+    
     include_once ("navPf.php");
     ?>
 

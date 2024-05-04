@@ -15,7 +15,8 @@
 </head>
 <style>
     *{
-    font-size:50px;}
+    font-size:50px;
+}
     .servico{
         background:gray;
         margin:5px;

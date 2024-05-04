@@ -50,7 +50,7 @@
             <option value="nomeDeServico">Serviço</option>
         </select>
 
-        <?php
+        <?php   
         if (!isset($_SESSION)) {
             session_start();
         }
