@@ -66,7 +66,7 @@ include_once('navHome.php');
       <img src="./imgs/icon-complete.svg" alt="">
       <h2>Obrigado!</h2>
       <span>A Tecnomade agradece </span>
-      <button><a href="homeUsr.php">Continue</a></button>
+      <a href="paginaDeServicosParaUsr.php"><button>Continue</button></a>
     </section>
     <form class="formulario" method="post">
     

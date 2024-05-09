@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Maio-2024 às 20:47
+-- Tempo de geração: 04-Maio-2024 às 20:47
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -80,19 +80,18 @@ CREATE TABLE `cat_sel` (
 -- Extraindo dados da tabela `cat_sel`
 --
 
-INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
-(1, 1, 7),
-(2, 1, 8),
-(5, 1, 2),
-(6, 1, 3),
-(7, 2, 6),
-(8, 2, 9),
-(9, 2, 12),
-(10, 3, 4),
-(11, 3, 10),
-(12, 4, 5),
-(13, 4, 6),
-(14, 4, 11);
+ INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
+ (1, 1, 2),
+ (2, 1, 3),
+ (3, 1, 8),
+ (4, 1, 7),
+ (5, 2, 6),
+ (6, 2, 9),
+ (7, 2, 12),
+ (8, 3, 4),
+ (9, 3, 5),
+ (10, 3, 6),
+ (11, 3, 10);
 
 -- --------------------------------------------------------
 
@@ -106,21 +105,8 @@ CREATE TABLE `contratacoes` (
   `id_Service` int(11) NOT NULL,
   `valor` decimal(10,0) NOT NULL,
   `data_Contratacao` date NOT NULL,
-  `descricao` text NOT NULL,
   `id_Pf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `contratacoes`
---
-
-INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `data_Contratacao`, `descricao`, `id_Pf`) VALUES
-(1, 1, 1, 35000, '2024-05-02', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 1),
-(2, 1, 2, 65000, '2024-05-02', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 1),
-(3, 1, 4, 15000, '2024-05-02', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente. ', 1),
-(4, 1, 3, 250000, '2024-05-02', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 1),
-(5, 2, 5, 350000, '2024-05-03', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. Maximize a eficiência e o desempenho da sua empresa com nossos serviços de desenvolvimento de sistemas em Java.', 2),
-(6, 2, 6, 48000, '2024-05-03', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 2);
 
 -- --------------------------------------------------------
 
@@ -145,13 +131,25 @@ CREATE TABLE `enderecos` (
 -- Extraindo dados da tabela `enderecos`
 --
 
-INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `num`, `comp`) VALUES
-(1, 1, NULL, '08580-730', 'Rua Marciliano Faustino', 'Jardim Ipê', 'Itaquaquecetuba', 'SP', '15', ''),
-(2, 2, NULL, '08580-070', 'Rua dos Arquitetos', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '12', ''),
-(3, 3, NULL, '08580-050', 'Rua dos Engenheiros', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '554', ''),
-(4, 4, NULL, '07190065', 'Rua Cristobal Claudio Elillo', 'Parque Cecap', 'Guarulhos', 'SP', '1721', ''),
-(5, NULL, 1, '05022-000', 'Avenida Pompéia', 'Vila Pompéia', 'São Paulo', 'SP', '445', ''),
-(6, NULL, 2, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '119', '');
+ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `num`, `comp`) VALUES
+ (1, 1, NULL, '08580-730', 'Rua Marciliano Faustino', 'Jardim Ipê', 'Itaquaquecetuba', 'SP', '15', ''),
+ (2, 2, NULL, '08580-070', 'Rua dos Arquitetos', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '194', ''),
+ (3, 3, NULL, '07190065', 'Rua Cristobal Claudio Elillo', 'Parque Cecap', 'Guarulhos', 'SP', '224', ''),
+ (4, NULL, 1, '05022-000', 'Avenida Pompéia', 'Vila Pompéia', 'São Paulo', 'SP', '96', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `orcamento`
+--
+
+CREATE TABLE `orcamento` (
+  `id_orcamento` int(11) NOT NULL,
+  `id_solicitacao` int(11) DEFAULT NULL,
+  `id_Pf` int(11) DEFAULT NULL,
+  `orcamento` decimal(10,0) DEFAULT NULL,
+  `status` varchar(20) DEFAULT 'Pendente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -178,11 +176,10 @@ CREATE TABLE `prof` (
 -- Extraindo dados da tabela `prof`
 --
 
-INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `hashPass`, `cnpj`, `imgName`, `categorias`, `descPf`, `avaliacao_media`) VALUES
-(1, 'Rodrigo Nunes Almeida', '1995-10-12', 'rdrigo35@gmail.com', '(11) 98859-4468', 'm', 'ed999f05e1ed9818541fcd882b2c780ebac594fc', '45.645.646/0001-46', 'b9918e8475397c1ceb84a274e555e6e6.jpg', NULL, 'Sou Rodrigo Nunes Almeida, um profissional especializado em manutenção de servidores, instalação de câmeras e alarmes, infraestrutura de rede e manutenção de redes sem fio. Minha experiência me permite oferecer soluções confiáveis e eficientes para garantir o funcionamento ininterrupto dos sistemas de TI e segurança. Estou comprometido em fornecer serviços de alta qualidade para empresas e organizações, ajudando a maximizar o desempenho de sua infraestrutura tecnológica.', NULL),
-(2, 'Marcos Almeida Rocha', '2001-11-12', 'mcal@gmail.com', '(11) 98858-5589', 'm', '5a78d7207d53ee01ca20554180c9f80f44e7e61d', '79.945.646/0001-45', 'de5ede32dffbaed102875d52b22010fb.jpg', NULL, 'Eu sou Marcos, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL),
-(3, 'Rafael Sousa Oliveira', '1998-02-05', 'rol@gmail.com', '(11) 98454-5689', 'm', 'fc6961fc54edac9228fd2d798fb3441f4940405f', '78.445.646/0001-25', 'e29f5af8acbb2bcad186505fda3b7826.jpg', NULL, 'Eu sou Rafael Sousa Oliveira, um especialista em desenvolvimento web e design UX/UI. Minha paixão está em criar experiências digitais envolventes e intuitivas, combinando habilidades técnicas sólidas com uma compreensão profunda do usuário. Com uma abordagem centrada no usuário, estou comprometido em desenvolver websites e interfaces que não apenas impressionem visualmente, mas também ofereçam uma experiência excepcional aos usuários.', NULL),
-(4, 'Ana Nunes Dos Santos', '1999-07-18', 'anunes@gmail.com', '(11) 90658-8689', 'f', 'e41079bf229d6ee9886927bb3326aa951cdae53e', '89.478.946/0001-66', 'd8eada203e133093d9c60f61c8346fc5.jpg', NULL, 'Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.', NULL);
+ INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `hashPass`, `cnpj`, `imgName`, `categorias`, `descPf`, `avaliacao_media`) VALUES
+ (1, 'Rodrigo Nunes Almeida', '1995-10-12', 'rdrigo35@gmail.com', '(11) 98859-4468', 'm', 'ed999f05e1ed9818541fcd882b2c780ebac594fc', '45.645.646/0001-46', 'ee3a192b4d0f089ebd494585ea14fe04.jpg', NULL, 'Sou Rodrigo Nunes Almeida, um profissional especializado em manutenção de servidores, instalação de câmeras e alarmes, infraestrutura de rede e manutenção de redes sem fio. Minha experiência me permite oferecer soluções confiáveis e eficientes para garantir o funcionamento ininterrupto dos sistemas de TI e segurança. Estou comprometido em fornecer serviços de alta qualidade para empresas e organizações, ajudando a maximizar o desempenho de sua infraestrutura tecnológica.', NULL),
+ (2, 'Marcos Almeida Rocha', '2001-11-12', 'mcal@gmail.com', '(11) 98858-5589', 'm', '5a78d7207d53ee01ca20554180c9f80f44e7e61d', '79.945.646/0001-45', '32c44f48c2d9bda9d7ec553febaa2602.jpg', NULL, 'Eu sou Marcos, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL),
+ (3, 'Ana Nunes Dos Santos', '1999-07-18', 'anunes@gmail.com', '(11) 90658-8689', 'm', 'e41079bf229d6ee9886927bb3326aa951cdae53e', '89.478.946/0001-66', 'eb00fa4b124ef87c7b8d962ff4d1e0e8.jpg', NULL, 'Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.', NULL);
 
 -- --------------------------------------------------------
 
@@ -194,9 +191,6 @@ CREATE TABLE `services` (
   `id_Service` int(11) NOT NULL,
   `nomeService` varchar(60) NOT NULL,
   `descService` longtext NOT NULL,
-  `vlrService` decimal(10,0) NOT NULL,
-  `vlrServiceHr` decimal(10,0) NOT NULL,
-  `tempoEstimado` int(11) NOT NULL,
   `id_Pf` int(11) NOT NULL,
   `id_Cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -205,14 +199,14 @@ CREATE TABLE `services` (
 -- Extraindo dados da tabela `services`
 --
 
-INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `vlrService`, `vlrServiceHr`, `tempoEstimado`, `id_Pf`, `id_Cat`) VALUES
-(1, 'Manutenção/Suporte para servidores', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 35000, 0, 0, 1, 7),
-(2, 'Instalação de Câmeras/Alarmes', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 65000, 0, 0, 1, 8),
-(3, 'Instalação de Infraestrutura de rede', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 250000, 0, 0, 1, 2),
-(4, 'Manutenção/Instalação de rede sem fio', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente. ', 15000, 0, 0, 1, 3),
-(5, 'Desenvolvimento de Sistemas Java', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. Maximize a eficiência e o desempenho da sua empresa com nossos serviços de desenvolvimento de sistemas em Java.', 350000, 0, 0, 2, 6),
-(6, 'Analise de Dados com Power BI', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 48000, 0, 0, 2, 9),
-(7, 'Cloud Computing com AWS', 'Armazenamento seguro, processamento eficiente e escalabilidade flexível são apenas o começo com os serviços de cloud computing AWS. De startups a grandes corporações, esses serviços oferecem as ferramentas necessárias para impulsionar sua empresa para o futuro. Aproveite ao máximo recursos, reduza custos e aumente a agilidade com esta solução de cloud computing líder de mercado. Entre em contato para saber mais sobre como podemos ajudar a impulsionar o sucesso na nuvem com a AWS.', 36500, 0, 0, 2, 12);
+ INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `id_Pf`, `id_Cat`) VALUES
+ (1, 'Manutenção/Suporte para servidores', 'O serviço de Manutenção/Suporte para Servidores oferece uma solução completa para garantir a estabilidade e o desempenho dos servidores de sua empresa. Este serviço abrange o monitoramento contínuo do desempenho dos servidores, a identificação e resolução proativa de problemas, além de atualizações regulares de software e firmware para manter os sistemas seguros e atualizados.', 1, 7),
+ (2, 'Instalação de Câmeras/Alarmes', 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 1, 8),
+ (3, 'Instalação de Infraestrutura de rede', 'A infraestrutura de rede oferece uma solução completa para garantir a conectividade confiável e eficiente de sua empresa. Este serviço abrange o projeto, implementação e manutenção de redes locais (LANs) e de área ampla (WANs), garantindo uma comunicação fluida entre os dispositivos e a segurança dos dados. Nossos especialistas realizam uma análise detalhada das necessidades de sua empresa, projetando uma infraestrutura de rede escalável e adaptável às suas demandas atuais e futuras. Além disso, oferecemos suporte técnico contínuo para resolver qualquer problema de conectividade e garantir o funcionamento ininterrupto de sua rede.', 1, 2),
+ (4, 'Suporte para rede sem fio', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente.', 1, 3),
+ (5, 'Desenvolvimento de Sistemas Java', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. ', 2, 6),
+ (6, 'Analise de Dados com Power BI', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 2, 9),
+ (7, 'Cloud Computing com AWS', 'Armazenamento seguro, processamento eficiente e escalabilidade flexível são apenas o começo com os serviços de cloud computing AWS. De startups a grandes corporações, esses serviços oferecem as ferramentas necessárias para impulsionar sua empresa para o futuro. Aproveite ao máximo recursos, reduza custos e aumente a agilidade com esta solução de cloud computing líder de mercado. Entre em contato para saber mais sobre como podemos ajudar a impulsionar o sucesso na nuvem com a AWS.', 2, 12);
 
 -- --------------------------------------------------------
 
@@ -229,17 +223,22 @@ CREATE TABLE `servicos_realizados` (
   `data_realizacao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `servicos_realizados`
+-- Estrutura da tabela `solicitacoes_servico`
 --
 
-INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_Pf`, `id_Usr`, `id_Service`, `data_realizacao`) VALUES
-(1, 1, 1, 1, 1, '2024-05-02'),
-(2, 2, 1, 1, 2, '2024-05-02'),
-(3, 3, 1, 1, 4, '2024-05-02'),
-(4, 4, 1, 1, 3, '2024-05-02'),
-(5, 5, 2, 2, 5, '2024-05-03'),
-(6, 6, 2, 2, 6, '2024-05-03');
+CREATE TABLE `solicitacoes_servico` (
+  `id_solicitacao` int(11) NOT NULL,
+  `id_Service` int(11) NOT NULL,
+  `id_Pf` int(11) NOT NULL,
+  `id_Usr` int(11) NOT NULL,
+  `descricao_servico` text NOT NULL,
+  `mensagem_cliente` text NOT NULL,
+  `data_Solicitacao` date NOT NULL,
+  `status` varchar(50) DEFAULT 'Pendente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -253,7 +252,6 @@ CREATE TABLE `users` (
   `dtNasUsr` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `gender` char(1) NOT NULL,
-  `imgData` longblob NOT NULL,
   `imgName` varchar(255) NOT NULL,
   `celUsr` varchar(20) NOT NULL,
   `hashPass` varchar(255) NOT NULL,
@@ -262,11 +260,10 @@ CREATE TABLE `users` (
 
 --
 -- Extraindo dados da tabela `users`
---
+-- --
 
-INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgData`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
-(1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'f', '', 'e72633b9a8a6d240ac6d4e35a776a3ce.jpg', '(21) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '987.654.321-00'),
-(2, 'Marina Oliveira Costa', '1999-12-05', 'marinacosta@email.com', 'f', '', 'a4e0ecf02edfccb879b16304838888fd.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
+ INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
+ (1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'm', '857aa0e9806ec583325c4d85514aafbd.jpg', '(11) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '219.876.543-21');
 
 --
 -- Índices para tabelas despejadas
@@ -311,6 +308,14 @@ ALTER TABLE `enderecos`
   ADD UNIQUE KEY `id_Usr` (`id_Usr`);
 
 --
+-- Índices para tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  ADD PRIMARY KEY (`id_orcamento`),
+  ADD KEY `id_solicitacao` (`id_solicitacao`),
+  ADD KEY `id_Pf` (`id_Pf`);
+
+--
 -- Índices para tabela `prof`
 --
 ALTER TABLE `prof`
@@ -330,6 +335,15 @@ ALTER TABLE `services`
 ALTER TABLE `servicos_realizados`
   ADD PRIMARY KEY (`id_ServicoRealizado`),
   ADD KEY `id_contratacao` (`id_contratacao`);
+
+--
+-- Índices para tabela `solicitacoes_servico`
+--
+ALTER TABLE `solicitacoes_servico`
+  ADD PRIMARY KEY (`id_solicitacao`),
+  ADD KEY `id_Service` (`id_Service`),
+  ADD KEY `id_Pf` (`id_Pf`),
+  ADD KEY `id_Usr` (`id_Usr`);
 
 --
 -- Índices para tabela `users`
@@ -357,25 +371,31 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `cat_sel`
 --
 ALTER TABLE `cat_sel`
-  MODIFY `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `contratacoes`
 --
 ALTER TABLE `contratacoes`
-  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  MODIFY `id_orcamento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `prof`
 --
 ALTER TABLE `prof`
-  MODIFY `id_Pf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_Pf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `services`
@@ -387,13 +407,19 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT de tabela `servicos_realizados`
 --
 ALTER TABLE `servicos_realizados`
-  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `solicitacoes_servico`
+--
+ALTER TABLE `solicitacoes_servico`
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
@@ -421,6 +447,13 @@ ALTER TABLE `contratacoes`
   ADD CONSTRAINT `fk_contratacoes_users` FOREIGN KEY (`id_Usr`) REFERENCES `users` (`id_Usr`);
 
 --
+-- Limitadores para a tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  ADD CONSTRAINT `orcamento_ibfk_1` FOREIGN KEY (`id_solicitacao`) REFERENCES `solicitacoes_servico` (`id_solicitacao`),
+  ADD CONSTRAINT `orcamento_ibfk_2` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
+
+--
 -- Limitadores para a tabela `services`
 --
 ALTER TABLE `services`
@@ -431,6 +464,14 @@ ALTER TABLE `services`
 --
 ALTER TABLE `servicos_realizados`
   ADD CONSTRAINT `servicos_realizados_ibfk_1` FOREIGN KEY (`id_contratacao`) REFERENCES `contratacoes` (`id_Contratacao`);
+
+--
+-- Limitadores para a tabela `solicitacoes_servico`
+--
+ALTER TABLE `solicitacoes_servico`
+  ADD CONSTRAINT `solicitacoes_servico_ibfk_1` FOREIGN KEY (`id_Service`) REFERENCES `services` (`id_Service`),
+  ADD CONSTRAINT `solicitacoes_servico_ibfk_2` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`),
+  ADD CONSTRAINT `solicitacoes_servico_ibfk_3` FOREIGN KEY (`id_Usr`) REFERENCES `users` (`id_Usr`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

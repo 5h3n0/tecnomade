@@ -11,13 +11,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/servicesInsert.css">
+    <link rel="stylesheet" href="./css/paginasDeServicoPf.css">
 </head>
 <style>
-    * {
-        font-size: 50px;
-    }
-
     .servico {
         background: gray;
         margin: 5px;
@@ -34,12 +30,18 @@
     $id_Pf = $_SESSION['id_Pf'];
 
     // Consulta para obter os serviços realizados associados ao id_Pf
-    $sql = "SELECT sr.*, c.valor, s.nomeService, s.descService, c.data_Contratacao, u.usrName AS nome_usuario
-            FROM servicos_realizados sr
-            INNER JOIN contratacoes c ON sr.id_contratacao = c.id_contratacao
-            INNER JOIN services s ON c.id_Service = s.id_Service
-            INNER JOIN users u ON c.id_Usr = u.id_Usr
-            WHERE sr.id_Pf = ?";
+    $sql = "SELECT sr.*, c.valor AS orcamento, s.nomeService, s.descService, c.data_Contratacao, u.usrName AS nome_usuario,
+    (SELECT mensagem_cliente FROM solicitacoes_servico ss WHERE ss.id_Service = sr.id_Service) AS mensagem_cliente
+    FROM servicos_realizados sr
+    INNER JOIN contratacoes c ON sr.id_contratacao = c.id_Contratacao
+    INNER JOIN services s ON c.id_Service = s.id_Service
+    INNER JOIN users u ON c.id_Usr = u.id_Usr
+    LEFT JOIN orcamento o ON sr.id_ServicoRealizado = o.id_solicitacao
+    WHERE sr.id_Pf = ?";
+
+
+
+
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_Pf);
     $stmt->execute();
@@ -50,14 +52,18 @@
         // Exibe os serviços
         while ($row = $result->fetch_assoc()) {
             echo "<div class='servico'>";
-            $valor = isset($row['valor']) ? $row['valor'] : 'Valor não disponível';
+            $data_realizacao = date('d/m/Y', strtotime($row['data_realizacao']));
+            $data_contratacao = date('d/m/Y', strtotime($row['data_Contratacao']));
+
+            $valor = $row['orcamento'];
             $valor = substr($valor, 0, -2);
             $valor = number_format($valor, 2, ',', '.');
             echo "Nome do Serviço: " . $row['nomeService'] . "<br>";
             echo "Descrição do Serviço: " . $row['descService'] . "<br>";
-            echo "Data de Contratação: " . $row['data_Contratacao'] . "<br>";
-            echo "Data de Realização: " . $row['data_realizacao'] . "<br>";
+            echo "Data de Contratação: $data_contratacao<br>";
+            echo "Data de Realização: $data_realizacao<br>";
             echo "Cliente que Contratou: " . $row['nome_usuario'] . "<br>";
+            echo "Mensagem Cliente: " . $row['mensagem_cliente'] . "<br>";
             echo "Valor: R$ $valor <br><br>";
             echo "</div>";
         }

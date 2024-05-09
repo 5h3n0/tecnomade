@@ -40,6 +40,7 @@ error_reporting(E_ALL);
       <li><a href="homeUsr.php" class="nav-links">Home</a></li>
       <li><a href="services.php" class="nav-links">Serviços</a></li>
       <li><a href="prof.php" class="nav-links">Profissionais</a></li>
+      <li><a href="paginaDeServicosParaUsr.php" class="nav-links">Contratações</a></li>
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">

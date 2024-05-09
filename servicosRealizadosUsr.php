@@ -1,0 +1,40 @@
+<?php
+        include_once("connect.php");
+        session_start();
+        $id_Usr = $_SESSION['id_Usr'];
+        ?>
+    <h2>Serviços Realizados</h2>
+    <ul>
+        <?php
+        $sql = "SELECT sr.*, s.nomeService, s.descService, c.valor, c.data_Contratacao, cat.nome AS nomeCategoria
+                FROM servicos_realizados sr
+                INNER JOIN contratacoes c ON sr.id_contratacao = c.id_Contratacao
+                INNER JOIN services s ON c.id_Service = s.id_Service 
+                INNER JOIN categorias cat ON s.id_Cat = cat.id_Cat
+                WHERE sr.id_Usr = $id_Usr";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $valor = $row['valor'];
+                $valor = substr($valor, 0, -2);
+                $valor = number_format($valor, 2, ',', '.');
+                $data_contratacao = $row['data_Contratacao'];
+                $data_contratacao = date('d/m/Y', strtotime($data_contratacao));
+                $data_realizacao = $row['data_realizacao'];
+                $data_realizacao = date('d/m/Y', strtotime($data_realizacao));
+                echo "<li>";
+                echo "Serviço: " . $row["nomeService"]. "<br>";
+                echo "Descrição: " . $row["descService"]. "<br>";
+                echo "Categoria: " . $row["nomeCategoria"]. "<br>";
+                echo "Valor: R$ $valor <br>";
+                // Se houver descrição de contratação, descomente a linha abaixo
+                // echo "Descrição da Contratação: " . $row["mensagem_cliente"]. "<br>";
+                echo "Data de Contratação: $data_contratacao <br>";
+                echo "Data de Realização: $data_realizacao <br>";
+                echo "</li>";
+            }
+        } else {
+            echo "<li>Nenhum serviço realizado.</li>";
+        }
+        $conn->close();
+        ?>

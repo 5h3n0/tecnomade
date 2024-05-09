@@ -16,6 +16,9 @@
         .card-title {
             color: black;
         }
+        *{
+            color: black;
+        }
     </style>
 </head>
 
@@ -41,25 +44,23 @@
                 <h1>Detalhes do Serviço</h1>
                 <div class="card">
                     <div class="card-body">
-                        <?php
-                        $valor = $row['vlrService'];
-                        $valor = substr($valor, 0, -2);
-                        $valor = number_format($valor, 2, ',', '.');
-                        ?>
+                        
                         <h5 class="card-title"><?php echo $row['nomeService']; ?></h5>
                         <p class="card-text"><?php echo $row['descService']; ?></p>
-                        <p class="card-text">Preço: R$ <?php echo $valor; ?></p>
                         <p class="card-text">Profissional: <?php echo $row['pfName']; ?></p>
-                        <p class="card-text">data de Contratação: <?php echo date("d-m-Y"); ?></p>
+                        <p class="card-text">Data de Contratação: <?php echo date("d-m-Y"); ?></p>
+                        
 
-                        <form action="contratServiceBd.php" method="POST">
+                        <form action="solicitar_servico.php" method="POST">
                             <input type="hidden" name="id_Service" value="<?php echo $row['id_Service']; ?>">
-                            <input type="hidden" name="descService" value="<?php echo $row['descService']; ?>">
-                            <input type="hidden" name="vlrService" value="<?php echo $row['vlrService']; ?>">
                             <input type="hidden" name="id_Pf" value="<?php echo $row['id_Pf']; ?>">
-                            <button type="submit" class="btn btn-primary">Contratar Serviço</button>
+                            <input type="hidden" name="descService" value="<?php echo $row['descService']; ?>">
+                            <div class="mb-3">
+                                <label for="mensagem_cliente">*Escreva qual necessecidade precisa ser atendida e o Profissional em breve dará um orçamento:*</label>
+                                <textarea class="form-control" id="mensagem_cliente" name="pedidoUsr" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Pedir Orçamento</button>
                         </form>
-                        <a href="javascript:history.back()" class="btn btn-secondary mt-3">Voltar</a>
                     </div>
                 </div>
                 <?php

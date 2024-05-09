@@ -11,24 +11,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nome = $_POST["nome"];
     $descricao = $_POST["desc"];
-    $preco = $_POST["preco"];
   
-
-
-    // Remove o símbolo de moeda e quaisquer separadores de milhar
-    $preco = preg_replace('/[^0-9]/', '', $preco);
-    
 
 
     $categoria = $_POST["categoria"];
 
-    $sql = "INSERT INTO services (nomeService, descService, vlrService, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO services (nomeService, descService, id_Cat, id_Pf ) VALUES (?, ?, ?, ?)";
 
 
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {      
-        $stmt->bind_param("ssdii", $nome, $descricao, $preco, $categoria, $id_Pf);
+        $stmt->bind_param("ssdi", $nome, $descricao, $categoria, $id_Pf);
 
         $id_Pf = $_SESSION['id_Pf']; 
 
@@ -44,19 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro na preparação da consulta: " . $conn->error;
     }
-
-
     $conn->close();
 }
-
-
-    // $categoria = $_POST["categoria"];
-    // $tipo_preco = $_POST["tipo_preco"];
-
-    // if ($tipo_preco == "valor_unico") {
-    //     $sql = "INSERT INTO services (nomeService, descService, vlrService, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
-    // } elseif ($tipo_preco == "por_hora") {
-    //     $sql = "INSERT INTO services (nomeService, descService, vlrServiceHr, id_Cat, id_Pf) VALUES (?, ?, ?, ?, ?)";
-    // }
 
 ?>

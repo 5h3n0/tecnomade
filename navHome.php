@@ -159,8 +159,8 @@ error_reporting(E_ALL);
     	}
 
 	}
-	var ocultarHome = "http://localhost/tecnomade/index.php";
-	if (window.location.href === ocultarHome) {
+	
+	if (window.location.href === "http://localhost/tecnomade/index.php") {
     	var linkHome = document.querySelector('.linkHome');
 
     	if (linkHome) {
