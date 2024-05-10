@@ -137,8 +137,11 @@ if ($result_orcamento) {
         // window.onload = function () {
         //     loadPage('servicesInsert.php');
         // };
+        // window.onload = function () {
+        //     loadPage('servicosInseridos.php');
+        // };
         window.onload = function () {
-            loadPage('servicosInseridos.php');
+            loadPage('orcamento.php');
         };
         function loadPage(page) {
             var xhttp = new XMLHttpRequest();

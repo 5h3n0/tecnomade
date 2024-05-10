@@ -15,24 +15,41 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_Pf);
 $stmt->execute();
 $result = $stmt->get_result();
-
+echo"<div class='orcamentos'>";
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div>";
-        echo "<p>ID da Solicitação: " . $row['id_solicitacao'] . "</p>";
-        echo "<p>Descrição do Serviço: " . $row['descricao_servico'] . "</p>";
-        echo "<p>Mensagem do Cliente: " . $row['mensagem_cliente'] . "</p>";
-        echo "<p>Data da Solicitação: " . $row['data_Solicitacao'] . "</p>";
-        echo "<form action='processar_orcamentoPf.php' method='POST'>";
+        echo "<div class='orcamento'>";
+        // echo "<p>ID da Solicitação: " . $row['id_solicitacao'] . "</p>";
+        echo"<div class='campos_orcamento'>";
+        echo"<label class='lbl_orcamento'>Descrição do Serviço</label>";
+        echo "<p class='dados_orcamento' id='msg_cliente'> " . $row['descricao_servico'] . "</p>";
+        echo"</div>";
+        echo"<div class='campos_orcamento'>";
+        echo"<label class='lbl_orcamento'>Mensagem do Cliente: </label>";
+        echo "<p class='dados_orcamento'>" . $row['mensagem_cliente'] . "</p>";
+        echo"</div>";
+        echo"<div class='campos_orcamento'>";
+        echo"<label class='lbl_orcamento'>Data da Solicitação: </label>";
+        echo "<p class='dados_orcamento'>" . $row['data_Solicitacao'] . "</p>";
+        echo"</div>";
+        echo "<form class='form_orcamento' action='processar_orcamentoPf.php' method='POST'>";
         echo "<input type='hidden' name='id_solicitacao' value='" . $row['id_solicitacao'] . "'>";
-        echo "<label for='orcamento'>Orçamento:</label>";
-        echo "<input type='text' id='orcamento'  oninput='this.value = formatDin(this.value)' name='orcamento' required>";
-        echo "<button type='submit'>Enviar Orçamento</button>";
+        
+        echo "<label for='orcamento' class='lbl_orcamento'>Orçamento:</label>";
+        echo "<input type='text' placeholder='Insira o valor do orçamento aqui:' id='orcamento'  oninput='this.value = formatDin(this.value)' name='orcamento' required>";
+        
+        
+     
+        echo "<button type='submit' id='btn-env-orcamento'>Enviar Orçamento</button>";
+        
+
         echo "</form>";
         echo "</div>";
     }
 } else {
     echo "Não há solicitações de serviço pendentes para você.";
 }
+echo"</div>";
+
 ?>
 <script src="js/formatDin.js"></script>
