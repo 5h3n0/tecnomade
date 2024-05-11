@@ -1,7 +1,5 @@
 <head>
-    <style>
-        *{color:black;}
-    </style>
+    <link rel="stylesheet" href="./css/paginasDeServicoPf.css">
 </head>
 <?php
 session_start();
@@ -45,20 +43,28 @@ if (!$stmt->execute()) {
 }
 
 $result = $stmt->get_result();
-
+echo"<div class='contratacaoes'>";
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $valor = $row['orcamento'];
             $valor = substr($valor, 0, -2);
             $valor = number_format($valor, 2, ',', '.');
-        echo "<div class='card my-3'>";
-        echo "<div class='card-body'>";
-        echo "<h5 class='card-title'>Nome do Serviço: " . $row['nomeService'] . "</h5>";
-        echo "<p class='card-text'>Descrição do Serviço: " . $row['descService'] . "</p>";
-        echo "<p class='card-text'>Nome do Usuário: " . $row['usrName'] . "</p>";
-        echo "<p class='card-text'>Texto do Pedido: " . $row['mensagem_cliente'] . "</p>";
-        echo "<p class='card-text'>Orçamento: R$ $valor</p>";
-        echo "<p class='card-text'>Data do Serviço: " . $row['data_Solicitacao'] . "</p>";
+            $data = $row['data_Solicitacao'];
+                $data = date('d/m/Y', strtotime($data));
+        echo "<div class='contratacao'>";
+        echo "<h5 class='titleContratacao'>" . $row['nomeService'] . "</h5>";
+        echo"<label class='lbl_contratacao'>Descrição do Serviço: </label>";
+        echo "<p class='dados_contratacao' id='desc_service_contratacao'>" . $row['descService'] . "</p>";
+        echo"<label class='lbl_contratacao'>Nome do Usuário: </label>";
+        echo "<p class='dados_contratacao'>" . $row['usrName'] . "</p>";
+        echo"<label class='lbl_contratacao'>Mensagem do Cliente</label>";
+        echo "<p class='dados_contratacao' id='msg_cliente_contratacao'>" . $row['mensagem_cliente'] . "</p>";
+        echo"<label class='lbl_contratacao'>Orçamento:</label>";
+
+        echo "<p class='dados_contratacao'>R$ $valor</p>";
+        echo"<label class='lbl_contratacao'>Data do Serviço: </label>";
+
+        echo "<p class='dados_contratacao'>" .$data. "</p>";
         echo "<form action='servicoRealizadoBd.php' method='POST'>";
         echo "<input type='hidden' name='id_Pf' value='" . $id_Pf . "'>";
         echo "<input type='hidden' name='id_Usr' value='" . $row['id_Usr'] . "'>";
@@ -66,12 +72,15 @@ if ($result->num_rows > 0) {
         echo "<input type='hidden' name='id_Service' value='" . $row['id_Service'] . "'>";
         echo "<input type='hidden' name='data_contratacao' value='" . $row['data_Solicitacao'] . "'>";
         echo "<input type='hidden' name='data_realizacao' value='" . date('Y-m-d') . "'>";
-        echo "<button type='submit' name='acao' value='concluir' class='btn btn-success'>Concluir Serviço</button>";
+        echo "<button type='submit' name='acao' value='concluir' class='btn_success'>Concluir Serviço</button>";
         echo "</form>";
-        echo "</div>"; // Adicionando a tag de fechamento </div> para fechar a div do card-body
-        echo "</div>"; // Adicionando a tag de fechamento </div> para fechar a div do card
+        echo "</div>"; 
     }
 } else {
-    echo "Não há serviços contratados com orçamento aceito.";
+    echo"<div class='semServicos'>";
+    echo "<p class='top'>Não há serviços contratados com orçamento aceito.</p>";
+    echo"</div>";
+
 }
+echo "</div>"; 
 ?>

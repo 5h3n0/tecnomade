@@ -134,15 +134,21 @@ if ($result_orcamento) {
     }
     ?>
     <script>
-        // window.onload = function () {
-        //     loadPage('servicesInsert.php');
-        // };
+         window.onload = function () {
+             loadPage('servicesInsert.php');
+         };
         // window.onload = function () {
         //     loadPage('servicosInseridos.php');
         // };
-        window.onload = function () {
-            loadPage('orcamento.php');
-        };
+       // window.onload = function () {
+       //     loadPage('orcamento.php');
+      //  };
+    //   window.onload = function () {
+    //         loadPage('novasContratacoes.php');
+    //     };
+        // window.onload = function () {
+        //     loadPage('servicosRealizados.php');
+        // };
         function loadPage(page) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {

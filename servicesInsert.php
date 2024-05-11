@@ -45,7 +45,7 @@ $all_categories_filled = mysqli_num_rows($result) == count($services_categories)
 <body>
     <?php if ($all_categories_filled) { ?>
         <div class="semServicos">
-            <h1 class="top">Você já inseriu todos os serviços disponíveis.</h1>
+            <p class="top">Você já inseriu todos os serviços disponíveis.</p>
         </div>
     <?php } else { ?>
         <section class="container py-5">
@@ -67,7 +67,7 @@ $all_categories_filled = mysqli_num_rows($result) == count($services_categories)
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
                             if (!in_array($row['id_Cat'], $services_categories)) {
-                                echo "<option value='{$row['id_Cat']}'>{$row['nome']}</option>";
+                                echo "<option class='option_insert' value='{$row['id_Cat']}'>{$row['nome']}</option>";
                             }
                         }
                         ?>

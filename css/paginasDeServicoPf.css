@@ -91,15 +91,17 @@
   height: 900px !important;
   width: 100vh;
   align-items: center;
-
   margin: auto;
 }
 
-.semServicos h1 {
+.semServicos p {
   position: relative;
   top: 45%;
   left: 50%;
   transform: translate(-50%, 0);
+  font-size: 45px !important;
+  color: rgba(27,92,81,1);
+  font-weight: bold;
 }
 * {
   box-sizing: border-box;
@@ -195,13 +197,17 @@
   border-color: rgb(32, 119, 109);
   color:#1da790 !important;
   text-shadow: 0 0 5px rgb(0, 0, 0) !important;
-
   font-weight: bold;
   text-transform: uppercase;
+  height: 100%;
+
+}
+.option_insert{
 
 }
 
-.btn_insert,.delete-btn, #btn-env-orcamento {
+
+.btn_insert,.delete-btn, #btn-env-orcamento, .btn_success {
   font-size: 20px;
   padding: 15px !important;
   padding-top: 10px !important;
@@ -219,7 +225,7 @@
   text-transform: uppercase;
 
 }
-.btn_insert:hover,.delete-btn:hover, #btn-env-orcamento:hover {
+.btn_insert:hover,.delete-btn:hover, #btn-env-orcamento:hover, .btn_success:hover {
   color: rgb(255, 255, 255);
   text-shadow: -2px 2px 10px #22a6ad;
   box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767),
@@ -252,22 +258,16 @@
   background-color:#237a6c;  
   color: rgb(0, 0, 0);
   font-weight: bold !important;
-  
-  
 }
 
 .servico:nth-child(odd) {
   /* background-color:#237a6c;   */
   background-color:#06241f;  
-
   color: rgb(238, 238, 238);
 
 }
 .servico:nth-child(even) .lbl_servico_inserido {
-
   color:#d8d8d8 !important;
-  
-  
 }
 
 .dados_service,.lbl_servico_inserido{
@@ -275,6 +275,9 @@
   text-align: justify;
   hyphens: auto;
   overflow-wrap: break-word;
+}
+.dados_service{
+  text-shadow: 0 0 1px black;
 }
 .delete-btn{
   margin-top: auto;
@@ -367,7 +370,7 @@
   width: 100% !important;
   margin: 0 !important;
   height: 100%;
-  padding: 25px 0 10px 0 !important;
+  padding: 25px 5px 10px 5px !important;
   font-size: 28px;
   color: white;
   text-align: center
@@ -382,7 +385,7 @@
   height: 100% !important;
 }
 #btn-env-orcamento{
-  width: 50%;
+  width: 80%;
   margin-left: 0%;
   
 }
@@ -391,4 +394,118 @@
   display: flex;
   place-items: center;
   flex-direction: column;
+}
+/* ----------------------------------- */
+.contratacaoes{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.contratacao{
+  background-color: #0b3630;
+  padding:25px;
+  margin: 2%;
+  border-radius: 25px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border: #0b3630;
+}
+.titleContratacao{
+  font-size: 35px !important;
+  color:#1da790 !important;
+  text-align: center !important;
+  font-weight: bold;
+  width: 50%;
+  background-color: #06241f;
+  padding: 5px;
+  border-radius: 15px;
+
+}
+.dados_contratacao{
+  background-color: #06241f;
+  border-radius: 15px;
+  color: white;
+  padding:10px;
+  width: 80%;
+  text-align: center !important;
+  hyphens: auto;
+}
+.btn_success{
+  width: 100%;
+  margin: 0;
+}
+.lbl_contratacao{
+  font-size: 32px;
+  font-weight: bold;
+  color:#1da790 !important;
+  text-align: center !important;
+}
+/* #msg_cliente_contratacao{
+  text-indent: 50px;
+} */
+ #desc_service_contratacao{
+  text-indent: 15px;
+  text-align: justify !important;
+} 
+/* --------------------------------- */
+.realizados{
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  margin-bottom: 25px;
+}
+.realizado{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.realizado:nth-child(even) {
+  background-color:rgb(0, 0, 0);  
+  color: rgb(222, 222, 222);
+
+  font-weight: bold !important;
+}
+
+.realizado:nth-child(odd) {
+  /* background-color:#237a6c;   */
+  background-color:rgb(0, 0, 0);  
+  color: rgb(222, 222, 222);
+
+}
+.realizado:nth-child(odd) .dados_realizados {
+  /* background-color:#237a6c;   */
+
+  color: rgb(222, 222, 222);
+
+}
+.realizado:nth-child(odd) .dados_realizados{
+  /* background-color:#237a6c;   */
+  color: rgb(222, 222, 222);
+  font-weight: bold;
+  text-shadow: 0 0 1px rgb(0, 0, 0);
+
+}
+.lbl_realizados{
+  font-size: 32px;
+  font-weight: bold;
+  color:#187c6b !important;
+  text-align: center !important;
+  display: block;
+}
+.dados_realizados{
+  background: #06241f !important;
+  padding: 10px;
+  border-radius: 15px;
+  width: 80%;
+  text-align: center;
+}
+#desc_realizado{
+  text-indent: 15px;
+  text-align: justify !important;
+  hyphens: auto !important;
 }

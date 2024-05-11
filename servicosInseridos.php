@@ -33,7 +33,11 @@
             echo "</div>";
         }
     } else {
-        echo "Nenhum serviço encontrado para este usuário.";
+    echo"<div class='semServicos'>";
+
+        echo "<p class='top'>Nenhum serviço encontrado para este usuário.</p>";
+    echo"</div>";
+
     }
 ?>
 </div>

@@ -37,9 +37,6 @@ if ($result->num_rows > 0) {
         
         echo "<label for='orcamento' class='lbl_orcamento'>Orçamento:</label>";
         echo "<input type='text' placeholder='Insira o valor do orçamento aqui:' id='orcamento'  oninput='this.value = formatDin(this.value)' name='orcamento' required>";
-        
-        
-     
         echo "<button type='submit' id='btn-env-orcamento'>Enviar Orçamento</button>";
         
 
@@ -47,7 +44,11 @@ if ($result->num_rows > 0) {
         echo "</div>";
     }
 } else {
-    echo "Não há solicitações de serviço pendentes para você.";
+    echo"<div class='semServicos'>";
+
+    echo "<p class='top'>Não há solicitações de serviço pendentes para você.</p>";
+    echo"</div>";
+
 }
 echo"</div>";
 
