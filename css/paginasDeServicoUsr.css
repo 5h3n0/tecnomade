@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+*{
+  font-family: "League Spartan", sans-serif !important;
+  font-weight: bold;
+}
+
+
+html, body{
+    background: black !important;
+}
+.content {
+    height: 100%;
+  width: 100%;
+}
+
+.navServices {
+  margin-top: 5%;
+  font-size: 32px;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  padding: 15px;
+}
+.navServices li {
+  color: #11574d !important;
+  font-size: 30px;
+  list-style: none;
+  position: relative; /* Necessário para o posicionamento absoluto do sublinhado */
+}
+
+.navServices a {
+  color: #17796b !important;
+  font-weight: bold;
+  text-decoration: none; /* Remova o sublinhado padrão dos links */
+}
+.navServices a:hover, .navServices li:hover {
+  text-decoration: none; 
+  scale: 1.05;
+  transition: 0.1s;
+}
+
+.navServices li::after {
+  content: ''; /* Adiciona um conteúdo vazio */
+  position: absolute; /* Posiciona o sublinhado em relação ao elemento pai */
+  bottom: 0.2em; /* Ajuste a posição vertical do sublinhado conforme necessário */
+  left: 0; /* Alinha o sublinhado à esquerda */
+  width: 100%; /* Garante que o sublinhado ocupe toda a largura do elemento pai */
+  height: 1px; /* Define a espessura do sublinhado */
+  background-color: #11574d; /* Cor do sublinhado */
+}
+.navServices li:hover::after {
+  background: transparent !important;
+}
+
+.opa {
+  background-color: #38a4ac;
+  color: black;
+  padding: 20px;
+  border: 5px solid rgb(19, 74, 71);
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 10%;
+  text-align: center;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #155724;
+  font-weight: bold;
+}
+
+.closeButton:hover {
+  scale: 1.2;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.semServicos {
+  height: 900px !important;
+  width: 100vh;
+  align-items: center;
+  margin: auto;
+}
+
+.semServicos p {
+  position: relative;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 45px !important;
+  color: rgba(27,92,81,1);
+  font-weight: bold;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 5%;
+  height: 100% !important;
+  justify-content: center !important;
+  margin: auto !important;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.top {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  height: 100% !important;
+}
+/* -------------inserir serviços----------------- */
+.formCadService {
+  background: linear-gradient(90deg, rgba(8,54,46,1) 22%, rgba(27,92,81,1) 54%, rgba(8,26,23,1) 85%);
+  padding: 10%;
+  border-radius: 35px;
+  width: 80%;
+  min-height: 650px;
+  border: #1dad95 5px solid !important;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  
+}
+#div_nome,#div_desc, #div_cat{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+#div_nome .lbl_nome_service, #div_desc .lbl_desc_service, #div_cat .lbl_cat_service{
+  width: 100%;
+  height: 100%;
+  display: block;
+ 
+
+}
+
+.lbl_service {
+  line-height: 30px;
+  text-align: left;
+  font-size: 22px !important;
+  font-weight: bold;
+  color:#1da790;
+  letter-spacing: 2px;
+  display: block;
+  margin: 15px 0 15px 20%;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+.inp_service {
+  display: block;
+  height: 45px !important;
+  width: 80% !important;
+  border-radius: 12px !important;
+  border: 5px solid rgb(28, 119, 104) !important;
+  background:#081a17;
+  color: white !important;
+  text-indent: 5px;
+
+
+}
+.btn_insert {
+  display: block;
+  height: 45px !important;
+  margin-left: 0 !important;
+}
+.textarea_desc {
+  min-height: 150px;
+  font-size: 22px;
+  padding: 5px;
+  overflow: auto;
+  resize: none;
+}
+.inp_service:focus {
+  box-shadow: 0px 0 15px rgb(5, 34, 33);
+}
+.select_cat {
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  background:#081a17;
+  border-color: rgb(32, 119, 109);
+  color:#1da790 !important;
+  text-shadow: 0 0 5px rgb(0, 0, 0) !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 100%;
+
+}
+.option_insert{
+
+}
+
+
+.btn_insert,.delete-btn, #btn-env-orcamento, .btn_success {
+  font-size: 20px;
+  padding: 15px !important;
+  padding-top: 10px !important;
+  margin: 10px 0 0 40%;
+  --green: rgb(0, 128, 111);
+  height: 50px !important;
+  position: relative;
+  border-radius: 0.6em;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.685), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+  background: black;
+  color: var(--green);
+  border: 2px solid var(--green);
+  text-transform: uppercase;
+
+}
+.btn_insert:hover,.delete-btn:hover, #btn-env-orcamento:hover, .btn_success:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: -2px 2px 10px #22a6ad;
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767),
+    0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+/* ------------------------------------------ */
+.servicos{
+  width: 100%;
+  margin: 5%;
+  display: flex;
+  margin: auto;
+  padding: 5%;
+  padding-top: 0%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+.servico{
+  width: 30%!important;
+  padding: 25px;
+  border-radius: 16px;
+  height: auto !important;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-top: 25px !important;
+  border: transparent 5px solid;
+  box-shadow: 0 0 15px #11574d ;
+}
+.servico:nth-child(even) {
+  background-color:#237a6c;  
+  color: rgb(0, 0, 0);
+  font-weight: bold !important;
+}
+
+.servico:nth-child(odd) {
+  /* background-color:#237a6c;   */
+  background-color:#06241f;  
+  color: rgb(238, 238, 238);
+
+}
+.servico:nth-child(even) .lbl_servico_inserido {
+  color:#d8d8d8 !important;
+}
+
+.dados_service,.lbl_servico_inserido{
+  letter-spacing: 0.05em;
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.dados_service{
+  text-shadow: 0 0 1px black;
+}
+.delete-btn{
+  margin-top: auto;
+}
+.lbl_servico_inserido{
+  font-size: 35px !important;
+  color:#1da790 !important;
+  text-align: center !important;
+  font-weight: bold;
+  width: 100%;
+}
+#nome_service{
+  text-align: center !important;
+  width: 100% !important;
+}
+#cat_service{
+  text-align: center !important;
+  width: 100% !important;
+}
+#desc_service{
+
+  width: 100% !important;
+  text-indent: 35px;
+  text-align: justify;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+}
+/* ------------------------------------------------ */
+.orcamentos{
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.orcamento{
+  background-color: #0b3630;
+  padding:25px;
+  margin: 2%;
+  border-radius: 18px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.campos_orcamento{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.lbl_orcamento{
+  font-size: 35px !important;
+  font-weight: bold;
+  color:#1da790 !important;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.dados_orcamento{
+  font-size: 28px !important;
+  color: rgb(238, 238, 238);
+  width: 60%;
+  text-align: center;
+  background: #081a17;
+  padding: 1%;
+  border-radius: 15px;
+  
+
+}
+#msg_cliente{
+  width: 80% !important;
+  text-indent: 35px;
+  text-align: justify;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  background: #081a17;
+  padding: 2%;
+  border-radius: 15px;
+  overflow-y: auto;
+  
+}
+#orcamento{
+  background-color: transparent !important;
+  border: none;
+  border-radius: 7px;
+  border-bottom: 4px solid rgb(0, 0, 0); 
+  box-shadow: 0 0 5px black;
+  width: 100% !important;
+  margin: 0 !important;
+  height: 100%;
+  padding: 25px 5px 10px 5px !important;
+  font-size: 28px;
+  color: white;
+  text-align: center
+}
+#orcamento::placeholder{
+ font-size: 28px;
+ text-transform: uppercase;
+ text-align: center;
+}
+.submit_orcamento{
+  width: 100% !important;
+  height: 100% !important;
+}
+#btn-env-orcamento{
+  width: 80%;
+  margin-left: 0%;
+  
+}
+.form_orcamento{
+  width: 40%;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+/* ----------------------------------- */
+.contratacaoes{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.contratacao{
+  background-color: #0b3630;
+  padding:25px;
+  margin: 2%;
+  border-radius: 25px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border: #0b3630;
+}
+.titleContratacao{
+  font-size: 35px !important;
+  color:#1da790 !important;
+  text-align: center !important;
+  font-weight: bold;
+  width: 50%;
+  background-color: #06241f;
+  padding: 5px;
+  border-radius: 15px;
+
+}
+.dados_contratacao{
+  background-color: #06241f;
+  border-radius: 15px;
+  color: white;
+  padding:10px;
+  width: 80%;
+  text-align: center !important;
+  hyphens: auto;
+}
+.btn_success{
+  width: 100%;
+  margin: 0;
+}
+.lbl_contratacao{
+  font-size: 32px;
+  font-weight: bold;
+  color:#1da790 !important;
+  text-align: center !important;
+}
+/* #msg_cliente_contratacao{
+  text-indent: 50px;
+} */
+ #desc_service_contratacao{
+  text-indent: 15px;
+  text-align: justify !important;
+} 
+/* --------------------------------- */
+.realizados{
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  margin-bottom: 25px;
+}
+.realizado{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+
+
+.realizado:nth-child(odd) {
+  /* background-color:#237a6c;   */
+  background-color:rgb(18, 67, 56);  
+  color: rgb(222, 222, 222);
+
+}
+.lbl_realizados{
+  font-size: 32px;
+  font-weight: bold;
+  color:#187c6b !important;
+  text-align: center !important;
+  display: block;
+}
+.dados_realizados{
+  background: #06241f !important;
+  padding: 10px;
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+}
+#desc_realizado{
+  text-indent: 15px;
+  text-align: justify !important;
+  hyphens: auto !important;
+}
