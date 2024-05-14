@@ -1,7 +1,7 @@
 <?php
 $serverName = "localhost";
 $userName = "root";
-$serverPass = "";
+$serverPass = "usbw";
 $dbName = "tecnomadedb";
 
 $conn = new mysqli($serverName, $userName, $serverPass, $dbName);

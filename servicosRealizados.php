@@ -15,7 +15,7 @@ $sql = "SELECT sr.*, c.valor AS orcamento, s.nomeService, s.descService, c.data_
     WHERE sr.id_Pf = $id_Pf";
 
 $result = $conn->query($sql);
-echo"<div class='realizados'>";
+echo "<div class='realizados'>";
 // Verifica se há serviços associados ao id_Pf
 if ($result->num_rows > 0) {
     // Exibe os serviços
@@ -27,28 +27,37 @@ if ($result->num_rows > 0) {
         $valor = $row['orcamento'];
         $valor = substr($valor, 0, -2);
         $valor = number_format($valor, 2, ',', '.');
-        echo"<label class='lbl_realizados'>Serviço</label>";
-        echo "<p class='dados_realizados'>".$row['nomeService']."</p>";
-        echo"<label class='lbl_realizados' id='desc_realizado'>Descrição do Serviço</label>";
+        echo "<label class='lbl_realizados'>Serviço</label>";
+        echo "<p class='dados_realizados'>" . $row['nomeService'] . "</p>";
+        echo "<label class='lbl_realizados' id='desc_realizado'>Descrição do Serviço</label>";
         echo "<p class='dados_realizados'>" . $row['descService'] . "</p>";
-        echo"<label class='lbl_realizados'> Contratação</label>";
-        echo "<p class='dados_realizados'> $data_contratacao</p>";
-        echo"<label class='lbl_realizados'>Realização </label>";
-        echo "<p class='dados_realizados'> $data_realizacao</p>";
-        echo"<label class='lbl_realizados'>Cliente</label>";
+        
+        echo "<label class='lbl_realizados'>Cliente</label>";
         echo "<p class='dados_realizados'>" . $row['nome_usuario'] . "</p>";
-        echo"<label class='lbl_realizados'>Mensagem Cliente:  </label>";
+        echo "<label class='lbl_realizados'>Mensagem Cliente:  </label>";
         echo "<p class='dados_realizados'>" . $row['mensagem_cliente'] . "</p>";
-        echo"<label class='lbl_realizados'>Valor:  </label>";
+        echo "<label class='lbl_realizados'>Valor:  </label>";
         echo "<p class='dados_realizados'>R$ $valor </p>";
+        echo "<div class='datas'>";
+        echo "<div class='data_contratacao'>";
+
+        echo "<label class='lbl_realizados'> Contratação</label>";
+        echo "<p class='dados_realizados'> $data_contratacao</p>";
+        echo "</div>";
+        echo "<div class='data_realizacao'>";
+
+        echo "<label class='lbl_realizados'>Realização </label>";
+        echo "<p class='dados_realizados'> $data_realizacao</p>";
+        echo "</div>";
+        echo "</div>";
         echo "</div>";
     }
 } else {
-    echo"<div class='semServicos'>";
+    echo "<div class='semServicos'>";
     echo "<p class='top'>Nenhum serviço encontrado para este usuário.</p>";
-    echo"</div>";
+    echo "</div>";
 
 }
-echo"</div>";
+echo "</div>";
 
 ?>

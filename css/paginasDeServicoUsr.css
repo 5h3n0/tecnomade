@@ -12,6 +12,7 @@
 
 html, body{
     background: black !important;
+    width: 100%;
 }
 .content {
     height: 100%;
@@ -104,6 +105,8 @@ html, body{
   font-size: 45px !important;
   color: rgba(27,92,81,1);
   font-weight: bold;
+  width: 100% !important;
+  text-align: center;
 }
 * {
   box-sizing: border-box;
@@ -459,27 +462,65 @@ html, body{
   justify-content: space-around;
   height: 100%;
   margin-bottom: 25px;
+
 }
 .realizado{
   display: flex;
   flex-direction: column;
   place-items: center;
+  padding: 25px;
+  border-radius: 25px;
+  height: 40%;
+  width: 30%;
+  background-color:rgb(18, 67, 56);  
+  color: rgb(222, 222, 222);
 }
 
 
-
-.realizado:nth-child(odd) {
+.datas{
+  display: flex;
+  justify-content: space-evenly !important;
+  width: 100%;
   /* background-color:#237a6c;   */
-  background-color:rgb(18, 67, 56);  
-  color: rgb(222, 222, 222);
+  
+}
+/* .realizado:nth-child(odd) {
+} */
+.data_contratacao{
+  margin: 5px 15px 0 0;
+  padding: 15px;
+  border-radius: 15px;
+
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 0 10px black;
+  
+}
+
+.data_realizacao{
+  
+  width: 80%;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 5px 0 0 15px;
+
+  text-align: center;
+  box-shadow: 0 0 10px black;
 
 }
 .lbl_realizados{
   font-size: 32px;
   font-weight: bold;
-  color:#187c6b !important;
+  color: #1da790 !important;
   text-align: center !important;
   display: block;
+}
+.datas label{
+  color: #1da790 !important;
+  font-size: 28px;
+  letter-spacing: 2px;
+
+
 }
 .dados_realizados{
   background: #06241f !important;
