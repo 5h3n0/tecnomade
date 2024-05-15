@@ -39,8 +39,11 @@
         </div>
         <script>
             window.onload = function () {
-                loadPage('servicosRealizadosUsr.php');
+                loadPage('verOrcamentosUsr.php');
             };
+            // window.onload = function () {
+            //     loadPage('servicosRealizadosUsr.php');
+            // };
             function loadPage(page) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
