@@ -27,6 +27,7 @@ $stmt->bind_param("i", $id_Usr);
 $stmt->execute();
 $result = $stmt->get_result();
 
+
 ?>
 
 
@@ -43,9 +44,11 @@ $result = $stmt->get_result();
 
 <body>
     <?php
-
+    $comOrcamento1 = false;
+    $comOrcamento2 = false;
     if ($result->num_rows > 0) {
         echo "<div class='orcamentos'>";
+        $comOrcamento1 = true;
         while ($row = $result->fetch_assoc()) {
             // Exibir cada orçamento em um card Bootstrap
             $valor = $row['orcamento'];
@@ -62,20 +65,42 @@ $result = $stmt->get_result();
             echo "<p class='dados_orcamento'>R$ $valor</p>";
             echo "<form action='processar_orcamentoUsr.php' method='POST'>";
             echo "<input type='hidden' name='id_orcamento' value='" . $row['id_orcamento'] . "'>";
-            echo"<div class='btns_orcamento'>";
+            echo "<div class='btns_orcamento'>";
             echo "<button type='submit' name='acao' value='aceitar' class='btn btn-success'>Aceitar</button>";
             echo "<button type='submit' name='acao' value='rejeitar' class='btn btn-danger mx-2'>Rejeitar</button>";
-            echo"</div>";
+            echo "</div>";
             echo "</form>";
             echo "</div>";
-
         }
         echo "</div>";
-    } else {
-        echo "<div class='semServicos'>";
-        echo "<p>Não há orçamentos recebidos.</p>";
-        echo "</div>";
+    } 
+    
 
+    $sql_pendentes = "SELECT s.*, srv.nomeService, p.pfName AS nomeProfissional, s.data_solicitacao 
+    FROM solicitacoes_servico s 
+    INNER JOIN services srv ON s.id_Service = srv.id_Service 
+    INNER JOIN prof p ON s.id_Pf = p.id_Pf
+    WHERE s.id_Usr = ? AND s.status = 'Pendente'";
+
+    $stmt_pendentes = $conn->prepare($sql_pendentes);
+    $stmt_pendentes->bind_param("i", $id_Usr);
+    $stmt_pendentes->execute();
+    $result_pendentes = $stmt_pendentes->get_result();
+
+    // Exibir as solicitações de serviço pendentes
+    if ($result_pendentes->num_rows > 0) {
+        $comOrcamento2 = true;
+        echo "<div class='solicitacoes-pendentes'>";
+        while ($row = $result_pendentes->fetch_assoc()) {
+            echo "<div class='solicitacao-pendente'>";
+            echo "<h2>Solicitação de Serviço Pendente</h2>";
+            echo "<p><strong>Descrição do Serviço:</strong> " . $row['descricao_servico'] . "</p>";
+            echo "<p><strong>Mensagem do Cliente:</strong> " . $row['mensagem_cliente'] . "</p>";
+            echo "<p><strong>Nome do Profissional:</strong> " . $row['nomeProfissional'] . "</p>";
+            echo "<p><strong>Data da Solicitação:</strong> " . $row['data_solicitacao'] . "</p>";
+            echo "</div>";
+        }
+        echo "</div>";
     }
     ?>
 </body>

@@ -38,8 +38,6 @@ if ($result->num_rows > 0) {
         echo "<label for='orcamento' class='lbl_orcamento'>Orçamento:</label>";
         echo "<input type='text' placeholder='Insira o valor do orçamento aqui:' id='orcamento'  oninput='this.value = formatDin(this.value)' name='orcamento' required>";
         echo "<button type='submit' id='btn-env-orcamento'>Enviar Orçamento</button>";
-        
-
         echo "</form>";
         echo "</div>";
     }

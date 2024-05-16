@@ -1,5 +1,4 @@
-<h2>Serviços em Andamento</h2>
-    <ul>
+
         <?php
         include_once("connect.php");
         session_start();
@@ -17,7 +16,7 @@
                 
                 $data = $row['data_Contratacao'];
                 $data = date('d/m/Y', strtotime($data));
-                echo "<li>";
+                
                 echo "Serviço: " . $row["nomeService"]. "<br>";
                 echo "Descrição: " . $row["descService"]. "<br>";
                 echo "Categoria: " . $row["nomeCategoria"]. "<br>";
@@ -25,10 +24,11 @@
                 // Se houver descrição de contratação, descomente a linha abaixo
                 // echo "Descrição da Contratação: " . $row["mensagem_cliente"]. "<br>";
                 echo "Data de Contratação: $data <br>";
-                echo "</li>";
             }
         } else {
-            echo "<li>Nenhum serviço em andamento.</li>";
+            echo"<div class='semServicos'>";
+            echo "<p>Nenhum serviço em andamento.</p>";
+            echo"</div>";
+            
         }
         ?>
-</ul>
