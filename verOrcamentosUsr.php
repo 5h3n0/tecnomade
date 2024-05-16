@@ -46,6 +46,12 @@ $result = $stmt->get_result();
     <?php
     $comOrcamento1 = false;
     $comOrcamento2 = false;
+    if($comOrcamento1 & $comOrcamento2 == true){
+        echo "<div class='semServicos'>";
+        echo "<p>Não há orçamentos recebidos.</p>";
+        echo "</div>";
+
+    }
     if ($result->num_rows > 0) {
         echo "<div class='orcamentos'>";
         $comOrcamento1 = true;
@@ -102,6 +108,7 @@ $result = $stmt->get_result();
         }
         echo "</div>";
     }
+ 
     ?>
 </body>
 
