@@ -351,8 +351,13 @@ html, body{
   background: #081a17;
   padding: 1%;
   border-radius: 15px;
-  
-
+}
+#desc_orcamento{
+  text-indent: 15px;
+  text-align: justify;
+  padding: 25px;
+  font-family: "League Spartan", sans-serif !important;
+  font-weight: bold !important;
 }
 #msg_cliente{
   width: 80% !important;
@@ -389,10 +394,16 @@ html, body{
   width: 100% !important;
   height: 100% !important;
 }
-#btn-env-orcamento{
-  width: 80%;
-  margin-left: 0%;
+.btns_orcamento{
+  width: 100% !important; 
+  height: 100% !important; 
+  display: flex;
+}
+.btn-success, .btn-danger{
+  font-size: 32px !important;
   
+  width: 100% !important;
+
 }
 .form_orcamento{
   width: 40%;
@@ -533,15 +544,4 @@ html, body{
   text-indent: 15px;
   text-align: justify !important;
   hyphens: auto !important;
-}
-.btns_orcamento{
-  width: 100% !important; 
-  height: 100% !important; 
-  display: flex;
-}
-.btn-success, .btn-danger{
-  font-size: 32px !important;
-  
-  width: 100% !important;
-
 }

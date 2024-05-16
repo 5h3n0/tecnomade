@@ -55,7 +55,7 @@ $result = $stmt->get_result();
             echo "<label class='lbl_orcamento'>Serviço</label>";
             echo "<p class='dados_orcamento'>" . $row['nomeService'] . "</p>";
             echo "<label class='lbl_orcamento'>Descrição do Serviço</label>";
-            echo "<p class='dados_orcamento'>" . $row['descricao_servico'] . "</p>";
+            echo "<p class='dados_orcamento' id='desc_orcamento'>" . $row['descricao_servico'] . "</p>";
             echo "<label class='lbl_orcamento'>Mensagem do Cliente</label>";
             echo "<p class='dados_orcamento'>" . $row['mensagem_cliente'] . "</p>";
             echo "<label class='lbl_orcamento'>Valor do Orçamento</label>";
