@@ -32,7 +32,7 @@ session_start();
 
 <body>
     <?php
-    include_once ('navHome.php')
+    include_once ('navHome.php');
         ?>
     <section class="container">
 

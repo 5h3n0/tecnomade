@@ -3,7 +3,7 @@ include('connect.php');
 ?>
 
 <head>
-    <link rel="stylesheet" href="./css/style_home.css">
+    <link rel="stylesheet" href="./css/style_footer.css">
 </head>
 
 <footer class="footer-section">
@@ -25,8 +25,8 @@ include('connect.php');
                             </svg>
                         </i>
                         <div class="cta-text">
-                            <h4>Find us</h4>
-                            <span>Rua Marquiolino Freitas, 885</span>
+                            <h4>Ache-nos</h4>
+                            <span>R. Cambará Orli, 866</span>
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,8 @@ include('connect.php');
                                 </g>
                             </svg></i>
                         <div class="cta-text">
-                            <h4>Call us</h4>
-                            <span>440028922</span>
+                            <h4>Ligue para nós</h4>
+                            <span>+55 (11) 440028922</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ include('connect.php');
 
                         </i>
                         <div class="cta-text">
-                            <h4>Mail us</h4>
+                            <h4>Envie-nos</h4>
                             <span>technomade@gmail.com</span>
                         </div>
                     </div>
@@ -89,88 +89,52 @@ include('connect.php');
             <div class="row">
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
-                        <div class="Adapt_redic">
-                            <div class="footer-logo">
-                                <button class="appstore-button">
-                                    <svg viewBox="0 0 24 24">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                        </g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <path
-                                                d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <span class="button-text">
-                                        <span class="top-text">Download on the</span>
-                                        <span class="bottom-text">App Store</span>
-                                    </span>
-                                </button>
-                                <a class="btn btn-google" href="#" title="Google Play">Google Play</a>
-                            </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                    <div class="footer-widget-heading">
+                            <h3>Termos</h3>
                         </div>
-                        <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor
-                                incididuntut consec tetur.</p>
-                        </div>
-                        <div class="footer-social-icon">
-                            <span>Follow us</span>
-                            <i>
-                                <img src="./imgs/facebook.png" class="social__icon" alt="facebook">
-                            </i>
-                            <i>
-                                <img src="./imgs/twitter_black.png" class="social__icon ajuste_tamanho" alt="twitter">
-                            </i>
-                            <i>
-                                <img src="./imgs/instagram.png" class="social__icon" alt="instagram">
-                            </i>
-                        </div>
+                        <ul class="ajst_tms_footer_text_link">
+                            <li><a href="#">Termos</a></li>
+                            <li><a href="#" >Privacidade</a></li>
+                            <li><a href="#">Política</a></li>
+                        </ul>
+                    </div>
+                </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Useful Links</h3>
+                            <h3>Links Úteis</h3>
                         </div>
                         <ul class="lista_de_links">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">about</a></li>
                             <li><a href="#">services</a></li>
-                            <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">About us</a></li>
                             <li><a href="#">Our Services</a></li>
                             <li><a href="#">Expert Team</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Latest News</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Subscribe</h3>
+                            <h3>Siga-nos</h3>
                         </div>
-                        <div class="footer-text mb-25">
-                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        <div class="footer-social-icon">
+                            <i>
+                            <svg data-name="Layer 1" id="Layer_1icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="social__icon"><path d="M256,0C114.615,0,0,114.615,0,256S114.615,512,256,512,512,397.385,512,256,397.385,0,256,0Zm67.59,153.428s-26.194-2.064-36.513,1.746c-17.056,6.3-17.462,21.034-17.462,35.084v28.694h52.149l-7.62,54.888H269.615V409.333h-58.9V273.84H161.744V218.952h48.974V172.4c0-49.292,37.942-67.151,60.563-69.294s52.309,4.286,52.309,4.286Z"/></svg>
+                            </i>
+                            <i>
+                            <svg data-name="Layer 1" id="Layer_2icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="social__icon"><path d="M256,0C114.615,0,0,114.615,0,256S114.615,512,256,512,512,397.385,512,256,397.385,0,256,0ZM367.915,198.646c.3,19.091-2.227,114.546-92.824,155.909S116,344.374,116,344.374c50.676,4.772,83.915-23.864,83.915-23.864-41.046-1.75-52.978-39.932-52.978-39.932,14.637,2.546,24.765-1.538,24.765-1.538-45.817-12.3-44.651-56.848-44.651-56.848,13.045,7.742,24.5,6.363,24.5,6.363-42.424-30.545-16.46-76.045-16.46-76.045,47.727,58.864,119.22,60.506,119.22,60.506a67.027,67.027,0,0,1-1.493-14.37c0-38.181,33.642-57.272,57.273-57.272s41.119,17.818,41.119,17.818c17.978-.8,37.228-13.046,37.228-13.046-7.637,23.228-23.7,31.819-23.7,31.819,14.557-1.591,31.267-8.91,31.267-8.91C390.358,181.465,367.915,198.646,367.915,198.646Z"/></svg>
+                            </i>
+                            <i>
+                            <svg data-name="Layer 1" id="Layer_3icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" class="social__icon"><path d="M314.757,147.525H197.243a49.717,49.717,0,0,0-49.718,49.718V314.757a49.718,49.718,0,0,0,49.718,49.718H314.757a49.718,49.718,0,0,0,49.717-49.718V197.243A49.717,49.717,0,0,0,314.757,147.525ZM256,324.391A68.391,68.391,0,1,1,324.391,256,68.391,68.391,0,0,1,256,324.391ZM327.242,201.58a16.271,16.271,0,1,1,16.27-16.271A16.271,16.271,0,0,1,327.242,201.58Z"/><path d="M256,211.545A44.455,44.455,0,1,0,300.455,256,44.455,44.455,0,0,0,256,211.545Z"/><path d="M256,0C114.615,0,0,114.615,0,256S114.615,512,256,512,512,397.385,512,256,397.385,0,256,0ZM389.333,312.5A76.836,76.836,0,0,1,312.5,389.333H199.5A76.837,76.837,0,0,1,122.666,312.5V199.5A76.836,76.836,0,0,1,199.5,122.667H312.5A76.836,76.836,0,0,1,389.333,199.5Z"/></svg>
+                            </i>
                         </div>
-                        <div class="subscribe-form">
-                            <form action="#">
-                                <input type="text" id="email" name="email" placeholder="Email Address"
-                                    autocomplete="auto">
-                                <button><i class="fab"><svg data-name="Layer 45" height="40" id="Layer_45"
-                                            viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"
-                                            class="footer_btn_enviar">
-                                            <title />
-                                            <polygon points="10.854 15.264 9 17.455 9 21 19 8 10.854 15.264"
-                                                style="fill:#ffffff" />
-                                            <polygon
-                                                points="3 12 8.607 14.99 8.613 14.99 17 8 10.775 15.357 12 16.781 18 20 21 3 3 12"
-                                                style="fill:#ffffff" />
-                                        </svg>
-                                    </i></button>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -182,18 +146,7 @@ include('connect.php');
             <div class="row">
                 <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2018, All Right Reserved <a href="sobrenoshtml">Tecnomade_Enterprise</a></p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
+                        <p>Copyright&copy; 2023, Todos os direitos reservados <a href="#">Tecnomade_Enterprise</a></p>
                     </div>
                 </div>
             </div>

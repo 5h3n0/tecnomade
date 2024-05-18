@@ -60,6 +60,7 @@ if ($result_orcamento) {
         $_SESSION['novo_orcamento'] = true;
     }
 }
+
 ?>
 
 <head>

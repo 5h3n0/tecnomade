@@ -40,10 +40,9 @@ width: 100%;
 }
 
 .avaliacao {
-    justify-content: center;
-    margin: auto;
-    width: 400px;
+    width: 340px;
     margin-bottom: 50px;
+    margin-top: 250px;
 }
 
 .estrelas {
@@ -51,11 +50,6 @@ width: 100%;
     display: flex;
 }
 
-.top {
-    border: 2px solid #06312a;
-    background-color: #081a17;
-
-}
 
 .estrelas label:hover,
 .estrelas input[type="radio"]:checked~label {
@@ -72,23 +66,26 @@ width: 100%;
 }
 
 #btn-contratar {
-    position: relative;
-    justify-content: center;
-    display: flex;
-    margin: auto;
-    color: rgb(182, 182, 182);
-    font-weight: bold;
-    font-size: 24px;
-    font-size: 26px;
-    background-color: #06312a;
-    width: 20%;
-    padding: 10px;
-    border-radius: 10px;
+        position: absolute;
+        right: 140px;
+        top: 200px;
+        text-align: center;
+        color: #00917e;
+        font-weight: bold;
+        font-size: 24px;
+        font-size: 26px;
+        background-color: #000000;
+        border: solid 2px #00917e;
+        width: 350px;
+        padding: 10px;
+        border-radius: 10px;
 }
 
 #btn-contratar:hover {
     scale: 1.05;
     text-decoration: none;
+    filter: drop-shadow( 0 0 10px #00917e);
+    text-shadow: 0 0 10px #00917e;
 }
 
 .estrelas label:before {
@@ -99,26 +96,24 @@ width: 100%;
 .cont {
     height: 130% !important;
     background-color: #000000;
-    padding: 5%;
     margin-bottom: 15%;
 }
 
 .imgPf {
-    height: 450px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
     object-fit: cover;
-    border-radius: 5px;
-    display: flex;
-    margin: auto;
-    border: 5px solid #06312a;
-    border-radius: 15px;
+    border-radius: 50%;
+    margin: 230px 60px 0;
+    border-bottom: 5px solid #00917e;
     box-shadow: 0 0 10px black;
 }
 
-h2 {
+.nome_profissional_tt{
     color: aliceblue;
-    text-align: center !important;
-    margin-top: 15px !important;
+    position: absolute;
+    margin-top: -55px;
+    margin-left: 15px;
 }
 
 .descPf {
@@ -126,43 +121,52 @@ h2 {
     border-radius: 10px;
     padding: 25px;
     overflow: scroll;
-    width: 80%;
+    width: 700px;
     display: flex;
-    margin: auto;
-    margin-bottom: 25px;
     hyphens: auto;
     word-wrap: break-word;
     text-align: justify;
-    text-indent: 1rem;
+}
+#cat{
+    color: rgb(0, 148, 128);
+    margin-bottom: 20px;
+    margin-left: 70px;
+    font-size: 28pt;
+    display: flex;
+    justify-content: left;
+    position: relative;
 }
 
 .cat {
     color: aliceblue;
     list-style-type: square;
     text-align: left;
-    font-size: 20px;
+    font-size: 20pt;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -0%);
-    width: 40%;
-
+    margin-left: 60px;
+    width: 400px;
 }
 
+.sequiser{display: flex;}
+
 .top {
-    width: 500px;
-    border-radius: 15px;
+    width: 100%;
+    height: 385px;
+    display: flex;
+    align-items: center;
     padding: 25px 10px 25px 10px;
     position: relative;
     top: 100%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    border-bottom: #00917e solid 5px ;
+    background-color: #000000;
+    margin-bottom: 10pc;
 }
+
 
 label,
 p {
     color: aliceblue;
-    font-size: 25px;
+    font-size: 25pt;
     display: block;
 }
 #lbl_desc{
@@ -174,11 +178,20 @@ form {
 }
 
 .container_perfil {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .ajustCat {
     margin-top: 0;
-    text-align: center;
+}
 
+.box_dados_pf_dd_cat_desc{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dd_info_pf label {
+    font-size: 28pt;
+    color: #00917e;
 }

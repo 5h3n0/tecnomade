@@ -10,6 +10,9 @@
 }
 
 
+body{
+  background-color: black !important;
+}
 
 .content {
   height: 100%;

@@ -1,0 +1,227 @@
+
+.footer-section {
+    background: #000000;
+    position: relative;
+    border-top: solid 1px #0e0e0e;
+    }
+    
+    .footer-cta {
+    border-bottom: 1px solid #00917e;
+    }
+    
+    .single-cta i {
+    color: #00917e;
+    float: left;
+    margin-top: 8px;
+    }
+    
+    .cta-text {
+    padding-left: 15px;
+    display: inline-block;
+    }
+    
+    .cta-text h4 {
+    color: #ffffff;
+    font-size: 20pt !important;
+    font-weight: 600;
+    margin-bottom: 2px;
+    }
+    .cta-text span {
+    color: #757575;
+    font-size: 14pt;
+    }
+    
+    .footer-content {
+    position: relative;
+    z-index: 2;
+    
+    }
+    
+    
+    
+    .footer-logo {
+      display: flex; height: 80px; max-width: 800px;
+    }
+    
+    
+    
+    .footer-text p {
+    margin-bottom: 14px;
+    color: #7e7e7e;
+    line-height: 28px;
+    }
+    
+    .footer-social-icon {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 25px;
+    }
+    
+    #Layer_1icon:hover{
+      fill: #000000;
+      filter: drop-shadow( 0 0 10px rgb(0, 153, 138) );
+    }
+    
+    #Layer_2icon:hover{
+      fill: #000000;
+      filter: drop-shadow( 0 0 10px rgb(0, 153, 138) );
+    }
+    
+    #Layer_3icon:hover{
+      fill: #000000;
+      filter: drop-shadow( 0 0 10px rgb(0, 153, 138) );
+    }
+    
+    .footer-social-icon span {
+    color: #ffffff;
+    display: block;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    }
+    
+    .footer-social-icon a {
+    color: #ffffff;
+    margin-right: 15px;
+    }
+    
+    .footer-social-icon svg{
+      width: 50px;
+      height: 50px;
+    }
+    
+    .footer-widget-heading h3 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+    font-size: 18pt;
+    text-align: left;
+    }
+    
+    .footer-widget-heading h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background: #00917e;
+    }
+    
+    .footer-widget ul li {
+    display: block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+    }
+    
+    .ajst_tms_footer_text_link{
+      margin-left: -50px;
+      text-align: left;
+    }
+    
+    .footer-widget ul li a:hover{
+    color: #00917e;
+    }
+    
+    .lista_de_links{
+      margin: 0 0 0 -30px;
+    }
+    
+    .footer-widget ul li a {
+    color: #878787;
+    font-size: 14pt;
+    text-transform: capitalize;
+    }
+    
+    .subscribe-form {
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .subscribe-form input {
+    width: 100%;
+    padding: 14px 28px;
+    background: #2E2E2E;
+    border: 1px solid #2E2E2E;
+    color: #fff;
+    }
+    
+    .subscribe-form button {
+      position: absolute;
+      right: 0;
+      background: #00917e;
+      padding: 13px 10px;
+      border: 1px solid #00917e;
+      top: 0;
+    }
+    
+    .subscribe-form button i {
+    color: #fff;
+    font-size: 22px;
+    transform: rotate(-6deg);
+    }
+    
+    .copyright-area{
+    background: linear-gradient(180deg, black , rgb(0, 128, 111) 65%);
+    padding: 25px 0;
+    }
+    
+    .copyright-text p {
+    margin: 0;
+    color: #ffffff;
+    }
+    
+    .copyright-text p, .copyright-text p a{
+      width: 1200px;
+      color: #ffffff;
+      text-align: center;
+    }
+    
+    .copyright-text p a:hover{
+        color: #00eeff;
+    }
+    
+    .copyright-text p a{
+    color: #ffffff;
+    font-size: 18pt;
+    }
+    
+    .footer-menu li {
+    display: inline-block;
+    margin-left: 20px;
+    }
+    
+    .footer-menu li:hover a{
+    color: #00ffdd;
+    }
+    
+    .footer-menu li a {
+    font-size: 18pt;
+    color: #ffffff;
+    }
+    
+    .footer_btn_enviar{
+      margin-top: -10px;
+    }
+    
+    .social__icon {
+      height: 40px;
+      width: 40px;
+        color: #fff;
+        text-decoration: none;	
+    }
+    
+    .social__icon:hover {
+        transform: scale(1.2);	
+    }
+    
+    .ajuste_tamanho{
+      height: 45px;
+      width: 45px;
+      margin: 0 5px;
+      filter: invert(1);
+    }
+      

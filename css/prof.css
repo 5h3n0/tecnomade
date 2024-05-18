@@ -1,19 +1,34 @@
-body{
-
-    background-color: black !important;
+html{
+    box-sizing: border-box!important;
+    margin: 0!important;
+    padding: 0!important;
+    width: 100%!important;
+    height: auto!important;
 }
-        .container {
-            margin-top: 5%;
+
+body{
+    overflow: auto!important;
+    box-sizing: border-box!important;
+    margin: 0!important;
+    padding: 0!important;
+    background-color: black !important;
+    width: 100%!important;
+    height: 100% !important;
+}
+        .cont_prof_bloco {
+            margin: 0;           
+            margin-top: 3%;        
         }
 
         .professional {
-            background-color: black !important;
+            background-color: rgba(0, 0, 0, 0.822) !important;
             cursor: pointer;
-            width: 300px;
-            border-radius: 10px;
+            width: 400px;
+            height: 600px;
+            border-radius: 40px;
             border: 5px solid rgb(13, 107, 91);
             margin: 10px;
-            padding: 5px;
+            padding: 30px;
             color: white;
         }
 
@@ -22,28 +37,59 @@ body{
             transition: 0.2s;
         }
 
-        .row {
-            width: 100%;
+        .bloco_pf_st {
+            background-image: url("./imgs/technology_back.gif");
+            background-size: cover;
+            height: 89vh;
+            padding: 50px;
             display: flex;
+            flex-wrap: wrap;
+            gap: 30px 0;
+            justify-content: center;
         }
 
         .profDetails {
             display: none;
             color: white;
-            background-color: black;
+            background: linear-gradient(-50deg, black 44%, rgb(0, 123, 111), black 51%);
             cursor: pointer;
-            width: 400px;
+            width: 475px;
             height: 800px;
             top: 0%;
+            justify-items: center;
             right: 1%;
             position: fixed;
             border: 5px solid rgb(13, 107, 91);
-            padding: 5px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 40px;
             overflow: scroll;
         }
 
-        .container img {
+     
+        .profDetails::-webkit-scrollbar-track {
+            background-color: rgb(12, 12, 12);
+            border-radius: 6px; 
+            height: 10%;
+            margin: 30px 30px 30px 130px ;
+            padding: 90px;
+        }
+
+
+        .profDetails::-webkit-scrollbar{
+            background-color: transparent;
+        }
+        
+        .name_prof_perfil, .title_card_esp{
+            font-size: 20pt;
+            color: #00917e;
+            font-weight: 600;
+        }
+
+        .list_esp_card_pf {
+            font-size: 15pt;
+        }
+
+        .cont_prof_bloco img {
             border-radius: 15px;
             width: 350px;
             height: 350px;
@@ -64,6 +110,47 @@ body{
             width: 350px;
             height: 350px;
             object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            border: 4px solid #00917e;
+        }
+
+        .especialidades_pf_descrition, #profCat h3, #description_pf_perfil, #profName{
+            color: rgb(0, 148, 128);
+            font-size: 24pt;
+        }
+
+        .btn_ver_pf_card{
+            display: block;
+            width: 100%;
+            height: 60px;
+            border: 2px solid rgb(0, 148, 128) ;
+            font-size: 16pt;
+            color: rgb(0, 148, 128);
+            border-radius: 10px;
+            background-color: black;
+            margin: 40px 0 20px 0;
+            
+        }
+
+        .closeBtn {
+            float: right;
+            font-size: 22pt;
+            color: #00917e;
+            background: black;
+            border: none;
+        }
+        .closeBtn:focus, .closeBtn:hover {
+            border: none;
+            outline: none;
+            text-shadow: 0 0 10px #00917e;
+            scale: 1.5;
+        }
+
+        .btn_ver_pf_card:hover{
+            text-shadow: 0 0 10px #00917e;
+            filter:drop-shadow(0 0 10px #00917e) ;
         }
 
         .profDetails {

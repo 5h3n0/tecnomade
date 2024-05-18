@@ -11,11 +11,10 @@ error_reporting(E_ALL);
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/style_home.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style_nav.css">
+
+ 
+
 <style>
   .imgNav{
       width:50px;
@@ -30,17 +29,15 @@ error_reporting(E_ALL);
 <div class="header cleafix">
   <div class="container_nav">
 
-    <a class="backhome" href="homeUsr.php">
-      <img src="./imgs/img_logo_white_and_black.png" class="logo" />
-      <h1 class="title_nav">TecnoMade</h1>
-    </a>
+    <a class="backhome" href="index.php">
+			<img src="./imgs/icon_logo_nav_bar.png" class="logo" />
+		</a>
     <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
     
     <ul class="nav">
       <li><a href="homeUsr.php" class="nav-links">Home</a></li>
       <li><a href="services.php" class="nav-links">Serviços</a></li>
       <li><a href="prof.php" class="nav-links">Profissionais</a></li>
-      <li><a href="paginaDeServicosParaUsr.php" class="nav-links">Contratações</a></li>
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,19 +55,16 @@ error_reporting(E_ALL);
                 $imgUsr = 'upload/' . $row['imgName'];
                 echo"<img src='$imgUsr' class='imgNav' alt='Imagem do Profissional'>";
                }
-
-                   
            }
           ?>
       </a>
-      <ul class="dropdown-menu">
+      <!-- <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="perfilUsr.php">Perfil</a></li>
         <li><a class="dropdown-item" href="infPeUsr.php">Informações Pessoais</a></li>
-        <li><a class="dropdown-item" href="servicosContratadosUsr.php">serviços contratados</a></li>
         <li><a href="#" class=" dropdown-item">Contato</a></li>
         <li><a href="#" class="dropdown-item">Sobre Nós</a></li>
           <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-        </ul>
+        </ul> -->
       </li>
 
       </li>

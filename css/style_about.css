@@ -1,0 +1,848 @@
+
+body {
+  background-color: #000000 !important;
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  user-select: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+*::selection {
+  color: #ffffff;
+  background: #0d6a5a;
+  border-radius: 10px;
+  text-shadow: -2px 2px 10px rgb(255, 255, 255);
+  padding: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  height: 10%;
+  width: 10px;
+  border-radius: 25px;
+  background-color: rgb(0, 123, 111);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 90%;
+  background-color: rgb(12, 12, 12);
+  border-radius: 25px;
+}
+
+
+
+.text_exe_ini_sobre_tt, .text_exe_ini_sobre h2, .title_nossa_historia, .title_nossa_historia, .pqnameTecnomade_tt, .bloco_text_expli_logo_colors h2 , .section_nossos_valores h2, .section_detalhes_sobre_membros h2, .title_team_tecnomade_about_us, .sectionTwoAboutUs h2
+{
+  font-family: "ttfors";
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #17ab93;
+  font-size: 36pt;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  font-size: 18pt;
+  margin-top: 30px !important;
+  text-align: justify;
+  line-height: 1.5;
+  color: white;
+}
+
+
+
+.section_ini_abouts {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content_text_sobre {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.img_title_lg {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  margin-top: 90px;
+  margin-left: -165px;
+  z-index: 1;
+  filter: opacity(30%) drop-shadow(2px 4px 6px white);
+}
+
+.text_exe_ini_sobre_tt {
+  color: #00917e;
+  text-align: center;
+  font-size: 36pt !important;
+  margin: 220px 0 70px 0;
+}
+
+.text_exe_ini_sobre {
+  text-align: center !important;
+}
+
+.text_exe_ini_sobre {
+  text-align: justify;
+  margin: 10px;
+  padding: 25px;
+  height: 500px;
+  word-wrap: break-word;
+  width: 630px;
+}
+
+
+.text_exe_ini_sobre h2 { color: #00917e; }
+
+.title_bold {
+  color: #00917e;
+  margin-left: -70px;
+  position: absolute;
+  font-weight: bold;
+}
+
+
+.conteiner_sobrenos_carrosel {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80pc;
+  padding: 0 5pc;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.carrossel {
+  background: linear-gradient(-9deg, #000000 50%, rgb(0, 128, 111), rgb(0, 0, 0) 60%);
+  text-align: center;
+  position: relative;
+  margin: 80px 0;
+}
+
+.carrossel button {
+  background: #000000;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 255, 255);
+  padding: 10px 10px;
+  display: flex;
+  position: absolute;
+  bottom: 225px;
+  filter: drop-shadow(0 0 10px rgb(0, 128, 111));
+}
+
+.carrossel button:hover {
+  background: linear-gradient(120deg, rgb(0, 128, 111) 20%, #000000);
+  fill: #fff;
+
+}
+
+.carrossel .botao-esquerdo {
+  left: 20%;
+  ;
+}
+
+.carrossel .botao-direito {
+  right: 20%;
+}
+
+.icon_carrossel_esquerdo {
+  rotate: 180deg;
+}
+
+.carrossel .texto-carrossel {
+  font-weight: bold;
+  font-size: 3rem;
+  position: absolute;
+  bottom: 20px;
+  left: 140px;
+  text-align: left;
+  color: #ecf0f1;
+}
+
+.carrossel .texto-carrossel p {
+  margin: 0;
+}
+
+.fotus {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  height: 550px;
+  width: 980px;
+  border: 5px solid rgb(0, 125, 111);
+}
+
+.tecnomade_logo_in_carrossel {
+  position: absolute;
+  margin: -380px 0 0 -175px;
+}
+
+.indicadores {
+  text-align: center;
+  margin-top: -40px;
+}
+
+.indicador {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicador.ativo {
+  background-color: #00917e;
+}
+
+.custom-hr {
+  border: 0;
+  height: 3px;
+  background-color: #17ab93;
+  margin: 60px 390px;
+}
+
+.section_nossa_historia {
+  padding: 0px 80px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #000000;
+}
+
+
+.img_etec_about_us,
+.img_localizacao_etec {
+  margin: 0 0 0 50px;
+  height: 500px;
+  width: 965px;
+  border-radius: 15px;
+  border: #00917e solid 4px;
+}
+
+.img_localizacao_etec{ height: 400px; }
+
+.title_nossa_historia { margin: 0; }
+
+.section_expli_name{
+  margin: 0 ;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px 80px 80px;
+}
+
+.img_palavras_signi{
+  margin: 0 50px 0 0;
+  height: 500px;
+  width: 965px;
+  border-radius: 15px;
+  border: #00917e solid 4px;
+}
+
+.section_sobre_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 35pc;
+  padding: 10px 80px 10px 80px;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.bloco_text_expli_logo_colors {
+  height: 100%;
+  width: 1070px;
+}
+
+.bx_imgs_balls {
+  position: relative;
+  display: block;
+  margin-right: 33%;
+  margin-top: -235px;
+}
+
+
+._ball,
+._ball1,
+._ball2,
+._ball3,
+._ball4,
+._ball5 {
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+._ball {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+}
+
+._ball {
+  animation: alternate-reverse cssAnimation_0 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_0 {
+  to {
+    transform: translate(0px, 0px) scale(1.4);
+  }
+}
+
+._ball1 {
+  background-color: rgb(2, 157, 142);
+  height: 200px;
+  width: 200px;
+  margin-left: 220px;
+}
+
+._ball1 {
+  animation: alternate-reverse cssAnimation_1 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_1 {
+  to {
+    transform: translate(140px, -100px);
+  }
+}
+
+
+
+._ball2 {
+  background-color: rgb(0, 255, 221);
+  margin-top: 140px;
+  margin-left: -80px;
+  height: 120px;
+  z-index: 6;
+  width: 120px;
+}
+
+._ball2 {
+  animation: alternate-reverse cssAnimation_2 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_2 {
+  to {
+    transform: translate(-70px, 78px);
+  }
+}
+
+._ball3 {
+  background-color: rgb(255, 255, 255);
+  margin-top: 300px;
+  height: 90px;
+  width: 90px;
+}
+
+._ball3 {
+  animation: alternate-reverse cssAnimation_3 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_3 {
+  to {
+    transform: translate(-51px, 140px);
+  }
+}
+
+._ball4 {
+  background-color: gray;
+  height: 170px;
+  width: 170px;
+  margin-top: -150px;
+  margin-left: -50px
+}
+
+._ball4 {
+  animation: alternate-reverse cssAnimation_4 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_4 {
+  to {
+    transform: translate(-62px, -103px);
+  }
+}
+
+.ajust_img_team1 {
+  animation: alternate-reverse cssAnimation_5 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_5 {
+  to {
+    transform: translate(140px, 0px);
+  }
+}
+
+.ajust_img_team2 {
+  animation: alternate-reverse cssAnimation_6 5s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_6 {
+  to {
+    transform: translate(-140px, 0px);
+  }
+}
+
+.titleOneAboutUS {
+  animation: alternate-reverse cssAnimation_7 1096ms infinite;
+  animation-delay: 3s;
+}
+
+@keyframes cssAnimation_7 {
+  to {
+    transform: translate(0px, -26px);
+  }
+}
+
+.imgs_balls {
+  margin-top: 12%;
+  margin-right: 15%;
+  text-align: center;
+}
+
+.img_logo_tecnomade_about {
+  margin: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  margin: 0px 0 0 13px;  
+  filter: invert(1);
+}
+
+
+.section_nossos_valores{
+  background: linear-gradient(-9deg, #000000 50%, rgb(0, 128, 111), rgb(0, 0, 0) 60%);
+  padding: 80px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.titulo_topico_list_value{
+  color: #00917e;
+  text-transform: uppercase;
+  margin-left: -40px;
+}
+
+.section_detalhes_sobre_membros{
+  margin: 0;
+  padding: 0px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.bloco_detalhes_membro_team{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 70px 0;
+  padding: 0; 
+}
+
+.box_detalhes_membro{
+  background-color: #00917e6e;
+  border-left: 15px solid #00917e;
+  border-right: 15px solid #00917e;
+  padding: 0 50px 20px 50px;
+  border-radius: 25px;
+  height: 100%;
+  width: 50%;
+  max-width: 1400px;
+}
+
+.box_img_sobre_membros{
+  max-width: 455px;
+  max-height: 455px;
+  width: 775px;
+  height: 455px;
+  background-color: #17ab93;
+  transform: rotate(45deg);
+  box-shadow: 0 0 20px #17ab93;
+  margin: 50px 200px 50px 125px;
+}
+
+.box_img_sobre_membros::after{
+  background-color: #000000;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  
+}
+
+.ajst_margin_dt_mbo{
+  margin: 50px 125px 50px 200px;
+}
+
+.dt_img_perfil {
+  height: 455px;
+  width: 455px;
+  position: absolute;
+  z-index: 1;
+  border: 2px solid #00917e;
+  box-shadow: 0 0 20px #17ab93;
+  transform: rotate(-45deg);
+}
+
+
+
+.nome_membro, .especialdade_membro{
+  font-weight: 900;
+}
+.section_team_tecnomade_about_us{
+  background: linear-gradient(-9deg, #000000 50%, rgb(0, 128, 111), rgb(0, 0, 0) 60%);
+  margin: 0;
+  padding: 0;
+  padding: 5pc 3pc;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.title_team_tecnomade_about_us{
+  margin-bottom: 60px;
+  padding: 25px;
+}
+
+.container_team{
+  display: flex;
+  justify-content: center;
+  height: auto;
+  flex-wrap: wrap-reverse;
+  gap: 30px;
+}
+
+.cardClient {
+  padding: 25px 20px;
+  height: 460px;
+  width: 275px;
+  border: 4px solid #7cdacc;
+  box-shadow: 0 2px 10px rgba(207, 212, 222, 1);
+  border-radius: 0 35px 0 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.cardClient:hover {
+  transform: translateY(-10px);
+}
+
+.foto_perfil_membro {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 15px ;
+  border: 4px solid #46ddc6;
+}
+
+.name-client {
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18pt
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 18pt;
+}
+
+.section_team_tecnomade_about_us a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #7cdacc;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.8rem;
+  fill: currentColor;
+}
+
+.tooltip-social {
+  background: #262626;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}
+
+
+
+#btnTopo {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #000000;
+  box-shadow: 0px 0px 5px 3px #00917e00;
+  border: none;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 0 5px 3px rgb(0, 255, 221);
+}
+.arrow_icon_bnt_top{
+  fill:#00ffdd;
+}
+
+#btnTopo:hover {
+  box-shadow: 0 0 5px 3px rgb(0, 128, 111);
+}
+.arrow_icon_bnt_top{
+  fill:rgb(0, 128, 111);
+}
+
+.arrow_icon_bnt_top{
+  fill:#00917e;
+}
+
+.sectionOneAboutUs {
+  background: linear-gradient(200deg, #000000 50%, rgb(0, 128, 111), rgb(0, 0, 0) 60%);
+  padding: 120px 80px 0 80px;
+  margin: 0;
+  font-size: 20pt;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%  !important;
+
+}
+
+.contentAboutUs {
+  padding: 0 25px;
+  width: 700px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.titleOneAboutUS {
+  color: rgb(0, 123, 111);
+  font-family: "League Spartan", sans-serif;
+
+}
+
+.ajs_div {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 0 0;
+}
+
+.bx_imgs_AboutUs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.img_abouts_row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 950px;
+}
+
+.img_abouts1,
+.img_abouts2,
+.img_abouts3 {
+  border: 5px solid rgb(0, 123, 111);
+}
+
+.img_abouts1 {
+  width: 950px;
+  height: 600px;
+}
+
+.img_abouts2 {
+  width: 950px;
+  height: 290px;
+}
+
+.img_abouts3 {
+  width: 950px;
+  height: 290px;
+}
+
+.decorations_imgs {
+  background-color: #ffffff;
+  height: 10px;
+  width: 140px;
+  margin: 40.8rem 0 0 -40px;
+  position: absolute;
+}
+
+.decorations_imgs::before {
+  background-color: #ffffff;
+  height: 10px;
+  width: 150px;
+  rotate: 90deg;
+  content: '';
+  position: absolute;
+  margin: -70px 0 0 -80px;
+}
+
+.sectionTwoAboutUs {
+  background: linear-gradient(6deg, #000000 45%, rgb(0, 128, 111), rgb(0, 0, 0) 60%);
+  height: 30pc;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20pt;
+  color: #ffffff;
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+.sectionTwoAboutUs h2 {
+  padding: 20px 0;
+}
+
+.redesSociaisAboutUs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 50px;
+}
+
+.iconsNtSociais {
+  height: 80px;
+  width: 80px;
+}
+
+.twitter{
+  border-radius: 50%;
+  border: #fff 2px solid;
+}
+
+.iconsNtSociais:hover {
+  transform: scale(1.2);
+
+}
+
+.linkedIn, .facebook{
+  border-radius: 50%;
+  border: #fff 2px solid;
+}
+
+.instagram:hover {
+    filter: drop-shadow( 0 0 10px rgb(181, 103, 241));
+}
+.facebook:hover {
+  filter: drop-shadow( 0 0 10px #00BFFF );
+}
+.whatsapp:hover {
+  filter: drop-shadow( 0 0 10px limeGreen);
+}
+.twitter:hover {
+  filter: drop-shadow( 0 0 10px white);
+}
+.git:hover{
+  filter: drop-shadow( 0 0 10px red);
+}
+
+.linkedIn:hover {
+  filter: drop-shadow(0px 0px 10px 	#1E90FF);
+} 
+
+
+
