@@ -39,12 +39,12 @@ if (!isset($_SESSION)) {
     </div>
     <script>
 
-        window.onload = function () {
-            loadPage('servicosEmAndamento.php');
-        };
         // window.onload = function () {
-        //     loadPage('verOrcamentosUsr.php');
+        //     loadPage('servicosEmAndamento.php');
         // };
+         window.onload = function () {
+             loadPage('verOrcamentosUsr.php');
+         };
         // window.onload = function () {
         //     loadPage('servicosRealizadosUsr.php');
         // };

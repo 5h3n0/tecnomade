@@ -44,19 +44,15 @@ $result = $stmt->get_result();
 
 <body>
     <?php
-    $comOrcamento1 = false;
-    $comOrcamento2 = false;
-    if($comOrcamento1 & $comOrcamento2 == true){
-        echo "<div class='semServicos'>";
-        echo "<p>Não há orçamentos recebidos.</p>";
-        echo "</div>";
-
-    }
+    
+    
     if ($result->num_rows > 0) {
+        echo "<h2 class='top'>Novos Orcamentos</h2>";
+
         echo "<div class='orcamentos'>";
         $comOrcamento1 = true;
         while ($row = $result->fetch_assoc()) {
-            // Exibir cada orçamento em um card Bootstrap
+            
             $valor = $row['orcamento'];
             $valor = substr($valor, 0, -2);
             $valor = number_format($valor, 2, ',', '.');
@@ -95,20 +91,32 @@ $result = $stmt->get_result();
 
     // Exibir as solicitações de serviço pendentes
     if ($result_pendentes->num_rows > 0) {
-        $comOrcamento2 = true;
+        echo "<h2 class='top'>Solicitação de Serviço Pendente</h2>";
         echo "<div class='solicitacoes-pendentes'>";
         while ($row = $result_pendentes->fetch_assoc()) {
+            $data = $row['data_solicitacao'];
+                    $data = date('d/m/Y', strtotime($data));
             echo "<div class='solicitacao-pendente'>";
-            echo "<h2>Solicitação de Serviço Pendente</h2>";
-            echo "<p><strong>Descrição do Serviço:</strong> " . $row['descricao_servico'] . "</p>";
-            echo "<p><strong>Mensagem do Cliente:</strong> " . $row['mensagem_cliente'] . "</p>";
-            echo "<p><strong>Nome do Profissional:</strong> " . $row['nomeProfissional'] . "</p>";
-            echo "<p><strong>Data da Solicitação:</strong> " . $row['data_solicitacao'] . "</p>";
+            echo "<label class='lbl_solicitacao_pendente'>Serviço</label>";
+            echo "<p class='dados_pendentes'>" . $row['nomeService'] . "</p>";
+            echo "<label class='lbl_solicitacao_pendente'>Descrição do Serviço</label>";
+            echo "<p class='dados_pendentes'>" . $row['descricao_servico'] . "</p>";
+            echo "<label class='lbl_solicitacao_pendente'>Pedido no Orçamento</label>";
+            echo "<p class='dados_pendentes'>" . $row['mensagem_cliente'] . "</p>";
+            echo "<label class='lbl_solicitacao_pendente'>Profissional</label>";
+            echo "<p class='dados_pendentes'>" . $row['nomeProfissional'] . "</p>";
+            echo "<label class='lbl_solicitacao_pendente'>Data da Solicitação</label>";
+            echo "<p class='dados_pendentes'>" . $data . "</p>";
             echo "</div>";
         }
         echo "</div>";
     }
- 
+    if($comOrcamento1 !== true){
+        echo "<div class='semServicos'>";
+        echo "<p>Não há orçamentos recebidos.</p>";
+        echo "</div>";
+
+    }
     ?>
 </body>
 

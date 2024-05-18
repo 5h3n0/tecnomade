@@ -52,17 +52,19 @@ if ($result->num_rows > 0) {
             $data = $row['data_Solicitacao'];
                 $data = date('d/m/Y', strtotime($data));
         echo "<div class='contratacao'>";
-        echo "<h5 class='titleContratacao'>" . $row['nomeService'] . "</h5>";
-        echo"<label class='lbl_contratacao'>Descrição do Serviço: </label>";
+        echo"<label class='lbl_contratacao'>Serviço</label>";
+
+        echo "<p class='dados_contratacao'>" . $row['nomeService'] . "</p>";
+        echo"<label class='lbl_contratacao'>Descrição do Serviço</label>";
         echo "<p class='dados_contratacao' id='desc_service_contratacao'>" . $row['descService'] . "</p>";
-        echo"<label class='lbl_contratacao'>Nome do Usuário: </label>";
+        echo"<label class='lbl_contratacao'>Usuário</label>";
         echo "<p class='dados_contratacao'>" . $row['usrName'] . "</p>";
         echo"<label class='lbl_contratacao'>Mensagem do Cliente</label>";
         echo "<p class='dados_contratacao' id='msg_cliente_contratacao'>" . $row['mensagem_cliente'] . "</p>";
-        echo"<label class='lbl_contratacao'>Orçamento:</label>";
+        echo"<label class='lbl_contratacao'>Orçamento</label>";
 
         echo "<p class='dados_contratacao'>R$ $valor</p>";
-        echo"<label class='lbl_contratacao'>Data do Serviço: </label>";
+        echo"<label class='lbl_contratacao'>Contratação</label>";
 
         echo "<p class='dados_contratacao'>" .$data. "</p>";
         echo "<form action='servicoRealizadoBd.php' method='POST'>";

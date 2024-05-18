@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         echo "<label class='lbl_realizados'>Descrição</label>";
 
         echo "<p class='dados_realizados'>" . $row["descService"] . "</p>";
-        echo "<label class='lbl_realizados'>Categoria: </label>";
+        echo "<label class='lbl_realizados'>Categoria</label>";
         echo "<p class='dados_realizados'>" . $row["nomeCategoria"] . "</p>";
         echo "<label class='lbl_realizados'>Valor</label>";
 
