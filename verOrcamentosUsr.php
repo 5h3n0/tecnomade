@@ -75,7 +75,7 @@ $result = $stmt->get_result();
             echo "</div>";
         }
         echo "</div>";
-    } 
+    }
     
 
     $sql_pendentes = "SELECT s.*, srv.nomeService, p.pfName AS nomeProfissional, s.data_solicitacao 
@@ -110,13 +110,12 @@ $result = $stmt->get_result();
             echo "</div>";
         }
         echo "</div>";
-    }
-    if($comOrcamento1 !== true){
+    }   else{
         echo "<div class='semServicos'>";
         echo "<p>Não há orçamentos recebidos.</p>";
         echo "</div>";
-
-    }
+}
+    
     ?>
 </body>
 

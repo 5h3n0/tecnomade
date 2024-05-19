@@ -92,7 +92,7 @@ html, body{
 
 .semServicos {
   height: 900px !important;
-  width: 100%;
+  width: 90% !important;
   align-items: center;
   margin: auto;
 }

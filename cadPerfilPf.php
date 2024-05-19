@@ -5,7 +5,6 @@ if(!isset($_SESSION))
 } 
 $_SESSION['escolhendoCat'] = true;
 require_once "connect.php";
-require_once 'navPf.php';
 //  if (!isset($_SESSION['pfCadastro'])) {
 //      header("Location: lgcd.php");
 //    }
