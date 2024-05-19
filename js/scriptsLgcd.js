@@ -105,7 +105,6 @@ function backPf() {
 }
 
 function mdFormUsr() {
-
     lgUsr.style.display = 'none';
     cdUsr.style.display = 'block';
 }
@@ -113,7 +112,16 @@ function mdFormUsr() {
 function mdFormPf() {
     lgPf.style.display = 'none';
     cdPf.style.display = 'block';
+}
 
+function mdFormCdUsr() {
+    lgUsr.style.display = 'block';
+    cdUsr.style.display = 'none';
+}
+
+function mdFormCdPf() {
+    lgPf.style.display = 'block';
+    cdPf.style.display = 'none';
 }
 
 

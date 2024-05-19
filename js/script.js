@@ -62,7 +62,7 @@ function fechar() {
   
     
     const emailInput = document.getElementById("login_input_user");
-    const passwordInput = document.getElementById("login_input_password");
+    let passwordInput = document.getElementById("login_input_password");
   
     emailInput.addEventListener("input", toggleSubmitButton);
     passwordInput.addEventListener("input", toggleSubmitButton);
@@ -75,4 +75,38 @@ function fechar() {
       }
     }
   });
+  
+  function seePass() {
+    let passwordInput = document.getElementById("login_input_password");
+    let bntVisuOff = document.getElementById("visuOff");
+    let bntVisuOn = document.getElementById("visuOn");
+    
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        bntVisuOff.style.display = "none";
+        bntVisuOn.style.display = "block";
+    } else {
+        passwordInput.type = "password";
+        bntVisuOn.style.display = "none";
+        bntVisuOff.style.display = "block";
+    }
+}
+  
+function dontSeePass() {
+    let passwordInput = document.getElementById("login_input_password");
+    let bntVisuOff = document.getElementById("visuOff");
+    let bntVisuOn = document.getElementById("visuOn");
+    
+    if (passwordInput.type === "text") {
+        passwordInput.type = "password";
+        bntVisuOn.style.display = "none";
+        bntVisuOff.style.display = "block";
+      } else {
+        passwordInput.type = "text";
+        bntVisuOff.style.display = "none";
+        bntVisuOn.style.display = "block";
+    }
+}
+
 /*-------------------------------Login--------------------------------------*/
+

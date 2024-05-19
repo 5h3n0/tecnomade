@@ -19,6 +19,7 @@ require_once 'navUsr.php';
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
     
     <link rel="stylesheet" type="text/css" href="./css/viewPerfilPfForUsr.css">
+    <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="shortcut" type="image/png" sizes="15px15px" href="./imgs/img_logo_black_and_white.png">
 

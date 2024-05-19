@@ -34,8 +34,8 @@ error_reporting(E_ALL);
       <li><a href="#" class="nav-links">Contact</a></li>
       <li><a href="sobre.php" class="nav-links">About</a></li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-img dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item dropdown_nav">
+        <a class="nav-img">
         <?php
           $sql = "SELECT * FROM prof WHERE id_Pf = $_SESSION[id_Pf]";
           $result = $conn->query($sql);
@@ -54,9 +54,11 @@ error_reporting(E_ALL);
           }
           ?>
         </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="perfilPf.php">Perfil</a></li>
-          <li><a class="dropdown-item" href="logout.php">Log out</a></li>
+        <ul class="dropdown_menu" style="display: block;">
+        <li><a class="dropdown-element nav-links" href="perfilUsr.php">Perfil</a></li>
+        <li><a class="dropdown-element nav-links" href="infPeUsr.php">Informações Pessoais</a></li>
+        <li><a href="#" class="dropdown-element nav-links">Configurações</a></li>
+        <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
         </ul>
       </li>
 
@@ -64,3 +66,7 @@ error_reporting(E_ALL);
     </ul>
   </div>
 </div>
+
+<script>
+    
+</script>

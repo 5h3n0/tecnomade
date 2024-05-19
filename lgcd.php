@@ -20,6 +20,7 @@ session_start();
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
     <link rel="stylesheet" href="./css/style_lg.css">
+    <link rel="stylesheet" href="./css/default.css">
 
     <style>
         body,
@@ -117,9 +118,9 @@ session_start();
                     <input type="password" name="usrPass" placeholder="Senha:">
 
                     <input type="submit" value="Login" name="enviarForm" class="btn-login">
-
+                    <div class="div_ajust_linksCad_linkMlg">
                     <span class="linksCad" id="linkUsr" onclick="mdFormUsr()">Não possui Cadastro?</span>
-
+                    </div>
                 </form>
 
                 <form action="registerUsrBd.php" method="post" class="cdUsr" id="cdUsr" autocomplete="off"
@@ -143,7 +144,7 @@ session_start();
                     <span id="spanErrorNameUsr" class="span-require">*A idade mínima é 18 anos!*</span>
 
                     <label for="email" class="label-require">Email:</label>
-                    <input type="email" name="email" placeholder="Digite um seu melhor Email:" oninput="emailValidate()"
+                    <input type="email" name="email" placeholder="Digite seu Email:" oninput="emailValidate()"
                         class="inputs require" required>
                     <span class="span-require">*Digite um email válido*</span>
 
@@ -156,11 +157,11 @@ session_start();
                     <span id="spanErrorCpfUsr" class="span-require">*CPF Inválido*</span>
 
                     <label for="usrPass" id="labelPassUsr" class="label-require">Digite uma senha:</label>
-                    <input type="text" name="usrPass" placeholder="Senha:" class="inputs require" autocomplete="off" id="inputPassUsr" required oninput="PassUsrVal()">
+                    <input type="password" name="usrPass" placeholder="Senha:" class="inputs require" autocomplete="off" id="inputPassUsr" required oninput="PassUsrVal()">
                     <span class="span-require" id="spanErrorPassUsr" >*A senha deve conter no mínimo 8 caracteres!*</span>
 
                     <label for="usrRpPass" id="labelCfPassUsr" class="label-require">Repita a senha:</label>
-                    <input type="text" id="inputCfPassUsr" name="usrRpPass" placeholder="Senha:" oninput="PassCfUsrVal()" class="inputs require" autocomplete="off" required>
+                    <input type="password" id="inputCfPassUsr" name="usrRpPass" placeholder="Senha:" oninput="PassCfUsrVal()" class="inputs require" autocomplete="off" required>
                     <span class="span-require" id="spanErrorCfPassUsr">*As senhas não conferem, verifique*</span>
 
                     <div class="gender">
@@ -179,7 +180,9 @@ session_start();
                     <div class="buttonsForm">
                         <input type="submit" value="Cadastrar" name="enviarForm" class="btn_cdst_sub">
                     </div>
-                    <span class="linkMlg" id="linkUsr" onclick="mdFormUsr()">Já possui Cadastro?</span>
+                    <div class="div_ajust_linksCad_linkMlg">
+                    <span class="linkMlg" id="linkUsr" onclick="mdFormCdUsr()">Já possui Cadastro?</span>
+                    </div>
                 </form>
             </div>
         </div>
@@ -207,7 +210,9 @@ session_start();
                     <label for="pfPass">Senha:</label>
                     <input type="password" name="pfPass" placeholder="Senha:">
                     <input type="submit" value="Login" name="enviarForm" class="btn-login">
+                    <div class="div_ajust_linksCad_linkMlg">
                     <span class="linksCad" id="linkPf" onclick="mdFormPf()">Não possui Cadastro?</span>
+                    </div>
                 </form>
 
 
@@ -271,8 +276,9 @@ session_start();
             <div class="buttonsForm">
                 <input type="submit" value="Cadastrar" name="enviarForm">
             </div>
-
-            <span class="linkMlg" id="linkPf" onclick="mdFormPf()">Já possui Cadastro?</span>
+            <div class="div_ajust_linksCad_linkMlg">
+            <span class="linkMlg" id="linkPf" onclick="mdFormCdPf()">Já possui Cadastro?</span>
+            </div>
     </div>
 </form>
 

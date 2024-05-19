@@ -13,10 +13,11 @@ error_reporting(E_ALL);
 
 <div class="header cleafix">
 	<div class="container_nav">
-
+		
 		<a class="backhome" href="index.php">
 			<img src="./imgs/icon_logo_nav_bar.png" class="logo" />
 		</a>
+
 		<div class="menu-icon" onclick="toggleNav()">&#9776;</div>
 
 		<ul class="nav">
@@ -107,8 +108,8 @@ error_reporting(E_ALL);
 			<hr class="breakLine35">
 
 			<div class="box_text_links_rgs_pass">
-			<a href="#" class="DontCadastroLink">Don't have a registration? Click here</a>
-			<a href="#" class="login_forgot">Forgot Password?</a>
+			<a href="lgcd.php" class="DontCadastroLink">Don't have a registration? Click here</a>
+			<a href="forgot_pass.php" class="login_forgot">Forgot Password?</a>
 			</div>
 		</form>
 

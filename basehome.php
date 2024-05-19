@@ -2,8 +2,8 @@
 <head>
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/chatbot1.css">
+    <link rel="stylesheet" href="./css/default.css">
 </head>
-<main>
 
     <section class="screen_exibition_ini">
             <div class="slogan_home">
@@ -574,4 +574,3 @@
                 </div>
             </div>
         </div>
-    </main>
