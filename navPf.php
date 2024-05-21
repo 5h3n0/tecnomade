@@ -11,6 +11,7 @@ error_reporting(E_ALL);
 
 <head>
   <link rel="stylesheet" href="./css/style_nav.css">
+  <link rel="shortcut icon" type="image/png" sizes="512x512" href="./imgs/img_logo_black_and_white.png">
   
   <style>
     .nav-img img{

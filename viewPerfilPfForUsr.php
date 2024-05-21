@@ -17,16 +17,28 @@ require_once 'navUsr.php';
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="./css/viewPerfilPfForUsr.css">
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="shortcut" type="image/png" sizes="15px15px" href="./imgs/img_logo_black_and_white.png">
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
+    <style>
+    .top {
+       background-image: url("./imgs/1110251_Animation_Envelope_Glow_1280x720.gif");
+       background-size: cover;
+       filter: brightness(0.5);
+       object-fit: cover;
+       background-repeat: no-repeat;
+       background-position: center; 
+    }
+
+    </style>
 
     <title>Profissional</title>
 
@@ -35,7 +47,6 @@ require_once 'navUsr.php';
 <body>
     <div class="cont">
         <div class="container_perfil">
-            
             <?php
             if (isset($_SESSION['id_Pf'])) {
                 $sql = "SELECT * FROM prof WHERE id_Pf = {$_SESSION['id_Pf']}";
@@ -133,7 +144,101 @@ require_once 'navUsr.php';
             echo "</div>";
             ?>
         </div>
+
+        <hr class="divis_line_green">
+        
+        <div class="bloco_comentarios_pf">
+            <div class="tt_coments_for_pf">
+                <h2>Comentários dos Clientes ao Profissional</h2>
+            </div>
+            <div class="comentario_for_pf"><h3>[ Nenhum comentário foi feito para o profissional ainda ... ]</h3></div>
+            
+        </div>
+
+        <hr class="divis_line_green">
+        
+        <div class="bloco_work_do_for_pf">
+            <div class="tt_work_do_for_pf">
+                <h2 class="text_null_coments_insire">Outros trabalhos feitos pelo profissional</h2>
+            </div>
+
+            <div class="work_do_for_pf"><h3 class="text_null_work" style="display: none;">Nenhum comentário foi feito para o profissional ainda ...</h3></div>
+
+
+
+
+
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+<div class="carrossel_works_pf">
+        <div class="carousel_inner_pf">
+            <div class="item_slide_of_car slide_active_pf">
+                <img src="https://images.unsplash.com/photo-1520531158340-44015069e78e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2hpdGUlMjBjaXR5fGVufDB8fDB8fHww" alt="Imagem 1">
+                <div class="info_about_work">
+                <h2>Titulo</h2>
+                <p>dd/mm/year</p>
+                <p>Descrição do trampo</p>
+                </div>
+            </div>
+            <div class="item_slide_of_car">
+                <img src="https://media.licdn.com/dms/image/C4E1BAQEvhN4dTQBoiw/company-background_10000/0/1584480540011/uptown4_inc__cover?e=2147483647&v=beta&t=Ix1NyhX1CDMwkgrbvEdlKe6Wcd8sc13DaFJU2eEvof4" alt="Imagem 2">
+                <div class="info_about_work">
+                <h2>Titulo</h2>
+                <p>dd/mm/year</p>
+                <p>Descrição do trampo</p>
+                </div>
+            </div>
+            <div class="item_slide_of_car">
+                <img src="https://w0.peakpx.com/wallpaper/421/390/HD-wallpaper-paisagem-preto-branco-ponte-natureza-paisagem-branco-preto-luz.jpg" alt="Imagem 3">
+                <div class="info_about_work">
+                <h2>Titulo</h2>
+                <p>dd/mm/year</p>
+                <p>Descrição do trampo</p>
+                </div>  
+            </div>
+        </div>
+
+        <ul class="carousel_indicators">
+            <li class="indicatodor_car indicatodor_active" data-slide-to="0"></li>
+            <li class="indicatodor_car" data-slide-to="1"></li>
+            <li class="indicatodor_car" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel_control">
+            <button class="bnt_left" ><span class="icon_btn_left"><</span></button>
+            <button class="bnt_right"><span class="icon_btn_right">></span></button>
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------------------------------------------------- -->
+
+
+
+
+
+        </div>
+    </div>
+    <script src="./js/carrossel_pf.js"></script>
 
     <?php
     include "footer.php";

@@ -7,7 +7,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/cartao.css">
   <link rel="stylesheet" href="./css/style_home.css">
-  <title></title>
+  <link rel="stylesheet" href="./css/default.css">
+
+
+  <title>Pagamento cartão</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
@@ -96,6 +99,16 @@ include_once('navHome.php');
   </main>
 
   </div>
+<div class="bloco_alerta">
+  <div class="card_alerta">
+    <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><polygon fill-rule="evenodd" points="8 9.414 3.707 13.707 2.293 12.293 6.586 8 2.293 3.707 3.707 2.293 8 6.586 12.293 2.293 13.707 3.707 9.414 8 13.707 12.293 12.293 13.707 8 9.414"/></svg>
+  <h2 class="Tt_alert"> Atenção !</h2>
+  <h2 class="text_equipe_tt">Equipe Tecnomade</h2>
+  <p>Para garantir sua confiança e satisfação, o pagamento ficará retido na plataforma e só será feito depois que o serviço for concluído como esperado. Assim, você tem a garantia de receber o que deseja antes de pagar. Se por acaso não ficar satisfeito ou se o serviço não for entregue conforme combinado, você terá seu dinheiro de volta imediatamente. Nosso compromisso é oferecer um serviço de qualidade e garantir sua segurança financeira em todas as etapas do processo.</p>
+</div>
+</div>
+ 
+
 <?php
 include_once('footer.php');
 ?>
