@@ -28,7 +28,16 @@
 </head>
 
 <body>
-  <div class="background">
+<div class="section_alerta">
+<div class="bloco_alerta"></div>
+  <div class="card_alerta">
+    <svg class="bnt_close_aleta" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><polygon fill-rule="evenodd" points="8 9.414 3.707 13.707 2.293 12.293 6.586 8 2.293 3.707 3.707 2.293 8 6.586 12.293 2.293 13.707 3.707 9.414 8 13.707 12.293 12.293 13.707 8 9.414"/></svg>
+  <h2 class="Tt_alert"> Atenção !</h2>
+  <p>Para garantir sua confiança e satisfação, o pagamento ficará retido na plataforma e só será feito depois que o serviço for concluído como esperado. Assim, você tem a garantia de receber o que deseja antes de pagar. Se por acaso não ficar satisfeito ou se o serviço não for entregue conforme combinado, você terá seu dinheiro de volta imediatamente. Nosso compromisso é oferecer um serviço de qualidade e garantir sua segurança financeira em todas as etapas do processo.</p>
+  <h2 class="text_equipe_tt">Ass: Equipe Tecnomade</h2>
+</div>
+</div>
+<div class="background">
     <div class="animation">
     </div>
   </div>
@@ -99,14 +108,7 @@ include_once('navHome.php');
   </main>
 
   </div>
-<div class="bloco_alerta">
-  <div class="card_alerta">
-    <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><polygon fill-rule="evenodd" points="8 9.414 3.707 13.707 2.293 12.293 6.586 8 2.293 3.707 3.707 2.293 8 6.586 12.293 2.293 13.707 3.707 9.414 8 13.707 12.293 12.293 13.707 8 9.414"/></svg>
-  <h2 class="Tt_alert"> Atenção !</h2>
-  <h2 class="text_equipe_tt">Equipe Tecnomade</h2>
-  <p>Para garantir sua confiança e satisfação, o pagamento ficará retido na plataforma e só será feito depois que o serviço for concluído como esperado. Assim, você tem a garantia de receber o que deseja antes de pagar. Se por acaso não ficar satisfeito ou se o serviço não for entregue conforme combinado, você terá seu dinheiro de volta imediatamente. Nosso compromisso é oferecer um serviço de qualidade e garantir sua segurança financeira em todas as etapas do processo.</p>
-</div>
-</div>
+
  
 
 <?php

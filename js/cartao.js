@@ -17,6 +17,7 @@ const mesDig = document.querySelector("#mes");
 //cvc
 const cvcDig = document.querySelector("#cvc");
 const cvc = document.querySelector(".cvc");
+const section_alerta = document.querySelector(".section_alerta");
 
 cvcDig.addEventListener("input", () => {
   cvc.innerHTML = cvcDig.value;
@@ -127,13 +128,33 @@ confirm.addEventListener("click", (e) => {
     hasOnlyAno(anoDig.value) &&
     hasOnlyMes(mesDig.value)
   ) {
+    section_alerta.style.display = "block";
     formulario.style.display = "none";
+    window.scrollTo({ top: 0 });
+    document.body.style.overflow = "hidden";
     obrigado.style.display = "block";
+  
   }
 });
+
+ function removerDivs() {
+            const divs = document.querySelectorAll('.section_alerta');
+            divs.forEach(div => {
+                div.remove();
+            });
+        }
+
+        setTimeout(removerDivs, 30000);
 
 continua.addEventListener("click", (e) => {
   formulario.style.display = "grid";
   obrigado.style.display = "none";
 });
-//
+
+
+
+
+document.querySelector(".bnt_close_aleta").addEventListener("click", function(){
+  section_alerta.remove();
+  document.body.style.overflow = "";
+});
