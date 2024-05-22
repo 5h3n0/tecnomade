@@ -28,6 +28,9 @@
 </head>
 
 <body>
+
+
+
 <div class="section_alerta">
 <div class="bloco_alerta"></div>
   <div class="card_alerta">
@@ -42,6 +45,7 @@
     </div>
   </div>
 <?php
+include_once ('loading_ghost.php');
 include_once('navHome.php');
 ?>
 

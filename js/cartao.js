@@ -18,6 +18,8 @@ const mesDig = document.querySelector("#mes");
 const cvcDig = document.querySelector("#cvc");
 const cvc = document.querySelector(".cvc");
 const section_alerta = document.querySelector(".section_alerta");
+const loadingscreen = document.querySelector(".loadingscreen");
+
 
 cvcDig.addEventListener("input", () => {
   cvc.innerHTML = cvcDig.value;
@@ -128,29 +130,58 @@ confirm.addEventListener("click", (e) => {
     hasOnlyAno(anoDig.value) &&
     hasOnlyMes(mesDig.value)
   ) {
-    section_alerta.style.display = "block";
+    
     formulario.style.display = "none";
     window.scrollTo({ top: 0 });
+    loadingscreen.style.display = "block";
     document.body.style.overflow = "hidden";
     obrigado.style.display = "block";
-  
+    setTimeout(end_loding, 5000);
+
+    function end_loding(){
+        loadingscreen.style.display = "none";
+       document.body.style.overflow = "";
+    }
+
+
   }
 });
+
+
+
 
  function removerDivs() {
             const divs = document.querySelectorAll('.section_alerta');
             divs.forEach(div => {
                 div.remove();
+                document.body.style.overflow = "scroll";
             });
         }
 
-        setTimeout(removerDivs, 30000);
+        setTimeout(removerDivs, 5000);
 
 continua.addEventListener("click", (e) => {
   formulario.style.display = "grid";
   obrigado.style.display = "none";
 });
 
+function toggleBodyOverflow() {
+  const div = document.querySelector(".bnt_close_aleta");
+
+  if (div) {
+    const displayStyle = window.getComputedStyle(div).display;
+
+    if (displayStyle === "block") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  } else {
+    console.error("Div não encontrada.");
+  }
+}
+
+toggleBodyOverflow();
 
 
 

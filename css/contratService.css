@@ -1,0 +1,14 @@
+.container_dth_services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+
+.card-text,
+.card-title {
+    color: black;
+}
