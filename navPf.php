@@ -57,6 +57,7 @@ error_reporting(E_ALL);
         </a>
         <ul class="dropdown_menu" style="display: block;">
         <li><a class="dropdown-element nav-links" href="perfilPf.php">Perfil</a></li>
+        <li><a class="dropdown-element nav-links" href="portifolio.php">Portifolio</a></li>
         <li><a class="dropdown-element nav-links" href="infPePf.php">Informações Pessoais</a></li>
         <li><a href="#" class="dropdown-element nav-links">Configurações</a></li>
         <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>

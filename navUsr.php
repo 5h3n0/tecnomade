@@ -59,6 +59,7 @@ error_reporting(E_ALL);
            }
           ?>
       </a>
+      <li><a class="dropdown-item" href="avaliar.php">avaliar</a></li>
        <!-- <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="perfilUsr.php">Perfil</a></li>
         <li><a class="dropdown-item" href="infPeUsr.php">Informações Pessoais</a></li>
