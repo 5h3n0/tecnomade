@@ -5,6 +5,8 @@ if(!isset($_SESSION))
 } 
 $id_Pf = $_SESSION['id_Pf'];
 header('Content-Type: text/html; charset=utf-8');
+unset($_SESSION['notification']);
+
 ?>
 <!DOCTYPE html>
 <html>

@@ -29,7 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_insert = $conn->prepare($sql_insert);
         $stmt_insert->bind_param("iiiss", $id_Pf, $id_Usr, $id_Contratacao, $id_Service, $data_realizacao);
         if ($stmt_insert->execute()) {
-           header("Location:paginaDeServicosParaPrestador.php");
+            // Definir a notificação na sessão
+            $_SESSION['notification'] = true;
+            header("Location: paginaDeServicosParaPrestador.php");
+            exit;
         } else {
             echo "Erro ao executar a consulta: " . $stmt_insert->error;
         }

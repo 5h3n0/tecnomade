@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `avaliacoes` (
   `id_Pf` int(11) NOT NULL,
   PRIMARY KEY (`id_avaliacao`),
   KEY `fk_id_Pf_avaliacao` (`id_Pf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Extraindo dados da tabela `avaliacoes`

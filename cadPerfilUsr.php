@@ -26,6 +26,7 @@ require_once 'navUsr.php';
         <div class="dados-usr_cad">
             <?php
             if (isset($_SESSION['id_Usr'])) {
+                
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
                         $temp_name = $_FILES['imagem']['tmp_name'];

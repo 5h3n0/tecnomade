@@ -18,6 +18,14 @@ html, body{
     height: 100%;
   width: 100% !important;
 }
+.notification {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin: 10px 0;
+}
 
 .navServices {
   margin-top: 5%;
@@ -474,6 +482,7 @@ html, body{
 .realizados{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   height: 100%;
   margin-bottom: 25px;
 
@@ -484,9 +493,9 @@ html, body{
   place-items: center;
   padding: 25px;
   border-radius: 25px;
-  height: 40%;
+  height: 100% !important;
   width: 30%;
-  background-color:rgb(18, 67, 56);  
+  background-color:rgb(18, 67, 56) !important;  
   color: rgb(222, 222, 222);
 }
 
@@ -525,6 +534,8 @@ html, body{
   color: #1da790 !important;
   text-align: center !important;
   display: block;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
 }
 .datas label{
   color: #1da790 !important;
@@ -537,9 +548,13 @@ html, body{
   border-radius: 15px;
   width: 100%;
   text-align: center;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  color: white !important;
+  line-height: 1.5rem;
 }
 #desc_realizado{
-  text-indent: 15px;
+  text-indent: 15px !important;
   text-align: justify !important;
   hyphens: auto !important;
 }

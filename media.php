@@ -13,8 +13,8 @@ echo"
 ";
 
 
-$sql = "SELECT AVG(estrelas) as average FROM avaliacoes WHERE id_Pf = ?";
-$stmt = $conn->prepare($sql);
+$sql_estrelas = "SELECT AVG(estrelas) as average FROM avaliacoes WHERE id_Pf = ?";
+$stmt = $conn->prepare($sql_estrelas);
 $stmt->bind_param("i", $id_Pf);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -24,5 +24,5 @@ $average = round($row['average'], 1);
 $stmt->close();
 $conn->close();
 
-echo "A média de avaliações para este produto é: " . $average;
+echo "" . $average;
 ?>

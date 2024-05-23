@@ -1,61 +1,65 @@
 <?php
-include_once ("connect.php");
 session_start();
-$id_Usr = $_SESSION['id_Usr'];
-?>
+include_once "connect.php";
 
-<?php
-$sql = "SELECT sr.*, s.nomeService, s.descService, c.valor, c.data_Contratacao, cat.nome AS nomeCategoria
-                FROM servicos_realizados sr
-                INNER JOIN contratacoes c ON sr.id_contratacao = c.id_Contratacao
-                INNER JOIN services s ON c.id_Service = s.id_Service 
-                INNER JOIN categorias cat ON s.id_Cat = cat.id_Cat
-                WHERE sr.id_Usr = $id_Usr";
+
+
+
+$id_Pf = $_SESSION['id_Pf'];
+
+// Consulta para obter os serviços realizados associados ao id_Pf
+$sql = "SELECT sr.*, c.valor AS orcamento, s.nomeService, s.descService, c.data_Contratacao, u.usrName AS nome_usuario,
+    (SELECT mensagem_cliente FROM solicitacoes_servico ss WHERE ss.id_Service = sr.id_Service LIMIT 1) AS mensagem_cliente
+    FROM servicos_realizados sr
+    INNER JOIN contratacoes c ON sr.id_contratacao = c.id_Contratacao
+    INNER JOIN services s ON c.id_Service = s.id_Service
+    INNER JOIN users u ON c.id_Usr = u.id_Usr
+    LEFT JOIN orcamento o ON sr.id_ServicoRealizado = o.id_solicitacao
+    WHERE sr.id_Pf = $id_Pf";
+
 $result = $conn->query($sql);
+echo "<div class='realizados'>";
+// Verifica se há serviços associados ao id_Pf
 if ($result->num_rows > 0) {
-    echo "<div class='realizados'>";
+    // Exibe os serviços
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='realizado'>";
-        $valor = $row['valor'];
+        echo "<div class='servico realizado'>";
+        $data_realizacao = date('d/m/Y', strtotime($row['data_realizacao']));
+        $data_contratacao = date('d/m/Y', strtotime($row['data_Contratacao']));
+
+        $valor = $row['orcamento'];
         $valor = substr($valor, 0, -2);
         $valor = number_format($valor, 2, ',', '.');
-        $data_contratacao = $row['data_Contratacao'];
-        $data_contratacao = date('d/m/Y', strtotime($data_contratacao));
-        $data_realizacao = $row['data_realizacao'];
-        $data_realizacao = date('d/m/Y', strtotime($data_realizacao));
         echo "<label class='lbl_realizados'>Serviço</label>";
-        echo "<p class='dados_realizados'>" . $row["nomeService"] . "gsdgsdg</p>";
-        echo "<label class='lbl_realizados'>Descrição</label>";
-
-        echo "<p class='dados_realizados'>" . $row["descService"] . "</p>";
-        echo "<label class='lbl_realizados'>Categoria</label>";
-        echo "<p class='dados_realizados'>" . $row["nomeCategoria"] . "</p>";
-        echo "<label class='lbl_realizados'>Valor</label>";
-
+        echo "<p class='dados_realizados'>" . $row['nomeService'] . "</p>";
+        echo "<label class='lbl_realizados' id='desc_realizado'>Descrição do Serviço</label>";
+        echo "<p class='dados_realizados'>" . $row['descService'] . "</p>";
+        
+        echo "<label class='lbl_realizados'>Cliente</label>";
+        echo "<p class='dados_realizados'>" . $row['nome_usuario'] . "</p>";
+        echo "<label class='lbl_realizados'>Mensagem Cliente:  </label>";
+        echo "<p class='dados_realizados'>" . $row['mensagem_cliente'] . "</p>";
+        echo "<label class='lbl_realizados'>Valor:  </label>";
         echo "<p class='dados_realizados'>R$ $valor </p>";
-        // Se houver descrição de contratação, descomente a linha abaixo
-        // echo "Descrição da Contratação: " . $row["mensagem_cliente"]. "</p>";
         echo "<div class='datas'>";
         echo "<div class='data_contratacao'>";
-        echo "<label class='lbl_realizados'>Contratação</label>";
-        echo "<p class='dados_realizados'> $data_contratacao </p>";
-        echo "</div>";
 
+        echo "<label class='lbl_realizados'> Contratação</label>";
+        echo "<p class='dados_realizados'> $data_contratacao</p>";
+        echo "</div>";
         echo "<div class='data_realizacao'>";
-        echo "<label class='lbl_realizados'>Realização</label>";
-        echo "<p class='dados_realizados'> $data_realizacao </p>";
+
+        echo "<label class='lbl_realizados'>Realização </label>";
+        echo "<p class='dados_realizados'> $data_realizacao</p>";
         echo "</div>";
         echo "</div>";
         echo "</div>";
     }
 } else {
-
     echo "<div class='semServicos'>";
-    
-    echo "<p>Nenhum serviço realizado.</p>";
+    echo "<p class='top'>Nenhum serviço encontrado para este usuário.</p>";
     echo "</div>";
 
 }
-$conn->close();
+echo "</div>";
 ?>
-</div>

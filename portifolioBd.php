@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date = $_POST['date'];
     $id_Pf = $_POST['id_Pf'];
     // Verifica se a pasta "uploads" existe, se não, tenta criá-la
-    $uploadDir = 'upload/';
+    $uploadDir = 'upload_portifolio/';
 
     // Preparando a consulta SQL com placeholders para os valores
     $sql = "INSERT INTO portfolio (title, id_Pf, description, date";

@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `portfolio` (
   `id_Pf` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_portifolio`),
   KEY `fk_id_Pf` (`id_Pf`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `portfolio`

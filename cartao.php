@@ -46,7 +46,6 @@
   </div>
 <?php
 include_once ('loading_ghost.php');
-include_once('navHome.php');
 ?>
 
   <h1 class="title_top"><span style="text-transform:uppercase;">Preencha os dados</span><br> Para que a contratação seja realizada com sucesso</h1> 

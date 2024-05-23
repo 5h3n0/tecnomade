@@ -77,6 +77,32 @@ while ($row = $result->fetch_assoc()) {
                 <h3 class="name_prof_perfil">
                     <?= $professional['pfName'] ?>
                 </h3>
+                <p class="title_card_esp">Avaliação média</p>
+                <?php
+                
+                $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?";
+                $stmt = $conn->prepare($sql_estrelas);
+                $stmt->bind_param("i", $professional['id_Pf']);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $media_estrelas = $row['average'];
+                    // Verificar se a média é nula antes de formatá-la
+                    if ($media_estrelas !== null) {
+                        // Formatar a média para exibir no máximo duas casas decimais
+                        $media_estrelas_formatada = number_format($media_estrelas, 2);
+                        echo "A média das estrelas é: " . $media_estrelas_formatada;
+                    } else {
+                        echo "Profissional ainda não avaliado.";
+                    }
+                } else {
+                    echo "Profissional ainda não avaliado.";
+                }
+                
+                
+                ?>
                 <p class="title_card_esp">Especialidades:</p>
                 <ul class="list_esp_card_pf">
                     <?php

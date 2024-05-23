@@ -37,7 +37,7 @@ if (!isset($_SESSION['usrLogado'])){
                         $caminho = "upload/" . $nome_imagem;
 
                         if (move_uploaded_file($temp_name, $caminho)) {
-                        $updateImagem = "UPDATE users SET imgName = '$imgName' WHERE id_Usr = $_SESSION[id_Usr]";
+                        $updateImagem = "UPDATE users SET imgName = '$nome_imagem' WHERE id_Usr = $_SESSION[id_Usr]";
                         $conn->query($updateImagem);
                     } 
                         

@@ -67,7 +67,7 @@ h1 {
 
                 <div class="carousel">
                     <?php for ($i = 1; $i <= 10; $i++): ?>
-                        <?php $imagePath = 'upload/' . $row["image$i"]; ?>
+                        <?php $imagePath = 'upload_portifolio/' . $row["image$i"]; ?>
                         <?php if (!empty($row["image$i"]) && file_exists($imagePath)): ?>
                             <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="Image <?php echo $i; ?>">
                         <?php endif; ?>
