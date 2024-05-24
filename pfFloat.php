@@ -8,7 +8,7 @@ if(!isset($_SESSION))
 $id_Pf = $_POST['id'];
 
 // Defina a variável de sessão com o ID do profissional
-$_SESSION['id_Pf'] = $id_Pf;
+$_SESSION['id_Pf_paraUsr'] = $id_Pf;
 require_once 'connect.php';
 
 // Verificar se o ID do profissional foi enviado via POST
