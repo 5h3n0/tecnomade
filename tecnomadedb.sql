@@ -186,6 +186,8 @@ ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`id_avaliacao`),
   ADD KEY `fk_id_Pf_avaliacao` (`id_Pf`);
 
+ALTER TABLE `avaliacoes` ADD `mensagem_avaliacao` VARCHAR( 255 ) NOT NULL AFTER `data_avaliacao` ;
+
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_Cat`);
 

@@ -115,7 +115,7 @@ if ($result_orcamento) {
                 } ?>
             </a>
         </li>
-        <li><a href="#" onclick="loadPage('servicosRealizados.php')">Seviços Realizados</a></li>
+        <li><a href="#" onclick="loadPage('servicosRealizados.php')">Serviços Realizados</a></li>
     </ul>
 
 

@@ -48,8 +48,8 @@ require_once 'navUsr.php';
     <div class="cont">
         <div class="container_perfil">
             <?php
-            if (isset($_SESSION['id_Pf'])) {
-                $sql = "SELECT * FROM prof WHERE id_Pf = {$_SESSION['id_Pf']}";
+            if (isset($_SESSION['id_Pf_paraUsr'])) {
+                $sql = "SELECT * FROM prof WHERE id_Pf = {$_SESSION['id_Pf_paraUsr']}";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -64,7 +64,7 @@ require_once 'navUsr.php';
                     echo "
                     <div class='avaliacao'>
                     <h2 class='nome_profissional_tt'>{$row['pfName']}</h2>
-                    <input type='hidden' name='id_Pf' value='<?php echo $_SESSION[id_Pf]; ?>'>
+                    <input type='hidden' name='id_Pf' value='<?php echo $_SESSION[id_Pf_paraUsr]; ?>'>
                     <fieldset class='estrelas'>
                                     <input type='radio' id='star5' name='rating' value='5' /><label for='star5' title='Excelente'></label>
                                     <input type='radio' id='star4' name='rating' value='4' /><label for='star4' title='Muito bom'></label>
@@ -100,7 +100,7 @@ require_once 'navUsr.php';
                         echo "<p><span>Gênero:</span> Prefiro Não identificar</p>";
                     }
 
-                    $comando = "SELECT * FROM enderecos WHERE id_Pf = {$_SESSION['id_Pf']}";
+                    $comando = "SELECT * FROM enderecos WHERE id_Pf = {$_SESSION['id_Pf_paraUsr']}";
 
                     $resultBusca = mysqli_query($conn, $comando);
 

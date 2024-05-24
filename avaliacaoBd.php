@@ -10,9 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_Pf = $_POST['id_Pf'];
     $estrelas = $_POST['estrelas'];
     $data_avaliacao = date('Y-m-d');
+    $mensagem_avaliacao = $_POST['mensagem_avaliacao'];
 
-    $stmt = $conn->prepare("INSERT INTO avaliacoes(id_Pf, estrelas, data_avaliacao) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $id_Pf, $estrelas, $data_avaliacao);
+    $stmt = $conn->prepare("INSERT INTO avaliacoes(id_Pf, estrelas, data_avaliacao, mensagem_avaliacao) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $id_Pf, $estrelas, $data_avaliacao, $mensagem_avaliacao);
     
     if ($stmt->execute()) {
        header("Location: paginaDeServicosParaUsr.php");

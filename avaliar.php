@@ -37,15 +37,20 @@ if ($result->num_rows > 0) {
                 <img src="<?php echo $imgPf ?>" alt="">
                 </div>
                 <p class="p_avaliar name"><?php echo $pfName ?></p>
-                <p class="p_avaliar"><?php echo $descPf ?></p>
             </div>
             <form action="avaliacaoBd.php" class="form_avaliar" method="post">
+                <label for="estrelas" class='lbl_avaliacao'>Avalie o serviço desse profissional:</label>
                 <div class="star-rating">
                     <input type="radio" id="star5" name="estrelas" value="5"><label for="star5">&#9733;</label>
                     <input type="radio" id="star4" name="estrelas" value="4"><label for="star4">&#9733;</label>
                     <input type="radio" id="star3" name="estrelas" value="3"><label for="star3">&#9733;</label>
                     <input type="radio" id="star2" name="estrelas" value="2"><label for="star2">&#9733;</label>
                     <input type="radio" id="star1" name="estrelas" value="1"><label for="star1">&#9733;</label>
+                </div>
+                <label for="mensagem_avaliacao" class='lbl_avaliacao'>Escreva brevemente sobre como foi sua experiência com o servico de:</label>
+                <?php echo"<br><span id='focoNome'>$pfName</span>"?>
+                <div class="cont_descPf_textarea">
+                <textarea name="mensagem_avaliacao" id="desc_avaliacao"></textarea>
                 </div>
                 <input type="hidden" name="id_Pf" value="<?php echo $id_Pf ?>"> <!-- Id do produto a ser avaliado -->
                 <button type="submit" class="btn-avaliar">Avaliar</button>
