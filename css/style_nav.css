@@ -180,7 +180,7 @@ padding: 10px;
   position: relative;
   color: rgba(255, 255, 255, 0.5);
   margin-top: 20px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 500;
   font-size: 1.25rem;
   transition: .20s all ease;
@@ -359,6 +359,8 @@ ul .dropdown_menu {
 .dropdown-element{
   width: 200px;
   color: #ffffff;
+  text-decoration: none !important;
+
 }
 
 .dropdown-element:hover{

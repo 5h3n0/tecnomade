@@ -60,15 +60,37 @@ error_reporting(E_ALL);
           ?>
       </a>
       <li><a class="dropdown-item" href="avaliar.php">avaliar</a></li>
-       <!-- <ul class="dropdown-menu">
+        <ul class="dropdown_menu" style="display: none;">
         <li><a class="dropdown-item" href="perfilUsr.php">Perfil</a></li>
         <li><a class="dropdown-item" href="infPeUsr.php">Informações Pessoais</a></li>
         <li><a href="#" class=" dropdown-item">Configurações</a></li>
-        <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-        </ul> -->
+        <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
+        </ul>
       </li>
 
       </li>
     </ul>
   </div>
 </div>
+
+<script>
+
+    const img_perfil = document.querySelector('.imgPf');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+
+        // img_perfil.addEventListener('mouseenter', () => {
+        //     dropdownMenu.style.display = 'block';
+        // });
+        img_perfil.addEventListener('click', () => {
+            dropdownMenu.style.display = 'block';
+        });
+
+        img_perfil.addEventListener('mouseleave', () => {
+          setTimeout(desativar_menu,15000);
+        });
+
+        function desativar_menu (){
+            dropdownMenu.style.display = 'none';
+          }      
+
+</script>

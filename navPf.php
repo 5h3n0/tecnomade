@@ -55,7 +55,7 @@ error_reporting(E_ALL);
           }
           ?>
         </a>
-        <ul class="dropdown_menu" style="display: block;">
+        <ul class="dropdown_menu" style="display: none;">
         <li><a class="dropdown-element nav-links" href="perfilPf.php">Perfil</a></li>
         <li><a class="dropdown-element nav-links" href="portifolio.php">Portifolio</a></li>
         <li><a class="dropdown-element nav-links" href="infPePf.php">Informações Pessoais</a></li>
@@ -70,5 +70,22 @@ error_reporting(E_ALL);
 </div>
 
 <script>
-    
+    const img_perfil = document.querySelector('.imgPf');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+
+        // img_perfil.addEventListener('mouseenter', () => {
+        //     dropdownMenu.style.display = 'block';
+        // });
+        img_perfil.addEventListener('click', () => {
+            dropdownMenu.style.display = 'block';
+        });
+
+        img_perfil.addEventListener('mouseleave', () => {
+          setTimeout(desativar_menu,15000);
+        });
+
+        function desativar_menu (){
+            dropdownMenu.style.display = 'none';
+          }
+
 </script>
