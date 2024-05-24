@@ -157,11 +157,11 @@ height: 100%;
 
 }
 #desc_avaliacao{
-    overflow: scroll !important;
+    overflow-y: auto !important;
   word-wrap: break-word;
-  min-height: 100px;
-  max-height: 250px;
-  width: 650px;
+  min-height: 150px;
+  width: 450px;
+  resize: none;
   border-radius: 0px 40px 0px 40px;
   text-align: justify;
   padding: 15px;
@@ -171,7 +171,15 @@ height: 100%;
   text-indent: 1em;
   overflow-wrap: break-word;
   font-size: 18px;
-  border: #1e685c solid 2px;
+  border: #1e685c solid 3px;
   hyphens: auto;
   margin-bottom: 4%;
 }
+
+.cont_descPf_textarea {
+    overflow: hidden  !important; 
+    border-radius: 0px 40px 0px 40px;
+    min-height: 150px !important;
+    width: 450px !important;
+    
+  }
