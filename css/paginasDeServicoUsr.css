@@ -589,6 +589,7 @@ html, body{
   border-radius: 15px;
   width: 100%;
   text-align: center;
+  font-size: 22px !important;
 }
 /* ---------------------------------------------- */
 .servicosEmAndamento{
