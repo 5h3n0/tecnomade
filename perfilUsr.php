@@ -18,9 +18,10 @@ if(!isset($_SESSION['usrLogado'])){
     <link rel="stylesheet" type="text/css" href="css/perfilUsr.css">
     <meta charset="UTF-8">
     <title>Perfil do usuário</title>
-    lin
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/default.css">
+
 </head>
 
 <body>

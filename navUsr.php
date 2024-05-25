@@ -40,8 +40,8 @@ error_reporting(E_ALL);
       <li><a href="services.php" class="nav-links">Serviços</a></li>
       <li><a href="prof.php" class="nav-links">Profissionais</a></li>
       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item" id="div_img">
+        <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <?php
            $sql = "SELECT * FROM users WHERE id_Usr = $_SESSION[id_Usr]";
            $result = $conn->query($sql);
@@ -59,11 +59,10 @@ error_reporting(E_ALL);
            }
           ?>
       </a>
-      <li><a class="dropdown-item" href="avaliar.php">avaliar</a></li>
         <ul class="dropdown_menu" style="display: none;">
-        <li><a class="dropdown-item" href="perfilUsr.php">Perfil</a></li>
-        <li><a class="dropdown-item" href="infPeUsr.php">Informações Pessoais</a></li>
-        <li><a href="#" class=" dropdown-item">Configurações</a></li>
+        <li><a class="dropdown-element nav-links" href="perfilUsr.php">Perfil</a></li>
+        <li><a class="dropdown-element nav-links" href="infPeUsr.php">Informações Pessoais</a></li>
+        <li><a href="#" class="dropdown-element nav-links">Configurações</a></li>
         <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
         </ul>
       </li>
@@ -75,22 +74,24 @@ error_reporting(E_ALL);
 
 <script>
 
-    const img_perfil = document.querySelector('.imgPf');
+    const img_perfil = document.getElementById('div_img');
     const dropdownMenu = document.querySelector('.dropdown_menu');
 
         // img_perfil.addEventListener('mouseenter', () => {
         //     dropdownMenu.style.display = 'block';
         // });
         img_perfil.addEventListener('click', () => {
-            dropdownMenu.style.display = 'block';
+             dropdownMenu.style.display = 'block';
         });
 
-        img_perfil.addEventListener('mouseleave', () => {
-          setTimeout(desativar_menu,15000);
-        });
+//         img_perfil.addEventListener('mouseleave', () => {
+//           setTimeout(desativar_menu,15000);
+//         });
+// 
+//         function desativar_menu (){
+//             dropdownMenu.style.display = 'none';
+//           }      
 
-        function desativar_menu (){
-            dropdownMenu.style.display = 'none';
-          }      
+        
 
 </script>

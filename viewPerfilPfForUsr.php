@@ -100,6 +100,8 @@ require_once 'navUsr.php';
                         echo "<p><span>Gênero:</span> Prefiro Não identificar</p>";
                     }
 
+                    // include_once "portifolio.php";
+
                     $comando = "SELECT * FROM enderecos WHERE id_Pf = {$_SESSION['id_Pf_paraUsr']}";
 
                     $resultBusca = mysqli_query($conn, $comando);

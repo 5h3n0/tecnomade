@@ -18,6 +18,7 @@ unset($_POST['atualizar']);
     <meta charset="UTF-8">
     <title>Perfil do usuário</title>
     <link rel="stylesheet" href="./css/perfilPf.css">
+    <link rel="stylesheet" href="./css/default.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
  
