@@ -73,10 +73,6 @@
         }
         ?>
     </div>
-    <?php
-     include_once "ghost_float.php";
-    ?>
-
 
     <script>
          document.addEventListener('DOMContentLoaded', (event) => {
@@ -102,6 +98,7 @@
                     charCountDiv.style.color = 'red';
                 } else {
                     errorMessageDiv.style.display = 'none';
+                    charCountDiv.style.color = '';
                     charCountDiv.style.display = 'block';
                 }
             });

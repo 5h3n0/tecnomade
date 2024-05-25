@@ -22,6 +22,7 @@ error_reporting(E_ALL);
     }
   </style>
 </head>
+
 <div class="header cleafix">
   <div class="container_nav">
 
@@ -69,23 +70,34 @@ error_reporting(E_ALL);
   </div>
 </div>
 
-<script>
+    <script>
+
+  document.addEventListener('DOMContentLoaded', function() {
     const img_perfil = document.querySelector('.imgPf');
     const dropdownMenu = document.querySelector('.dropdown_menu');
 
-        // img_perfil.addEventListener('mouseenter', () => {
-        //     dropdownMenu.style.display = 'block';
-        // });
-        img_perfil.addEventListener('click', () => {
-            dropdownMenu.style.display = 'block';
-        });
+    img_perfil.addEventListener('click', () => {
+      if (dropdownMenu.style.display === 'none') {
+        dropdownMenu.style.display = 'block';
+        setTimeout(close_menu_bar, 5000);
+      } else {
+        dropdownMenu.style.display = 'none';
+      };
+    });
 
-        img_perfil.addEventListener('mouseleave', () => {
-          setTimeout(desativar_menu,15000);
-        });
+    function close_menu_bar() {
+      dropdownMenu.style.display = 'none';
+    }
 
-        function desativar_menu (){
-            dropdownMenu.style.display = 'none';
-          }
+    document.body.addEventListener('click', function(event) {
+      const targetElement = event.target;
 
+      if (targetElement !== img_perfil && !dropdownMenu.contains(targetElement)) {
+       dropdownMenu.style.display = 'none';
+        }
+    });
+  });
 </script>
+
+
+       
