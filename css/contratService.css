@@ -35,7 +35,7 @@ html,body{
 .card-body_contrat{
     background-color: black;
     color: white;
-    filter: drop-shadow(0 0 60px #00917e);
+    filter: drop-shadow(0 0 13px #00917e);
     border: 5px solid #00917e;
     border-radius: 25px;
     padding: 50px;

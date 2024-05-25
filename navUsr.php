@@ -74,23 +74,38 @@ error_reporting(E_ALL);
 
 <script>
 
-    const img_perfil = document.getElementById('div_img');
+document.addEventListener('DOMContentLoaded', function() {
+    const img_perfil = document.querySelector('#div_img a');
+    console.log("Elemento img_perfil:", img_perfil);
+    
     const dropdownMenu = document.querySelector('.dropdown_menu');
+    console.log("Elemento dropdownMenu:", dropdownMenu);
 
-        // img_perfil.addEventListener('mouseenter', () => {
-        //     dropdownMenu.style.display = 'block';
-        // });
+    if (img_perfil && dropdownMenu) {
         img_perfil.addEventListener('click', () => {
-             dropdownMenu.style.display = 'block';
+            if (dropdownMenu.style.display === 'none') {
+                dropdownMenu.style.display = 'block';
+                setTimeout(close_menu_bar, 5000);
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
         });
 
-//         img_perfil.addEventListener('mouseleave', () => {
-//           setTimeout(desativar_menu,15000);
-//         });
-// 
-//         function desativar_menu (){
-//             dropdownMenu.style.display = 'none';
-//           }      
+        function close_menu_bar() {
+            dropdownMenu.style.display = 'none';
+        }
+
+        document.body.addEventListener('click', function(event) {
+          if (event.target !== img_perfil && event.target.parentNode !== img_perfil) {
+            dropdownMenu.style.display = 'none';
+            }
+        });
+    } else {
+        console.error("Um ou ambos os elementos não foram encontrados no DOM.");
+    }
+});
+
+
 
         
 
