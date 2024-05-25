@@ -10,7 +10,7 @@ if(!isset($_SESSION['pfLogado'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 

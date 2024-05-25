@@ -11,7 +11,7 @@ if(!isset($_SESSION['usrLogado'])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
