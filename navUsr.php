@@ -29,7 +29,6 @@ error_reporting(E_ALL);
 </head>
 <div class="header cleafix">
   <div class="container_nav">
-
     <a class="backhome" href="index.php">
 			<img src="./imgs/icon_logo_nav_bar.png" class="logo" />
 		</a>

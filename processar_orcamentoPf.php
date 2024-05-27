@@ -15,13 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_solicitacao = $_POST['id_solicitacao'];
     $orcamento = $_POST['orcamento'];
     $orcamento = preg_replace('/[^0-9]/', '', $orcamento);
-    
+    $msg_for_client = $_POST['msg_for_client'];
+        
     // Limpa os dados de entrada para evitar injeção de SQL (NÃO É O IDEAL, MAS É O QUE VOCÊ QUER)
     $id_solicitacao = mysqli_real_escape_string($conn, $id_solicitacao);
     $orcamento = mysqli_real_escape_string($conn, $orcamento);
     
     // Insere o orçamento na tabela orcamento
-    $sql = "INSERT INTO orcamento (id_solicitacao, id_Pf, orcamento) VALUES ('$id_solicitacao', '{$_SESSION['id_Pf']}', '$orcamento')";
+    $sql = "INSERT INTO orcamento (id_solicitacao, id_Pf, orcamento, msg_for_client) VALUES ('$id_solicitacao', '{$_SESSION['id_Pf']}', '$orcamento','$msg_for_client')";
     
     // Executa a consulta SQL
     if (mysqli_query($conn, $sql)) {
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro ao processar o orçamento.";
     }
+
 } else {
     echo "O formulário não foi submetido corretamente.";
 }

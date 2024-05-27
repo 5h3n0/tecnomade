@@ -65,6 +65,8 @@ $result = $stmt->get_result();
             echo "<p class='dados_orcamento'>" . $row['mensagem_cliente'] . "</p>";
             echo "<label class='lbl_orcamento'>Valor do Orçamento</label>";
             echo "<p class='dados_orcamento'>R$ $valor</p>";
+            echo "<label class='lbl_orcamento'>Mensgem do profissional para você</label>";
+            echo "<p class='dados_orcamento'>" . $row['msg_for_client'] ."</p>";
             echo "<form action='processar_orcamentoUsr.php' method='POST'>";
             echo "<input type='hidden' name='id_orcamento' value='" . $row['id_orcamento'] . "'>";
             echo "<div class='btns_orcamento'>";

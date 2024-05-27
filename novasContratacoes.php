@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
 
         echo "<p class='dados_contratacao'>R$ $valor</p>";
         echo"<label class='lbl_contratacao'>Contratação</label>";
-
+        
         echo "<p class='dados_contratacao'>" .$data. "</p>";
         echo "<form action='servicoRealizadoBd.php' method='POST'>";
         echo "<input type='hidden' name='id_Pf' value='" . $id_Pf . "'>";

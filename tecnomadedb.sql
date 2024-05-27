@@ -88,7 +88,8 @@ CREATE TABLE `orcamento` (
   `id_solicitacao` int(11) DEFAULT NULL,
   `id_Pf` int(11) DEFAULT NULL,
   `orcamento` decimal(10,0) DEFAULT NULL,
-  `status` varchar(20) DEFAULT 'Pendente'
+  `status` varchar(20) DEFAULT 'Pendente',
+  `msg_for_client` text DEFAULT ' Sem Nenhuma Mensagem do profissional pra você...'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `portfolio` (
@@ -309,3 +310,11 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES (NULL, 'black xyz', '2005-05-26', 'black@gmail.com', 'm', '554834f3cd8f1fa71026f9a6434ed0f7.jpg', '(11) 96464-8612', '933f868ccf7ece7601793d3887f5522fbb341418', '186.841.648-61');
+
+INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `num`, `comp`) VALUES (NULL, '4', NULL, '08586010', 'Avenida Cardeal', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '150', '');
+
+INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `hashPass`, `cnpj`, `imgName`, `categorias`, `descPf`, `avaliacao_media`) VALUES (NULL, 'black xyz', '2005-06-22', 'black@gmail.com', '(11) 96486-1525', 'm', '933f868ccf7ece7601793d3887f5522fbb341418', '16.545.646/5464-86', 'cf001da34629ede7c257171085b12244.jpg', NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL);
+
+INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `num`, `comp`) VALUES (NULL, NULL, '2', '08586-180', 'Rua do Bronze', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '250', '');
