@@ -1,0 +1,193 @@
+<div class="portfolio">
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="project">
+                <h2><?php echo htmlspecialchars($row['title']); ?></h2>
+                <p><?php echo htmlspecialchars($row['description']); ?></p>
+                <p><?php echo htmlspecialchars($row['date']); ?></p>
+
+                <div class="carousel">
+                    <?php for ($i = 1; $i <= 10; $i++): ?>
+                        <?php $imagePath = 'upload_portifolio/' . $row["image$i"]; ?>
+                        <?php if (!empty($row["image$i"]) && file_exists($imagePath)): ?>
+                            <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="Image <?php echo $i; ?>">
+                        <?php endif; ?>
+                    <?php endfor; ?>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php
+include 'connect.php';
+
+// Consulta todos os registros do portfólio
+$result = $conn->query("SELECT * FROM portfolio");
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="./css/viewPerfilPfForUsr.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+
+
+        .carousel_control {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel_control button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .carousel_indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .carousel_indicators .indicatodor_car {
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+            height: 10px;
+            margin: 0 5px;
+            width: 10px;
+        }
+
+        .carousel_indicators .indicatodor_active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio">
+        <?php
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="project">';
+            echo '<h2>' . $row['title'] . '</h2>';
+            echo '<p>' . $row['description'] . '</p>';
+            echo '<p>' . date('d/m/Y', strtotime($row['date'])) . '</p>';
+            echo '<div class="carrossel_works_pf carousel">';
+            echo '<div class="carousel_inner_pf">';
+            for ($i = 1; $i <= 10; $i++) {
+                if (!empty($row['image' . $i])) {
+                    echo '<div class="item_slide_of_car' . ($i == 1 ? ' slide_active_pf' : '') . '">';
+                    echo '<img src="upload_portifolio/' . $row['image' . $i] . '" alt="Imagem ' . $i . '">';
+                    echo '</div>';
+                }
+            }
+            echo '</div>';
+            echo '<div class="carousel_control">';
+            
+            echo '</div>';
+            echo '<ul class="carousel_indicators">';
+            for ($i = 1; $i <= 10; $i++) {
+                if (!empty($row['image' . $i])) {
+                    echo '<li class="indicatodor_car' . ($i == 1 ? ' indicatodor_active' : '') . '" data-slide-to="' . ($i - 1) . '"></li>';
+                }
+            }
+            echo '</ul>';
+            echo '</div>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+    <script>
+        const carousels = document.querySelectorAll('.carrossel_works_pf');
+
+        carousels.forEach(carousel => {
+            const carouselInner = carousel.querySelector('.carousel_inner_pf');
+            const items = carouselInner.querySelectorAll('.item_slide_of_car');
+            let activeIndex = 0;
+
+            function showItem(index) {
+                items.forEach((item) => {
+                    item.classList.remove('slide_active_pf');
+                });
+                items[index].classList.add('slide_active_pf');
+                updateIndicators();
+            }
+
+            function nextSlide() {
+                activeIndex = (activeIndex + 1) % items.length;
+                showItem(activeIndex);
+            }
+
+            function prevSlide() {
+                activeIndex = (activeIndex - 1 + items.length) % items.length;
+                showItem(activeIndex);
+            }
+
+            carousel.querySelector('.bnt_left').addEventListener('click', prevSlide);
+            carousel.querySelector('.bnt_right').addEventListener('click', nextSlide);
+
+            setInterval(() => {
+                nextSlide();
+            }, 5000);
+
+            const indicators = carousel.querySelectorAll('.indicatodor_car');
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showItem(index);
+                    activeIndex = index;
+                    updateIndicators();
+                });
+            });
+
+            function updateIndicators() {
+                indicators.forEach((indicator, index) => {
+                    if (index === activeIndex) {
+                        indicator.classList.add('indicatodor_active');
+                    } else {
+                        indicator.classList.remove('indicatodor_active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
