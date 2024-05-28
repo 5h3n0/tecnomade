@@ -38,21 +38,20 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamentos Recebidos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <body>
     <?php
-    
-    
+
+
     if ($result->num_rows > 0) {
         echo "<h2 class='top'>Novos Orcamentos</h2>";
 
         echo "<div class='orcamentos'>";
         $comOrcamento1 = true;
         while ($row = $result->fetch_assoc()) {
-            
+
             $valor = $row['orcamento'];
             $valor = substr($valor, 0, -2);
             $valor = number_format($valor, 2, ',', '.');
@@ -66,7 +65,11 @@ $result = $stmt->get_result();
             echo "<label class='lbl_orcamento'>Valor do Orçamento</label>";
             echo "<p class='dados_orcamento'>R$ $valor</p>";
             echo "<label class='lbl_orcamento'>Mensgem do profissional para você</label>";
-            echo "<p class='dados_orcamento'>" . $row['msg_for_client'] ."</p>";
+            if ($row['msg_for_client'] == null) {
+                echo "<p class='dados_orcamento'>O profissional não enviou nenhuma mensagem.</p>";
+            } else {
+                echo "<p class='dados_orcamento'>".$row['msg_for_client']."</p>";
+            }
             echo "<form action='processar_orcamentoUsr.php' method='POST'>";
             echo "<input type='hidden' name='id_orcamento' value='" . $row['id_orcamento'] . "'>";
             echo "<div class='btns_orcamento'>";
@@ -78,7 +81,7 @@ $result = $stmt->get_result();
         }
         echo "</div>";
     }
-    
+
 
     $sql_pendentes = "SELECT s.*, srv.nomeService, p.pfName AS nomeProfissional, s.data_solicitacao 
     FROM solicitacoes_servico s 
@@ -97,7 +100,7 @@ $result = $stmt->get_result();
         echo "<div class='solicitacoes-pendentes'>";
         while ($row = $result_pendentes->fetch_assoc()) {
             $data = $row['data_solicitacao'];
-                    $data = date('d/m/Y', strtotime($data));
+            $data = date('d/m/Y', strtotime($data));
             echo "<div class='solicitacao-pendente'>";
             echo "<label class='lbl_solicitacao_pendente'>Serviço</label>";
             echo "<p class='dados_pendentes'>" . $row['nomeService'] . "</p>";
@@ -112,12 +115,12 @@ $result = $stmt->get_result();
             echo "</div>";
         }
         echo "</div>";
-    }   else{
+    } else {
         echo "<div class='semServicos'>";
         echo "<p>Não há orçamentos recebidos.</p>";
         echo "</div>";
-}
-    
+    }
+
     ?>
 </body>
 

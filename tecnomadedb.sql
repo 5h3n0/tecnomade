@@ -89,7 +89,7 @@ CREATE TABLE `orcamento` (
   `id_Pf` int(11) DEFAULT NULL,
   `orcamento` decimal(10,0) DEFAULT NULL,
   `status` varchar(20) DEFAULT 'Pendente',
-  `msg_for_client` text DEFAULT ' Sem Nenhuma Mensagem do profissional pra você...'
+  `msg_for_client` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `portfolio` (

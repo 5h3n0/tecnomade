@@ -24,7 +24,7 @@ body{
             background-color: rgba(0, 0, 0, 0.822) !important;
             cursor: pointer;
             width: 400px;
-            height: 600px;
+            height: 650px;
             border-radius: 40px;
             border: 5px solid rgb(13, 107, 91);
             margin: 10px;
@@ -133,7 +133,9 @@ body{
             margin: 40px 0 20px 0;
             
         }
-
+        .star{
+            margin: 5px !important;
+        }
         .closeBtn {
             float: right;
             font-size: 22pt;
