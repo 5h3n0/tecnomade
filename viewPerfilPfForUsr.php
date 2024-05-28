@@ -310,7 +310,7 @@ $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?
 
                 <div class="carousel_control">
                     <button class="bnt_left"><span class="icon_btn_left">
-                            << /span></button>
+                            <</button>
                     <button class="bnt_right"><span class="icon_btn_right">></span></button>
                 </div>
             </div>
