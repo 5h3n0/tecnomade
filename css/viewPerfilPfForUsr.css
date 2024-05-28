@@ -133,7 +133,7 @@ width: 100%;
 }
 
 
-#cat{
+#cat, #lbl_regiao{
     color: rgb(0, 148, 128);
     margin-bottom: 20px;
     margin-left: 70px;
@@ -229,7 +229,12 @@ form {
         width: 100%;
     }
 }
-
+.endereco{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    place-items: center;
+}
 .bloco_comentarios_pf{
     padding: 50px;
     width: 100%;
