@@ -229,6 +229,9 @@ form {
         width: 100%;
     }
 }
+.star{
+    margin: 5px !important;
+}
 .endereco{
     display: flex;
     flex-direction: column;

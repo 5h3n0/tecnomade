@@ -115,11 +115,12 @@ $result = $stmt->get_result();
             echo "</div>";
         }
         echo "</div>";
-    } else {
-        echo "<div class='semServicos'>";
-        echo "<p>Não há orçamentos recebidos.</p>";
-        echo "</div>";
-    }
+    } 
+    // else {
+    //     echo "<div class='semServicos'>";
+    //     echo "<p>Não há orçamentos recebidos.</p>";
+    //     echo "</div>";
+    // }
 
     ?>
 </body>
