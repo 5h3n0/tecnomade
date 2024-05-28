@@ -377,11 +377,12 @@ form {
 }
 
 .bnt_left {
-    left: -45rem;
+    left: -25rem;
+    
 }
 
 .bnt_right {
-    right: -45rem;
+    right: -25rem;
 }
 
 .carousel_indicators {
