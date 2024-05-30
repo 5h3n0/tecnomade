@@ -72,6 +72,7 @@ if ($result_orcamento) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet"
+    link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/paginasDeServicoPf.css">
@@ -126,9 +127,11 @@ if ($result_orcamento) {
     </div>
     <?php
     if (isset($_SESSION['servicoInserido']) && $_SESSION['servicoInserido']) {
+        echo '<div class="cap_shadow">';
         echo '<div class="opa">';
         echo '  <p>Serviço inserido com sucesso!</p>';
         echo '  <button class="closeButton" onclick="closeAlert()">Fechar</button>';
+        echo '</div>';
         echo '</div>';
 
         $_SESSION['servicoInserido'] = false;
@@ -165,13 +168,12 @@ if ($result_orcamento) {
 
         function closeAlert() {
             document.querySelector('.opa').style.display = 'none';
+            document.querySelector('.cap_shadow').style.display = 'none';
         }
 
     </script>
 
-    <?php
-    include_once "footer.php";
-    ?>
+    
     <script src="./js/formatDin.js"></script>
 
 </body>

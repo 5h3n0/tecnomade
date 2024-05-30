@@ -78,29 +78,59 @@ body{
 }
 
 .opa {
-  background-color: #38a4ac;
-  color: black;
-  padding: 20px;
-  border: 5px solid rgb(19, 74, 71);
-  border-radius: 5px;
-  font-size: 22px;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 10%;
-  text-align: center;
+  background-color: #000000;
+    color: #187c6b;
+    padding: 20px;
+    height: 300px;
+    border: 5px solid #00917e;
+    border-radius: 30px;
+    filter: drop-shadow(2px 4px 60px);
+    font-size: 32pt;
+    display: flex;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: opacity 1s ease;
+    animation: fadeIn 2s ease forwards;
 }
 
-.closeButton {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #155724;
-  font-weight: bold;
+.cap_shadow{
+  background: #000000b3;
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  z-index: 99;
+  top: 80px;
+  left: 0;
+  transition: opacity 1s ease;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+button.closeButton {
+  margin: 20px 0 0 0;
+  width: 191px;
+  text-decoration: none;
 }
 
 .closeButton:hover {
@@ -224,7 +254,7 @@ body{
   height: 100%;
 
 }
-.btn_insert,.delete-btn, #btn-env-orcamento, .btn_success {
+.btn_insert,.delete-btn, #btn-env-orcamento, .btn_success, .closeButton {
   font-size: 20px;
   padding: 15px !important;
   padding-top: 10px !important;
@@ -242,7 +272,7 @@ body{
   text-transform: uppercase;
 
 }
-.btn_insert:hover,.delete-btn:hover, #btn-env-orcamento:hover, .btn_success:hover {
+.btn_insert:hover,.delete-btn:hover, #btn-env-orcamento:hover, .btn_success:hover, .closeButton:hover {
   color: rgb(255, 255, 255);
   text-shadow: -2px 2px 10px #22a6ad;
   box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767),
@@ -448,9 +478,6 @@ body{
   outline: none;
 }
 
-.msg_for_cliente:focus,.msg_for_cliente:active{
-  
-}
 
 
 

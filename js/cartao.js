@@ -137,7 +137,12 @@ confirm.addEventListener("click", (e) => {
     document.body.style.overflow = "hidden";
     obrigado.style.display = "block";
     setTimeout(end_loding, 5000);
+    setTimeout( returnForPag, 15000);
 
+    
+    function returnForPag(){
+      window.location.href = "paginaDeServicosParaUsr.php";
+    }
     function end_loding(){
         loadingscreen.style.display = "none";
        document.body.style.overflow = "";
