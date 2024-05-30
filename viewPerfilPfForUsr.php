@@ -235,7 +235,7 @@ $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?
                 $sql_mensagens = "SELECT mensagem_avaliacao FROM avaliacoes WHERE id_Pf = '$_SESSION[id_Pf_paraUsr]'";
                 $result_mensagens = $conn->query($sql_mensagens);
                 $row_mensagens = $result_mensagens->fetch_assoc();
-                if($row_mensagens['mensagem_avaliacao'] == null){
+                if(isset($row_mensagens['mensagem_avaliacao']) == null){
                     echo"<h3>[ Nenhum comentário foi feito para o profissional ainda ... ]</h3>";
                 }else{
                 echo"<h3>". $row_mensagens['mensagem_avaliacao']."</h3>";  
