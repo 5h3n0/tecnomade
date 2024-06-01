@@ -32,9 +32,9 @@ error_reporting(E_ALL);
     <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
     <ul class="nav">
       <li><a href="homePf.php" class="nav-links">Home</a></li>
-      <li><a href="paginaDeServicosParaPrestador.php" class="nav-links">Services</a></li>
-      <li><a href="#" class="nav-links">Contact</a></li>
-      <li><a href="sobre.php" class="nav-links">About</a></li>
+      <li><a href="paginaDeServicosParaPrestador.php" class="nav-links">Serviços</a></li>
+      <li><a href="#" class="nav-links">Contato</a></li>
+      <li><a href="sobre.php" class="nav-links">Sobre nós</a></li>
 
       <li class="nav-item dropdown_nav">
         <a class="nav-img">

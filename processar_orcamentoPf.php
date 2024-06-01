@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Atualiza o status da solicitação de serviço para 'Orçamento Enviado'
         $sql_update = "UPDATE solicitacoes_servico SET status = 'Orçamento Enviado' WHERE id_solicitacao = '$id_solicitacao'";
         if (mysqli_query($conn, $sql_update)) {
+            $_SESSION['orcamentoDado'] = true;
             header("Location:paginaDeServicosParaPrestador.php");
             exit;
         } else {
