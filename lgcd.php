@@ -117,7 +117,7 @@ session_start();
 
                     <input type="password" name="usrPass" placeholder="Senha:">
 
-                    <input type="submit" value="Login" name="enviarForm" class="btn-login">
+                    <input type="submit" value="Login" name="enviarForm" class="btn-login btn_cdst_sub">
                     <div class="div_ajust_linksCad_linkMlg">
                     <span class="linksCad" id="linkUsr" onclick="mdFormUsr()">Não possui Cadastro?</span>
                     </div>
@@ -209,7 +209,7 @@ session_start();
                     <input type="email" name="email" placeholder="Email:">
                     <label for="pfPass">Senha:</label>
                     <input type="password" name="pfPass" placeholder="Senha:">
-                    <input type="submit" value="Login" name="enviarForm" class="btn-login">
+                    <input type="submit" value="Login" name="enviarForm" class="btn-login btn_cdst_sub">
                     <div class="div_ajust_linksCad_linkMlg">
                     <span class="linksCad" id="linkPf" onclick="mdFormPf()">Não possui Cadastro?</span>
                     </div>
@@ -274,7 +274,7 @@ session_start();
             </div>
 
             <div class="buttonsForm">
-                <input type="submit" value="Cadastrar" name="enviarForm">
+                <input type="submit" value="Cadastrar" class="btn_cdst_sub" name="enviarForm">
             </div>
             <div class="div_ajust_linksCad_linkMlg">
             <span class="linkMlg" id="linkPf" onclick="mdFormCdPf()">Já possui Cadastro?</span>
@@ -290,6 +290,12 @@ session_start();
     <script src="./js/endereco.js"></script>
     <script src="./js/scriptsLgcd.js"></script>
     <script src="./js/format.js"></script>
+    <script>
+        document.querySelector(".linkRegister").style.display = "none";
+        document.querySelector("#loginOpen").style.display = "none";
+    </script>
+    
+
 </body>
 
 </html>

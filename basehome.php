@@ -242,6 +242,127 @@
             <h3>Perfils de alguns profissionais excepcionais</h3>
         </div>
 
+        
+        <section class="conteiner_perfils">
+
+            
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/e4/0a/c8/e40ac8f5360289d4c6b2bd2124a73a28.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/c7/9c/02/c79c022b7218798e8c2e6e167ba67076.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/8c/57/dc/8c57dc1cdeaf2748ff297a978eb81fb5.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/e4/0a/c8/e40ac8f5360289d4c6b2bd2124a73a28.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/c7/9c/02/c79c022b7218798e8c2e6e167ba67076.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/8c/57/dc/8c57dc1cdeaf2748ff297a978eb81fb5.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/e4/0a/c8/e40ac8f5360289d4c6b2bd2124a73a28.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/c7/9c/02/c79c022b7218798e8c2e6e167ba67076.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/8c/57/dc/8c57dc1cdeaf2748ff297a978eb81fb5.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/e4/0a/c8/e40ac8f5360289d4c6b2bd2124a73a28.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                 <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/c7/9c/02/c79c022b7218798e8c2e6e167ba67076.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/8c/57/dc/8c57dc1cdeaf2748ff297a978eb81fb5.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/8c/57/dc/8c57dc1cdeaf2748ff297a978eb81fb5.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+            <div class="box__perfil">
+                <img src="https://i.pinimg.com/736x/e4/0a/c8/e40ac8f5360289d4c6b2bd2124a73a28.jpg"
+                    class="img_perfil_of_box">
+                <h2 class="name_of_box_perfils">Profisional</h2>
+                <p class="descrytion_of_box_perfils">Desenvolvedor de softwares / Tecnico em manutenção</p>
+                 <span class="text_avaliation_star_value"><img src="./imgs/star_avaliation.png" class="img_star_box_perfils">
+               <p class="valorAvaliacao">4.0 </p></span>
+            </div>
+                      
+
+        </section>
+
 
         <section>
             <div class="cap_shadow">

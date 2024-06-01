@@ -122,7 +122,7 @@ require_once "connect.php";
         <div id="removerCategoriaContainer"></div>
     </div>
 <script>
- function fimCad{
+ function fimCad(){
     window.location.href='perfilPf.php';
  }
 </script>

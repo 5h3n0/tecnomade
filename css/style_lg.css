@@ -128,7 +128,7 @@ h2, h1,h3,h4, p {
 }
 
 
-.btn-screenOptionlogin, input[type="submit"]{
+.btn-screenOptionlogin, input[type="submit"], .btn_cdst_sub{
   --green: rgb(0, 128, 111);
   font-size: 20px;
   height: 45px;
@@ -149,13 +149,17 @@ h2, h1,h3,h4, p {
 }
 
 .btn-screenOptionlogin, input[type="submit"],
-button[type="reset"]:hover {
-  color: rgb(0, 160, 157);
+button[type="reset"]:hover, .btn_cdst_sub:hover {
+  color: #00917e;
   text-shadow: -2px 2px 10px #22a6ad;
   box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767), 0 0 9px 3px rgba(27, 253, 156, 0.2);
 }
 
-.btn-screenOptionlogin:before {
+.btn-screenOptionlogin:hover, .btn_cdst_sub:hover{
+    color: white;
+}
+
+.btn-screenOptionlogin:before, .btn_cdst_sub:before{
   content: "";
   position: absolute;
   left: -4em;
@@ -166,7 +170,7 @@ button[type="reset"]:hover {
   background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
 }
 
-.btn-screenOptionlogin:hover:before {
+.btn-screenOptionlogin:hover:before, .btn_cdst_sub:hover:before {
   transform: translateX(30em);
 }
 
@@ -360,6 +364,10 @@ input[type="submit"]{
   margin: 20px 0px;
 }
 
+input[type="submit"]:active{
+  scale: 0.88;
+}
+
 .btn_cdst_sub{
   left: 0;
 }
@@ -456,6 +464,7 @@ input[type="date"] {
   border-radius: 8px;
   margin: -2% -15% 0% 11%;
   display: block;
+  padding: 7px;
   font-size: 20px;
   line-height: 25px;
 }
@@ -578,7 +587,7 @@ input::-webkit-input-placeholder {
 .optPf:hover {
   scale: 1.1;
   transition: 0.5s;
-  color: aquamarine;
+  color: rgb(255, 255, 255);
 }
 
 .backForOpt {
@@ -658,7 +667,16 @@ input::-webkit-input-placeholder {
 .linksCad, .linkMlg {
   position: absolute;
   font-size: 14pt;
+  cursor: pointer;
 }
+
+.linksCad:hover, .linkMlg:hover {
+  color: #00917e;
+  text-decoration: underline;
+  transition: 1s;
+  transform: scale(1.1);
+}
+
 
 .lgPf, .lgUsr{
   height: 427px;
