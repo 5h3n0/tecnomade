@@ -271,49 +271,49 @@ $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?
 
 
 
-            <div class="carrossel_works_pf">
-                <div class="carousel_inner_pf">
-                    <div class="item_slide_of_car slide_active_pf">
-                        <img src="https://images.unsplash.com/photo-1520531158340-44015069e78e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2hpdGUlMjBjaXR5fGVufDB8fDB8fHww"
-                            alt="Imagem 1">
-                        <div class="info_about_work">
-                            <h2>Titulo</h2>
-                            <p>dd/mm/year</p>
-                            <p>Descrição do trampo</p>
-                        </div>
-                    </div>
-                    <div class="item_slide_of_car">
-                        <img src="https://media.licdn.com/dms/image/C4E1BAQEvhN4dTQBoiw/company-background_10000/0/1584480540011/uptown4_inc__cover?e=2147483647&v=beta&t=Ix1NyhX1CDMwkgrbvEdlKe6Wcd8sc13DaFJU2eEvof4"
-                            alt="Imagem 2">
-                        <div class="info_about_work">
-                            <h2>Titulo</h2>
-                            <p>dd/mm/year</p>
-                            <p>Descrição do trampo</p>
-                        </div>
-                    </div>
-                    <div class="item_slide_of_car">
-                        <img src="https://w0.peakpx.com/wallpaper/421/390/HD-wallpaper-paisagem-preto-branco-ponte-natureza-paisagem-branco-preto-luz.jpg"
-                            alt="Imagem 3">
-                        <div class="info_about_work">
-                            <h2>Titulo</h2>
-                            <p>dd/mm/year</p>
-                            <p>Descrição do trampo</p>
-                        </div>
-                    </div>
-                </div>
+            <?php
+            $portfolioSql = "SELECT `title` , `description`, `date`, `image1` FROM portfolio WHERE id_Pf = $_SESSION[id_Pf_paraUsr]";
+            $portfolioResult = $conn->query($portfolioSql);
 
-                <ul class="carousel_indicators">
-                    <li class="indicatodor_car indicatodor_active" data-slide-to="0"></li>
-                    <li class="indicatodor_car" data-slide-to="1"></li>
-                    <li class="indicatodor_car" data-slide-to="2"></li>
-                </ul>
+            if ($portfolioResult->num_rows > 0) {
+                echo '<div class="carrossel_works_pf">';
+                echo '<div class="carousel_inner_pf">';
+                
+                while ($portfolioRow = $portfolioResult->fetch_assoc()) {
+                    echo '<div class="item_slide_of_car">';
+                    if (!empty($portfolioRow['image1'])) {
+                        echo "<img src='upload_portifolio/{$portfolioRow['image1']}' alt='{$portfolioRow['title']}'>";
+                    }
+                    echo '<div class="info_about_work">';
+                    echo "<h2>{$portfolioRow['title']}</h2>";
+                    echo "<p>" . date('d/m/Y', strtotime($portfolioRow['date'])) . "</p>";
+                    echo "<p>{$portfolioRow['description']}</p>";
+                    echo '</div>';
+                    echo '</div>';
+                }
 
-                <div class="carousel_control">
-                    <button class="bnt_left"><span class="icon_btn_left">
-                            <</button>
-                    <button class="bnt_right"><span class="icon_btn_right">></span></button>
-                </div>
-            </div>
+                echo '</div>'; // Fechando carousel_inner_pf
+                
+                // Adicionando os indicadores
+                echo '<ul class="carousel_indicators">';
+                for ($i = 0; $i < $portfolioResult->num_rows; $i++) {
+                    $activeClass = $i === 0 ? 'indicatodor_active' : '';
+                    echo "<li class='indicatodor_car $activeClass' data-slide-to='$i'></li>";
+                }
+                echo '</ul>';
+
+                // Adicionando os botões de controle
+                echo '<div class="carousel_control">';
+                echo '<button class="bnt_left"><span class="icon_btn_left"><</span></button>';
+                echo '<button class="bnt_right"><span class="icon_btn_right">></span></button>';
+                echo '</div>';
+                
+                echo '</div>'; // Fechando carrossel_works_pf
+            } else {
+                echo '<div class="work_do_for_pf"><h3 class="text_null_work">Nenhum trabalho encontrado para o profissional ainda...</h3></div>';
+            }
+            ?>
+
 
 
 
