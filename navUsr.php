@@ -38,9 +38,8 @@ error_reporting(E_ALL);
       <li><a href="homeUsr.php" class="nav-links">Home</a></li>
       <li><a href="services.php" class="nav-links">Serviços</a></li>
       <li><a href="prof.php" class="nav-links">Profissionais</a></li>
-      <li><a href="#" class="nav-links">Contact</a></li>
-			<li><a href="sobre.php" class="nav-links">About</a></li>
-      
+      <li><a href="#" class="nav-links">Contato</a></li>
+			<li><a href="sobre.php" class="nav-links">Sobre nós</a></li>
       <li class="nav-item" id="div_img">
         <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <?php

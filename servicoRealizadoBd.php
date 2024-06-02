@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Erro: ID de Contratação inválido.";
             exit;
         }
-
         // Preparar e executar a consulta SQL para inserir os dados na tabela servicos_realizados
         $sql_insert = "INSERT INTO servicos_realizados (id_Pf, id_Usr, id_Contratacao, id_Service, data_realizacao) VALUES (?, ?, ?, ?, ?)";
         $stmt_insert = $conn->prepare($sql_insert);
