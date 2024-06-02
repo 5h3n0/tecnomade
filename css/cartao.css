@@ -421,3 +421,55 @@ h2.text_equipe_tt {
     transform: scale(1.2);
     filter: drop-shadow( 0 0 20px #00917e);
   }
+
+  .header {
+    height: 80px;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(0deg, transparent, rgb(0, 128, 111));
+    height: 90px;
+    font-family: "League Spartan", sans-serif;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    z-index: 9;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+  display: block;
+  width: auto !important;
+  height: 80px;
+  object-fit: cover;
+  padding: 10px;
+  filter: drop-shadow(2px 4px 6px black);
+  float: left;
+  margin-top: -20px;
+}
+
+
+  .footer_sigle_slim{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 40px;
+    height: 90px;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgb(0, 128, 111));
+}
+
+.footer_sigle_slim p { margin: 0 !important; }
+.footer_sigle_slim a {
+    color: #00917e;
+    font-size: 18pt;
+}

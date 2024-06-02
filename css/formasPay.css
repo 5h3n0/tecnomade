@@ -1,0 +1,386 @@
+body {
+    background-image: url("./imgs/skyline1.jpg") !important;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+a{
+    text-decoration: none !important;
+    color: #00917e;
+}
+
+.container_method_pay {
+    background-color: #000000cb;
+    padding: 20px 30px;
+    border: 2px solid #00917e;
+    border-radius: 25px;
+    box-shadow: 0 0px 60px #00917e;
+    width: 550px;
+    height: 550px;
+}
+
+p{
+    margin: 0;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 100 !important;
+}
+
+h2 {
+    color: #00917e;
+    margin: 40px 0;
+    text-align: center;
+    font-size: 28pt !important;
+}
+
+.payment-option {
+    color: #00917e;
+    height: 60px;
+    padding: 5px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    font-size: 18pt;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.payment-option:hover {
+    transition: 0.80s ease;
+    box-shadow: inset 0 0 20px #00917e;;
+    border: 2px solid #00917e;
+    color: #00917e;
+    transform: scale(1.02);
+    .arrow_right_redi{
+        fill: #00917e;
+    }
+}
+
+.payment-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.arrow-icon {
+    font-size: 18px;
+    color: #888;
+}
+
+svg.icon_method_pay {
+    height: 40px;
+    width: 40px;
+    fill: #00917e;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(0deg, transparent, rgb(0, 128, 111));
+    height: 90px;
+    font-family: "League Spartan", sans-serif;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    z-index: 9;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    display: block;
+    width: auto !important;
+    height: 80px;
+    object-fit: cover;
+    padding: 10px;
+    filter: drop-shadow(2px 4px 6px black);
+    float: left;
+    margin-top: -20px;
+  }
+
+
+.footer_sigle_slim{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 40px;
+    height: 90px;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgb(0, 128, 111));
+}
+
+.footer_sigle_slim p { margin: 0 !important; }
+.footer_sigle_slim a {
+    color: #00917e;
+    font-size: 18pt;
+}
+
+.arrow_right_redi{
+    display: block;
+    position: absolute;
+    fill: #fff;
+    margin-left: 415px;
+    transition: fill 0.2s ease;
+}
+
+.relogio {
+  position: absolute ;
+  right: 200px;
+  bottom: 150px;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.point_space{
+    margin: 0 20px 0 30px;
+}
+.horas{
+    margin-left: 30px;
+}
+
+.horas,.minutos,.segundos {
+    color: #00917e;
+  position: relative;
+  margin-top: 300px;
+  display: inline-flex;
+  flex-direction: column;
+  width: 40px;
+  text-align: center;
+}
+
+.logo_relogio{
+    color: #00917e;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+}
+
+
+  .conteiner_pay_pix{
+    background-color: rgb(0, 0, 0);
+    width: 60rem;
+    height: 65rem;
+    padding: 65px 80px;
+    border-radius: 35px;
+    border: #00917e 5px solid;
+    box-shadow: 0 0 60px #00917e;
+    color: #00917e;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title_pay_pix{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+    margin: -30px 0 40px 0;
+    color: #00917e;
+    font-size: 28pt;
+}
+
+#qrcode{
+    margin: 0 auto 30px auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: #00917e 5px solid ;
+    background-color: #fff;
+}
+#pixKeyContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#pixKey {
+    margin-top: 30px;
+    width: 700px;
+    height: 60px;
+    font-size: 18pt;
+    padding: 10px;
+    background: black;
+    color: #00917e;
+    margin-bottom: 20px;
+    border: 4px solid #00917e;
+    border-radius: 30px;
+    text-align: center;
+    outline: none;
+}
+
+
+
+  
+  #copyBtn {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    background-color: rgb(1 46 40);
+    margin: 8px 0 0 20px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  #copyBtn:hover{
+    background-color: #000;
+    border-right: 4px solid #00917e;
+    border-bottom: 4px solid #00917e;
+    filter: drop-shadow( 0 0 20px #00917e);
+}
+
+#copyBtn:active{
+    scale: 0.85;
+}
+
+.aviso_copy{
+    display: none;
+    transition: 5s;
+    background-color: rgb(1 46 40);
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    width: 100px;
+    margin-top: -110px;
+    margin-left: 830px;
+    padding: 5px;
+}
+ 
+  #copyBtn svg path{fill: #fff;}
+  #copyBtn svg {
+    height: 45px;
+    width: 45px;
+  }
+
+  .bloco_alerta{
+    width: 100%;
+    text-align: justify;
+    height: 400px;
+    background-color: rgb(1 46 40);
+    border-radius: 30px;
+    padding: 20px;
+    color: #fff;
+    margin: 30px 0;
+}
+
+.bloco_alerta p{
+    margin-bottom: 10px;
+}
+
+
+.btn_enviar_code {
+    --green: rgb(0,128,111);
+  font-size: 20px;
+  height: 200px;
+  width: 100%;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  outline: none !important;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.685), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.btn_enviar_code:hover {
+    color: #ffffff !important;
+    text-shadow: -2px 2px 10px rgb(255, 255, 255);
+    box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.btn_enviar_code::before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform 0.80s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+  }
+  .btn_enviar_code:hover:before {
+     transform: translateX(60em);
+ }
+
+  .btn_enviar_code:active{
+    transform: scale(0.95);
+  }
+
+  .img_pix_icon_deco img{
+    width: 700px;
+    height: 700px;
+  }
+
+  .img_pix_icon_deco{
+    position: absolute;
+    right: -200px;
+  }
+
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(
+      90deg,
+      rgb(0, 0, 0),
+      rgb(0, 0, 0),
+      rgb(6, 26, 24),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+    background-size: 200% 200%;
+    animation: opa 5s linear infinite;
+  }
+  .animation {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(0, 0, 0)) !important;
+    background-size: 200% 200%;
+  }
+  
+  @keyframes opa {
+    0% {
+      background-position: 100% 100%;
+    }
+    25% {
+      background-position: 50% 50%;
+    }
+    50% {
+      background-position: 0%, 0%;
+    }
+    75% {
+      background-position: -50% -50%;
+    }
+    100% {
+      background-position: -100%, -100%;
+    }
+  }

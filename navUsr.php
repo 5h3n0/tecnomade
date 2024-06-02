@@ -61,9 +61,10 @@ error_reporting(E_ALL);
           ?>
       </a>
         <ul class="dropdown_menu" style="display: none;">
-        <li><a class="dropdown-element nav-links" href="perfilUsr.php">Perfil</a></li>
-        <li><a class="dropdown-element nav-links" href="infPeUsr.php">Informações Pessoais</a></li>
-        <li><a href="#" class="dropdown-element nav-links">Configurações</a></li>
+          <li><a class="dropdown-element nav-links" href="perfilUsr.php">Perfil</a></li>
+          <li><a class="dropdown-element nav-links" href="paginaDeServicosParaUsr.php">Minha Contrações</a></li>
+          <li><a class="dropdown-element nav-links" href="infPeUsr.php">Informações Pessoais</a></li>
+        <li><a href="formasPay.php" class="dropdown-element nav-links">Configurações</a></li>
         <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
         </ul>
       </li>

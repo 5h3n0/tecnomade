@@ -29,7 +29,11 @@
 
 <body>
 
-
+<div class="header cleafix">
+	<div class="container_nav">		
+			<img src="./imgs/icon_logo_nav_bar.png" class="logo" />
+	</div>
+	</div>
 
 <div class="section_alerta">
 <div class="bloco_alerta"></div>
@@ -112,11 +116,12 @@ include_once ('loading_ghost.php');
 
   </div>
 
- 
+  <footer class="footer_sigle_slim">
+        <p>Copyright&copy; 2023, Todos os direitos reservados <a href="#">Tecnomade_Enterprise</a></p>
+        <!-- <a href="">Contact</a>
+        <a href="">Privacy & Terms</a> -->
+  </footer> 
 
-<?php
-include_once('footer.php');
-?>
 
   <script src="./js/cartao.js"></script>
 </body>
