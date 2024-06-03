@@ -35,11 +35,11 @@ error_reporting(E_ALL);
     <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
     
     <ul class="nav">
-      <li><a href="homeUsr.php" class="nav-links">Home</a></li>
-      <li><a href="services.php" class="nav-links">Serviços</a></li>
-      <li><a href="prof.php" class="nav-links">Profissionais</a></li>
-      <li><a href="#" class="nav-links">Contato</a></li>
-			<li><a href="sobre.php" class="nav-links">Sobre nós</a></li>
+      <li><a href="homeUsr.php" class="nav-links linkHome">Home</a></li>
+      <li><a href="services.php" class="nav-links linkServices">Serviços</a></li>
+      <li><a href="prof.php" class="nav-links linkProf">Profissionais</a></li>
+      <!-- <li><a href="#" class="nav-links ">Contato</a></li> -->
+			<li><a href="sobre.php" class="nav-links linkSobre">Sobre nós</a></li>
       <li class="nav-item" id="div_img">
         <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <?php
@@ -105,6 +105,57 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("Um ou ambos os elementos não foram encontrados no DOM.");
     }
 });
+
+
+
+
+
+if (window.location.href === "http://localhost/tecnomade/homeUsr.php") {
+  var linkHome = document.querySelector('.linkHome');
+
+  if (linkHome) {
+    linkHome.style.display = "none";
+  }
+
+}
+if (window.location.href === "http://localhost/tecnomade/services.php") {
+  var linkServices = document.querySelector('.linkServices');
+
+  if (linkServices) {
+    linkServices.style.display = "none";
+  }
+
+}
+
+if (window.location.href === "http://localhost/tecnomade/sobre.php") {
+  var linkSobre = document.querySelector('.linkSobre');
+
+  if (linkSobre) {
+    linkSobre.style.display = "none";
+  }
+
+}
+
+if (window.location.href === "http://localhost/tecnomade/prof.php") {
+  var linkProf = document.querySelector('.linkProf');
+
+  if (linkProf) {
+    linkProf.style.display = "none";
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

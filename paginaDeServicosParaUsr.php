@@ -69,12 +69,12 @@ if (isset($_SESSION['notification'])) {
         // window.onload = function () {
         //     loadPage('servicosEmAndamento.php');
         // };
+        //  window.onload = function () {
+        //      loadPage('verOrcamentosUsr.php');
+        //  };
          window.onload = function () {
-             loadPage('verOrcamentosUsr.php');
+             loadPage('servicosRealizadosUsr.php');
          };
-        // window.onload = function () {
-        //     loadPage('servicosRealizadosUsr.php');
-        // };
         function loadPage(page) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {

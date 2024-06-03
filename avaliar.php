@@ -48,9 +48,10 @@ if ($result->num_rows > 0) {
                     <input type="radio" required id="star1" name="estrelas" value="1"><label for="star1">&#9733;</label>
                 </div>
                 <label for="mensagem_avaliacao" class='lbl_avaliacao'>Escreva brevemente sobre como foi sua experiência com o servico de:</label>
-                <?php echo"<br><span id='focoNome'>$pfName</span>"?>
+                <?php // echo"<br><span id='focoNome'>$pfName</span>";?>
+                <br>
                 <div class="cont_descPf_textarea">
-                <textarea name="mensagem_avaliacao" id="desc_avaliacao"></textarea>
+                <textarea name="mensagem_avaliacao" id="desc_avaliacao" placeholder="Escreva brevemente sobre os servicos de: <?php echo $pfName;?> "></textarea>
                 </div>
                 <input type="hidden" name="id_Pf" value="<?php echo $id_Pf ?>"> <!-- Id do produto a ser avaliado -->
                 <button type="submit" class="btn-avaliar">Avaliar</button>

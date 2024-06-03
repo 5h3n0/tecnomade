@@ -58,13 +58,13 @@ $result = $stmt->get_result();
             echo "<div class='orcamento'>";
             echo "<label class='lbl_orcamento'>Serviço</label>";
             echo "<p class='dados_orcamento'>" . $row['nomeService'] . "</p>";
-            echo "<label class='lbl_orcamento'>Descrição do Serviço</label>";
-            echo "<p class='dados_orcamento' id='desc_orcamento'>" . $row['descricao_servico'] . "</p>";
+            // echo "<label class='lbl_orcamento'>Descrição do Serviço</label>";
+            // echo "<p class='dados_orcamento' id='desc_orcamento'>" . $row['descricao_servico'] . "</p>";
             echo "<label class='lbl_orcamento'>Mensagem do Cliente</label>";
             echo "<p class='dados_orcamento'>" . $row['mensagem_cliente'] . "</p>";
             echo "<label class='lbl_orcamento'>Valor do Orçamento</label>";
             echo "<p class='dados_orcamento'>R$ $valor</p>";
-            echo "<label class='lbl_orcamento'>Mensgem do profissional para você</label>";
+            echo "<label class='lbl_orcamento'>Mensagem do profissional para você</label>";
             if ($row['msg_for_client'] == null) {
                 echo "<p class='dados_orcamento'>O profissional não enviou nenhuma mensagem.</p>";
             } else {

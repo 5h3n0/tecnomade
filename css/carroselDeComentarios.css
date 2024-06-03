@@ -1,0 +1,31 @@
+.carousel {
+    position: relative;
+    width: 300px; /* Defina a largura do seu carrossel */
+    overflow: hidden;
+}
+.carousel-item {
+   display: block !important;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}

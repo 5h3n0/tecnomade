@@ -24,10 +24,10 @@ error_reporting(E_ALL);
 
 		<ul class="nav">
 			<li><a href="index.php" class="nav-links linkHome">Home</a></li>
-			<li><a href="#" class="nav-links">Services</a></li>
-			<li><a href="#" class="nav-links">Contact</a></li>
-			<li><a href="sobre.php" class="nav-links">About</a></li>
-			<li><a href="lgcd.php" class="nav-links linkRegister">Register</a></li>
+			<li><a href="#" class="nav-links">Serviços</a></li>
+			<li><a href="#" class="nav-links">Contato</a></li>
+			<li><a href="sobre.php" class="nav-links">Sobre nós</a></li>
+			<li><a href="lgcd.php" class="nav-links linkRegister">Cadastre-se</a></li>
 			<li><a href="#" class="nav-links cliente" id="loginOpen" onclick="abrirTelamenu()">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
 						stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"

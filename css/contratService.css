@@ -61,6 +61,7 @@ html,body{
     font-size: 20pt;
     outline: none;
     border: #00917e solid 2px;
+    height: 250px;
  }
 
  #mensagem_cliente::placeholder{

@@ -8,14 +8,16 @@ include_once "connect.php";
 $id_Pf = $_SESSION['id_Pf'];
 
 // Consulta para obter os serviços realizados associados ao id_Pf
-$sql = "SELECT sr.*, c.valor AS orcamento, s.nomeService, s.descService, c.data_Contratacao, u.usrName AS nome_usuario,
+$sql = "SELECT sr.*, c.valor AS orcamento, s.nomeService, s.descService, c.data_Contratacao, u.usrName AS nome_usuario, p.pfName,
     (SELECT mensagem_cliente FROM solicitacoes_servico ss WHERE ss.id_Service = sr.id_Service LIMIT 1) AS mensagem_cliente
     FROM servicos_realizados sr
     INNER JOIN contratacoes c ON sr.id_contratacao = c.id_Contratacao
     INNER JOIN services s ON c.id_Service = s.id_Service
     INNER JOIN users u ON c.id_Usr = u.id_Usr
+    INNER JOIN prof p ON sr.id_Pf = p.id_Pf
     LEFT JOIN orcamento o ON sr.id_ServicoRealizado = o.id_solicitacao
     WHERE sr.id_Pf = $id_Pf";
+
 
 $result = $conn->query($sql);
 echo "<div class='realizados'>";
@@ -35,10 +37,10 @@ if ($result->num_rows > 0) {
         echo "<label class='lbl_realizados' id='desc_realizado'>Descrição do Serviço</label>";
         echo "<p class='dados_realizados'>" . $row['descService'] . "</p>";
         
-        echo "<label class='lbl_realizados'>Cliente</label>";
-        echo "<p class='dados_realizados'>" . $row['nome_usuario'] . "</p>";
-        echo "<label class='lbl_realizados'>Mensagem Cliente:  </label>";
-        echo "<p class='dados_realizados'>" . $row['mensagem_cliente'] . "</p>";
+        echo "<label class='lbl_realizados'>Profissional</label>";
+        echo "<p class='dados_realizados'>" . $row['pfName'] . "</p>";
+        // echo "<label class='lbl_realizados'>Mensagem Cliente  </label>";
+        // echo "<p class='dados_realizados'>" . $row['mensagem_cliente'] . "</p>";
         echo "<label class='lbl_realizados'>Valor:  </label>";
         echo "<p class='dados_realizados'>R$ $valor </p>";
         echo "<div class='datas'>";

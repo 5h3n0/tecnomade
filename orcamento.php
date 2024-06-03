@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
         
         echo "<label for='orcamento' class='lbl_orcamento'>Orçamento:</label>";
         echo "<input type='text' placeholder='Insira o valor do orçamento aqui:' id='orcamento'  oninput='this.value = formatDin(this.value)' name='orcamento' required>";
-        echo "<label for='msg_for_client' class='lbl_orcamento'>Enviar Mensagem para cliente :</label>";
+        echo "<label for='msg_for_client' class='lbl_orcamento'>Mensagem Para Cliente :</label>";
         echo "<textarea name='msg_for_client' id='msgForClient' placeholder='Digite uma mensagem se desejar' class='msg_for_cliente''></textarea>";
         echo "<button type='submit' id='btn-env-orcamento'>Enviar Orçamento</button>";
         echo "</form>";
