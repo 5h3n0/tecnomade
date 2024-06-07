@@ -31,11 +31,11 @@ $id_Pf = $_SESSION['id_Pf'];
             <div class="inserir_imgs">
                 <div id="image_fields">
                     <div>
-                        <label for="image1" class="lbl_insert_portifolio">Imagem 1</label>
+                        <label for="image1" class="lbl_insert_portifolio">Insira uma Imagem:</label>
                         <input type="file" id="image1" name="image1" required>
                     </div>
                     <div>
-                        <label for="image2" class="lbl_insert_portifolio">Imagem 2</label>
+                        <label for="image2" class="lbl_insert_portifolio">Insira uma Imagem:</label>
                         <input type="file" id="image2" name="image2">
                     </div>
                 </div>
@@ -59,7 +59,7 @@ $id_Pf = $_SESSION['id_Pf'];
                     if (imageCount < 10) {
                         imageCount++;
                         var newImageField = document.createElement('div');
-                        newImageField.innerHTML = '<label class="lbl_insert_portifolio" for="image' + imageCount + '">Imagem ' + imageCount + ':</label>' +
+                        newImageField.innerHTML = '<label class="lbl_insert_portifolio" for="image' + imageCount + '">Insira uma Imagem:</label>' +
                             '<input type="file" id="image' + imageCount + '" name="image' + imageCount + '">';
                         document.getElementById('image_fields').appendChild(newImageField);
                     } else {

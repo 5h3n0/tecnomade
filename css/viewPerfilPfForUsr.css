@@ -256,9 +256,11 @@ form {
 
 .comentario_for_pf{
     height: 530px;
-    padding: 50px;
+    width: 750px;
+    padding: 80px;
+    text-align: center;
     display: flex;
-    align-items: center;
+    place-items: center;
     background-color: #000000da;
     border-left: 15px solid #00917e;
     border-right: 15px solid #00917e; 

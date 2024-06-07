@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Jun-2024 às 22:58
+-- Tempo de geração: 07-Jun-2024 às 22:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -101,7 +101,10 @@ INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
 (8, 3, 4),
 (9, 3, 5),
 (10, 3, 6),
-(11, 3, 10);
+(11, 3, 10),
+(12, 5, 6),
+(13, 5, 9),
+(14, 5, 12);
 
 -- --------------------------------------------------------
 
@@ -156,7 +159,8 @@ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro
 (4, NULL, 1, '05022-000', 'Avenida Pompéia', 'Vila Pompéia', 'São Paulo', 'SP', '96', ''),
 (5, 4, NULL, '08586010', 'Avenida Cardeal', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '150', ''),
 (6, NULL, 2, '08586-180', 'Rua do Bronze', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '250', ''),
-(7, NULL, 3, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '1150', '');
+(7, NULL, 3, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '1150', ''),
+(8, 5, NULL, '08580-050', 'Rua dos Engenheiros', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '1245', '');
 
 -- --------------------------------------------------------
 
@@ -205,6 +209,15 @@ CREATE TABLE `portfolio` (
   `id_Pf` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `portfolio`
+--
+
+INSERT INTO `portfolio` (`id_portifolio`, `title`, `description`, `date`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `image7`, `image8`, `image9`, `image10`, `id_Pf`) VALUES
+(1, 'Instalação de Câmeras', 'Realizei um serviço de instalação de câmeras residenciais em São Paulo ', '2022-11-05', '56089366a34de263177ad674cf7dfaef.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(2, 'Manutenção de Servidor', 'Troca de componentes em um servidor de dados.', '2021-05-14', '85e4e1da41d2434f9d1867a4d8a4299b.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(3, 'Infraestrutura de Rede', 'Cabeamento estruturado com pontos de câmera e redes.', '2019-04-17', '4a257554a82331589d68a72d33479deb.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -234,7 +247,8 @@ INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `h
 (1, 'Rodrigo Nunes Almeida', '1995-10-12', 'rdrigo35@gmail.com', '(11) 98859-4468', 'm', 'ed999f05e1ed9818541fcd882b2c780ebac594fc', '45.645.646/0001-46', 'b5d58a2dba09f30c2bff598f81ba85bf.jpg', NULL, 'Sou Rodrigo Nunes Almeida, um profissional especializado em manutenção de servidores, instalação de câmeras e alarmes, infraestrutura de rede e manutenção de redes sem fio. Minha experiência me permite oferecer soluções confiáveis e eficientes para garantir o funcionamento ininterrupto dos sistemas de TI e segurança. Estou comprometido em fornecer serviços de alta qualidade para empresas e organizações, ajudando a maximizar o desempenho de sua infraestrutura tecnológica.', NULL),
 (2, 'Marcos Almeida Rocha', '2001-11-12', 'mcal@gmail.com', '(11) 98858-5589', 'm', '5a78d7207d53ee01ca20554180c9f80f44e7e61d', '79.945.646/0001-45', '80b35a95ed3b570c067da1de894c8b03.jpg', NULL, 'Eu sou Marcos, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL),
 (3, 'Ana Nunes Dos Santos', '1999-07-18', 'anunes@gmail.com', '(11) 90658-8689', 'm', 'e41079bf229d6ee9886927bb3326aa951cdae53e', '89.478.946/0001-66', 'eb00fa4b124ef87c7b8d962ff4d1e0e8.jpg', NULL, 'Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.', NULL),
-(4, 'black xyz', '2005-06-22', 'black@gmail.com', '(11) 96486-1525', 'm', '933f868ccf7ece7601793d3887f5522fbb341418', '16.545.646/5464-86', 'cf001da34629ede7c257171085b12244.jpg', NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL);
+(4, 'black xyz', '2005-06-22', 'black@gmail.com', '(11) 96486-1525', 'm', '933f868ccf7ece7601793d3887f5522fbb341418', '16.545.646/5464-86', 'cf001da34629ede7c257171085b12244.jpg', NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL),
+(5, 'Rafael Sousa Oliveira', '1998-02-05', 'rol@gmail.com', '(11) 98454-5689', 'm', 'fc6961fc54edac9228fd2d798fb3441f4940405f', '78.445.646/0001-25', 'b48bee7eaa944376ecaf9be3521d1e35.jpg', NULL, 'Sou Rafael Sousa, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL);
 
 -- --------------------------------------------------------
 
@@ -451,7 +465,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `cat_sel`
 --
 ALTER TABLE `cat_sel`
-  MODIFY `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_Cat_Sel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `contratacoes`
@@ -463,7 +477,7 @@ ALTER TABLE `contratacoes`
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
@@ -475,13 +489,13 @@ ALTER TABLE `orcamento`
 -- AUTO_INCREMENT de tabela `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id_portifolio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_portifolio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `prof`
 --
 ALTER TABLE `prof`
-  MODIFY `id_Pf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_Pf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `services`

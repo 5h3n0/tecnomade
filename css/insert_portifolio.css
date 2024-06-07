@@ -45,10 +45,9 @@ body, html{
 }
 
 .lbl_insert_portifolio{
-    font-size: 22px;
+    font-size: 32px !important;
     color: #117c6a;
     font-weight: bold;
-    letter-spacing: 1px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -65,6 +64,7 @@ body, html{
     background-color: #061614;
     margin-top: 10x;
     margin-bottom: 10px;
+    font-size: 22px;
 
 }
 #description{
@@ -81,7 +81,8 @@ body, html{
   color: aliceblue;
   text-indent: 15px;
   overflow-wrap: break-word;
-  font-size: 18px;
+  font-size: 22px;
+
   border: #1e685c solid 3px;
   hyphens: auto;
   margin-bottom: 4%;
@@ -105,7 +106,7 @@ body, html{
     margin-top: 10x;
     margin-bottom: 10px;
     display: block;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 25px;
   }
   
@@ -123,6 +124,8 @@ body, html{
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 18px;
+
   }
   .inserir_imgs{
     display: flex;

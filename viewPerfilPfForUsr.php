@@ -119,24 +119,6 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
                         echo "Profissional ainda não avaliado.";
                     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     echo "</div>";
                     echo "<a href='services.php' id='btn-contratar'>contratar</a>";
                     echo "</div>";
@@ -233,26 +215,74 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
             </div>
             <div class="comentario_for_pf">
                 <?php
-                $sql_mensagens = "SELECT mensagem_avaliacao FROM avaliacoes WHERE id_Pf = '$_SESSION[id_Pf_paraUsr]'";
+                $sql_mensagens = "SELECT mensagem_avaliacao, estrelas FROM avaliacoes WHERE id_Pf = '$_SESSION[id_Pf_paraUsr]'";
                 $result_mensagens = $conn->query($sql_mensagens);
                 echo '<div class="carousel">';
                 echo '<div class="carousel-inner" id="carousel-inner">';
 
                 if ($result_mensagens->num_rows > 0) {
+                    $indice = 0;
                     while ($row_mensagens = $result_mensagens->fetch_assoc()) {
-                        echo '<div class="carousel-item">' . $row_mensagens['mensagem_avaliacao'] . '</div>';
+                        $media_estrelas = $row_mensagens['estrelas'];
+                        echo '<div class="carousel-item" id="carousel-item-' . $indice . '">';
+                        if ($media_estrelas !== null) {
+                            // Formatar a média para exibir no máximo duas casas decimais
+                            $media_estrelas_formatada = number_format($media_estrelas, 2);
+        
+                            if ($media_estrelas_formatada >= 5) {
+        
+                                for ($cont = 0; $cont < 5; $cont++) {
+                                    echo $star_yellow;
+                                }
+        
+                            } else if ($media_estrelas_formatada >= 4) {
+                                for ($cont = 0; $cont < 4; $cont++) {
+                                    echo $star_yellow;
+                                }
+                                for ($i = 1; $i < 2; $i++) {
+                                    echo $star_gray;
+                                }
+                            } else if ($media_estrelas_formatada >= 3) {
+                                for ($cont = 0; $cont < 3; $cont++) {
+                                    echo $star_yellow;
+                                }
+                                for ($i = 0; $i < 2; $i++) {
+                                    echo $star_gray;
+                                }
+                            } else if ($media_estrelas_formatada >= 2) {
+                                for ($cont = 0; $cont < 2; $cont++) {
+                                    echo $star_yellow;
+                                }
+                                for ($cont = 0; $cont < 3; $cont++) {
+                                    echo $star_gray;
+                                }
+                            } else {
+                                echo $star_yellow;
+                                for ($cont = 0; $cont < 4; $cont++) {
+                                    echo $star_gray;
+                                }
+                            }
+                        }
+                        echo'<p class="mensagemAvaliação">' . $row_mensagens['mensagem_avaliacao'] . '</p></div>';
+                        $indice++;
                     }
                 } else {
-                    echo '<h3>[ Nenhum comentário foi feito para o profissional ainda ... ]</h3>';
+                    echo '<div class="carousel-item"><h3>[ Nenhum comentário foi feito para o profissional ainda ... ]</h3></div>';
                 }
 
                 echo '</div>';
-                echo '<a class="carousel-control prev" onclick="prevSlide()">&#10094;</a>';
-                echo '<a class="carousel-control next" onclick="nextSlide()">&#10095;</a>';
+                echo '<a class="carousel-control prev" onclick="prevMsg()">&#10094;</a>';
+                echo '<a class="carousel-control next" onclick="nextMsg()">&#10095;</a>';
+                echo '</div>';
+
+                // Adicionando os indicadores de slide
+                echo '<div class="carousel-indicators" id="carousel-indicators">';
+                for ($i = 0; $i < $result_mensagens->num_rows; $i++) {
+                    echo '<span class="indicator" data-slide-to="' . $i . '"></span>';
+                }
                 echo '</div>';
                 ?>
             </div>
-
         </div>
 
         <hr class="divis_line_green">

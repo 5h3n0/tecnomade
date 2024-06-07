@@ -1,35 +1,47 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const totalSlides = slides.length;
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.comentario_for_pf .carousel');
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const items = carouselInner.querySelectorAll('.carousel-item');
+    let activeIndex = 0;
 
-function showSlides() {
-    const inner = document.getElementById('carousel-inner');
-    if (inner) {
-        inner.style.transition = "transform 0.5s ease-in-out";
-        inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function showItem(index) {
+        items.forEach((item) => {
+            item.classList.remove('active');
+        });
+        items[index].classList.add('active');
+        updateIndicators();
     }
-}
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    showSlides();
-}
+    function nextSlide() {
+        activeIndex = (activeIndex + 1) % items.length;
+        showItem(activeIndex);
+    }
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    showSlides();
-}
+    function prevSlide() {
+        activeIndex = (activeIndex - 1 + items.length) % items.length;
+        showItem(activeIndex);
+    }
 
-// Automaticamente avança para o próximo slide a cada 3 segundos
-setInterval(nextSlide, 3000);
+    carousel.querySelector('.prev').addEventListener('click', prevSlide);
+    carousel.querySelector('.next').addEventListener('click', nextSlide);
 
-const mensagens = ['Mensagem 1', 'Mensagem 2', 'Mensagem 3']; // Substitua com suas mensagens
-const inner = document.getElementById('carousel-inner');
-if (inner && mensagens) {
-    mensagens.forEach(mensagem => {
-        const slide = document.createElement('div');
-        slide.classList.add('carousel-item');
-        slide.textContent = mensagem;
-        inner.appendChild(slide);
+    setInterval(nextSlide, 5000);
+
+    const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showItem(index);
+            activeIndex = index;
+        });
     });
-}
+
+    function updateIndicators() {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === activeIndex);
+        });
+    }
+
+    // Mostrar o primeiro item inicialmente
+    showItem(activeIndex);
+});
