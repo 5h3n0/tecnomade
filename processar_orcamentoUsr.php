@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_insert_contratacoes->bind_param("iiids", $id_Pf, $id_Usr, $id_service, $valor_orcamento, $data_contratacao);
 
             if ($stmt_insert_contratacoes->execute()) {
-                header("location: cartao.php");
+                header("location: formasPay.php");
             } else {
                 echo "Erro ao inserir dados na tabela contratacoes: " . $stmt_insert_contratacoes->error;
             }
