@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    padding-top: 25%;
+    padding-top: 20%;
 }
 
 .carousel-inner {
@@ -54,6 +54,7 @@ background-color: black;
     height: 60px !important;
     font-size: 40px;
     padding-bottom: 70px;
+    display: none;
 
 }
 .carousel-control.prev{

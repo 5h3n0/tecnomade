@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     carousel.querySelector('.prev').addEventListener('click', prevSlide);
     carousel.querySelector('.next').addEventListener('click', nextSlide);
 
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 3000);
 
     const indicators = document.querySelectorAll('.carousel-indicators .indicator');
 
