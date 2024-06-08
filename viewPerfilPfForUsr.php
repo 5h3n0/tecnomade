@@ -271,16 +271,16 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
                 }
 
                 echo '</div>';
-                echo '<a class="carousel-control prev" onclick="prevMsg()">&#10094;</a>';
-                echo '<a class="carousel-control next" onclick="nextMsg()">&#10095;</a>';
-                echo '</div>';
-
-                // Adicionando os indicadores de slide
                 echo '<div class="carousel-indicators" id="carousel-indicators">';
                 for ($i = 0; $i < $result_mensagens->num_rows; $i++) {
                     echo '<span class="indicator" data-slide-to="' . $i . '"></span>';
                 }
                 echo '</div>';
+                echo '<a class="carousel-control prev" onclick="prevMsg()">&#10094;</a>';
+                echo '<a class="carousel-control next" onclick="nextMsg()">&#10095;</a>';
+                echo '</div>';
+
+                // Adicionando os indicadores de slide
                 ?>
             </div>
         </div>

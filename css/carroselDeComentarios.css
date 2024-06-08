@@ -76,6 +76,9 @@ background-color: black;
 .carousel-indicators {
     text-align: center;
     padding: 10px 0;
+    position: absolute;
+    top:92%;
+    
 }
 
 .carousel-indicators .indicator {
@@ -89,7 +92,7 @@ background-color: black;
 }
 
 .carousel-indicators .indicator.active {
-    background-color: black;
+    background-color: rgb(0, 126, 128);
 }
 
 .carousel-item.active {
