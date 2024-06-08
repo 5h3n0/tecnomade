@@ -159,3 +159,6 @@ body{
             margin-top: 5%;
             float: right;
         }
+        #naoAvaliado{
+            font-size: 20px !important;
+        }

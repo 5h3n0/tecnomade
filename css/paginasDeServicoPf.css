@@ -176,12 +176,12 @@ button.closeButton {
 }
 /* -------------inserir serviços----------------- */
 .formCadService {
-  background: linear-gradient(90deg, rgba(8,54,46,1) 22%, rgba(27,92,81,1) 54%, rgba(8,26,23,1) 85%);
+  background:#0d352e;
   padding: 10%;
   border-radius: 35px;
   width: 80%;
   min-height: 650px;
-  border: #1dad95 5px solid !important;
+  border: #176659 5px solid !important;
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -301,20 +301,12 @@ button.closeButton {
   border: transparent 5px solid;
   box-shadow: 0 0 15px #11574d ;
 }
-.servico:nth-child(even) {
-  background-color:#237a6c;  
-  color: rgb(0, 0, 0);
+.servico {
+  background-color:#0f332d;  
+  color: rgb(212, 212, 212);
   font-weight: bold !important;
-}
-
-.servico:nth-child(odd) {
-  /* background-color:#237a6c;   */
-  background-color:#06241f;  
-  color: rgb(238, 238, 238);
-
-}
-.servico:nth-child(even) .lbl_servico_inserido {
-  color:#d8d8d8 !important;
+  border: #176659 5px solid;
+  
 }
 
 .dados_service,.lbl_servico_inserido{
@@ -322,16 +314,20 @@ button.closeButton {
   text-align: justify;
   hyphens: auto;
   overflow-wrap: break-word;
+  font-size: 22px;
 }
 .dados_service{
   text-shadow: 0 0 1px black;
+  background-color: #0a241f !important;
+  padding: 5px;
+  border-radius: 12px;
 }
 .delete-btn{
   margin-top: auto;
 }
 .lbl_servico_inserido{
   font-size: 35px !important;
-  color:#1da790 !important;
+  color:#188a77 !important;
   text-align: center !important;
   font-weight: bold;
   width: 100%;
@@ -572,7 +568,6 @@ button.closeButton {
   color: rgb(222, 222, 222);
   font-weight: bold;
   text-shadow: 0 0 1px rgb(0, 0, 0);
-
 }
 .lbl_realizados{
   font-size: 32px;
@@ -626,6 +621,7 @@ button.closeButton {
   border-radius: 15px;
   width: 80%;
   text-align: center;
+  font-size: 22px !important;
 }
 #desc_realizado{
   text-indent: 15px;

@@ -7,13 +7,10 @@
     flex-direction: column;
     place-items: center;
     padding-top: 25%;
-    padding-top: 25%;
 }
 
 .carousel-inner {
-
     transition: transform 0.5s ease;
-  
 }
 
 .carousel-item {

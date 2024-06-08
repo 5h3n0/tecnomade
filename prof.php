@@ -77,7 +77,7 @@ while ($row = $result->fetch_assoc()) {
                 <h3 class="name_prof_perfil">
                     <?= $professional['pfName'] ?>
                 </h3>
-                <p class="title_card_esp">Avaliação média</p>
+
                 <?php
                 
                 $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?";
@@ -136,10 +136,8 @@ while ($row = $result->fetch_assoc()) {
 
 
                     } else {
-                        echo "Profissional ainda não avaliado.";
+                        echo "<p id='naoAvaliado'>Profissional ainda não avaliado.</p>";
                     }
-                } else {
-                    echo "Profissional ainda não avaliado.";
                 }
                 
                 

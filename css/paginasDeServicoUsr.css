@@ -240,7 +240,10 @@ html, body{
 .option_insert{
 
 }
+.btn-success, .btn-danger{
+  font-weight: bold !important;
 
+}
 
 .btn_insert,.delete-btn, #btn-env-orcamento, .btn_success {
   font-size: 20px;
@@ -630,6 +633,7 @@ html, body{
   width: 30%;
   background-color:rgb(18, 67, 56);  
   color: rgb(222, 222, 222);
+  border: solid 5px rgb(16, 92, 81);
 }
 .lbl_emAndamento{
   font-size: 32px;
@@ -642,8 +646,10 @@ html, body{
   background: #06241f !important;
   padding: 10px;
   border-radius: 15px;
-  width: 100%;
+  width: 90%;
   text-align: center;
+  font-size: 22px;
+  margin: 5px;
 }
 #desc_andamento{
   text-indent: 15px;
