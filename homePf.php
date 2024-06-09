@@ -570,10 +570,10 @@ if(!isset($_SESSION['pfLogado'])){
             <i class="fa fa-comments" aria-hidden="true"></i>
             <div class="chat">
                 <div class="header_chat">
-                    <img src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
+                    <img src="./imgs/img_pf_chatbot_tec.png"
                         class="img_perfil_tecnobot">
                     <span class="title_tecnobot">
-                        OSvaldo_Tecnobot v1_test
+                        Tec The Ghost ^^
                     </span>
                     <button class="btn_fechar_chat">
                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -583,10 +583,10 @@ if(!isset($_SESSION['pfLogado'])){
                 <ul class="messages">
                     <!-- <li class="self">Olá, preciso de ajuda. </li> -->
                     <li class="other msg"><img
-                            src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
-                            class="img_perfil_tecnobot_chat"> Olá, eu sou o batman. fdp</li>
+                            src="./imgs/img_pf_chatbot_tec.png"
+                            class="img_perfil_tecnobot_chat">Olá, Eu sou o Tec, o fantasma.</li>
                     <li class="other msg"><img
-                            src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
+                            src="./imgs/img_pf_chatbot_tec.png"
                             style="top: 32px;" class="img_perfil_tecnobot_chat"> Em que posso te ajuda?<br> O que
                         precisa saber?</li>
                 </ul>

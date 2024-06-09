@@ -229,14 +229,19 @@ form {
         width: 100%;
     }
 }
-.star{
-    margin: 5px !important;
+
+.star {
+    /* margin: 5px !important; */
+    margin-left: 16px;
+    margin-top: 15px;
 }
+
 .endereco{
     display: flex;
     flex-direction: column;
     width: 100%;
     place-items: center;
+    margin: 4pc 0 8pc 0;
 }
 .bloco_comentarios_pf{
     padding: 50px;

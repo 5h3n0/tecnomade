@@ -43,7 +43,7 @@ padding: 10px;
 
 .nav {
   float: right;
-  list-style: none;
+  list-style: none !important;
   position: absolute;
   right: 30px;
 }
@@ -54,7 +54,7 @@ padding: 10px;
 
 .nav a {
   display: block;
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 10px 20px;
   font-size: 14pt;
 }
@@ -62,7 +62,7 @@ padding: 10px;
 
 .nav-links,.nav-link {
   color: #ffffff;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .nav-links:hover, .nav-link:hover {

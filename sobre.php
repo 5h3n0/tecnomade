@@ -192,6 +192,8 @@ if(isset($_SESSION['pfLogado'])){
     </section>
 
     <section class="section_detalhes_sobre_membros">
+        <a name="ExpertTeam"></a>
+
         <h2> Nossa Equipe</h2>
         <a name="perfilGabriela"></a>
         <div class="bloco_detalhes_membro_team">
@@ -482,7 +484,7 @@ if(isset($_SESSION['pfLogado'])){
                         </svg>
                         <span class="tooltip-social">Facebook</span>
                     </a>
-                    <a href="#">
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlJWKxqGLQMdTQhZNKqHzwQcVpTMhhfHSztLzmfqsfzbFRhLzzjgKpTSrvfJqTdFWkdckg">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
                         </svg>
@@ -496,6 +498,7 @@ if(isset($_SESSION['pfLogado'])){
 
     
   <section class="sectionTwoAboutUs">
+<a name="entraEmContato"></a>
 
  <h2>Entre em contato ou siga <br> Tecnomade 
   pelas redes sociais também</h2>
@@ -528,51 +531,12 @@ c1.562,1.562,4.095,1.562,5.656,0L44,21.655v62.344c0,2.209,1.791,4,4,4S52,86.208,
 
 </button>
 
-<div class="floating-chat">
-            <i class="fa fa-comments" aria-hidden="true"></i>
-            <div class="chat">
-                <div class="header_chat">
-                    <img src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
-                        class="img_perfil_tecnobot">
-                    <span class="title_tecnobot">
-                        OSvaldo_Tecnobot v1_test
-                    </span>
-                    <button class="btn_fechar_chat">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </button>
-
-                </div>
-                <ul class="messages">
-                    <!-- <li class="self">Olá, preciso de ajuda. </li> -->
-                    <li class="other msg"><img
-                            src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
-                            class="img_perfil_tecnobot_chat"> Olá, eu sou o batman. fdp</li>
-                    <li class="other msg"><img
-                            src="https://i.pinimg.com/236x/2c/67/f0/2c67f0796ef5bf73654c7429a0ce082e.jpg"
-                            style="top: 32px;" class="img_perfil_tecnobot_chat"> Em que posso te ajuda?<br> O que
-                        precisa saber?</li>
-                </ul>
-                <div class="footer">
-                    <div class="text-box" contenteditable="true" disabled="true"></div>
-                    <button id="sendMessage"><svg data-name="Layer 45" height="25" id="Layer_45" viewBox="0 0 24 24"
-                            width="25" xmlns="http://www.w3.org/2000/svg">
-                            <title />
-                            <polygon class="color_icon" points="10.854 15.264 9 17.455 9 21 19 8 10.854 15.264"
-                                style="fill:rgb(0,128,111)" />
-                            <polygon class="color_icon"
-                                points="3 12 8.607 14.99 8.613 14.99 17 8 10.775 15.357 12 16.781 18 20 21 3 3 12"
-                                style="fill: rgb(0, 128, 111)" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
 
 <?php
     require_once './footer.php';
+    include_once "./chatbot.php";
 ?>
 
-    <script src="./js/scriptsIndex.js"></script>
     <script src="./js/script.js"></script>
 
     <script>

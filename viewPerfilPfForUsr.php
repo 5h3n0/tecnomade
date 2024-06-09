@@ -202,7 +202,7 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
             echo "<h2 id='lbl_regiao'> Região do Profissional</h2>";
             echo '
                 <div style="padding: 10px 0 0; clear: both">
-                    <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=' . $row_endereco['cep'] . '&output=embed"></iframe>
+                    <iframe width="900" scrolling="no" height="500" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=' . $row_endereco['cep'] . '&output=embed"></iframe>
                 </div>';
             echo "</div>";
         }

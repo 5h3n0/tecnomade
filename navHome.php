@@ -24,8 +24,8 @@ error_reporting(E_ALL);
 
 		<ul class="nav">
 			<li><a href="index.php" class="nav-links linkHome">Home</a></li>
-			<li><a href="#" class="nav-links">Serviços</a></li>
-			<li><a href="#" class="nav-links">Contato</a></li>
+			<li><a href="#" class="nav-links services_item_nav">Serviços</a></li>
+			<li><a href="./sobre.php#entraEmContato" class="nav-links">Contato</a></li>
 			<li><a href="sobre.php" class="nav-links">Sobre nós</a></li>
 			<li><a href="lgcd.php" class="nav-links linkRegister">Cadastre-se</a></li>
 			<li><a href="#" class="nav-links cliente" id="loginOpen" onclick="abrirTelamenu()">

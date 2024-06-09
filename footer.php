@@ -95,9 +95,9 @@ include('connect.php');
                             <h3>Termos</h3>
                         </div>
                         <ul class="ajst_tms_footer_text_link">
-                            <li><a href="#">Termos</a></li>
-                            <li><a href="#" >Privacidade</a></li>
-                            <li><a href="#">Política</a></li>
+                            <li><a href="./terms_use_and_privacy.php#termos_uso">Termos</a></li>
+                            <li><a href="./terms_use_and_privacy.php#privacidade" >Privacidade</a></li>
+                            <li><a href="./terms_use_and_privacy.php#politicas">Política</a></li>
                         </ul>
                     </div>
                 </div>
@@ -109,12 +109,12 @@ include('connect.php');
                             <h3>Links Úteis</h3>
                         </div>
                         <ul class="lista_de_links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">about</a></li>
-                            <li><a href="#">services</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="./index.php">Home</a></li>
+                            <li><a href="./sobre.php">about</a></li>
+                            <li><a href="./sobre.php">services</a></li>
+                            <li><a href="./sobre.php#entraEmContato">Contact</a></li>
+                            <li><a href="./sobre.php">Our Services</a></li>
+                            <li><a href="./sobre.php#ExpertTeam">Expert Team</a></li>
                         </ul>
                     </div>
                 </div>
