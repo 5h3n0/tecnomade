@@ -3,8 +3,9 @@ include 'connect.php';
 if (!isset($_SESSION)) {
     session_start();
   }
+  $id_Pf = $_SESSION['id_Pf'];
 include_once('navPf.php');
-$result = $conn->query("SELECT * FROM portfolio");
+$result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
 ?>
 
 <!DOCTYPE html>
