@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jun-2024 às 22:00
+-- Tempo de geração: 10-Jun-2024 às 21:13
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -43,7 +43,8 @@ CREATE TABLE `avaliacoes` (
 
 INSERT INTO `avaliacoes` (`id_avaliacao`, `estrelas`, `data_avaliacao`, `mensagem_avaliacao`, `id_Pf`) VALUES
 (1, 5, '2024-06-03', 'Gostei muito, ótimo atendimento.', 1),
-(2, 5, '2024-06-03', 'Ótimo serviço, supriu todas as necessidades do ambiente!', 1);
+(2, 5, '2024-06-03', 'Ótimo serviço, supriu todas as necessidades do ambiente!', 1),
+(3, 5, '2024-06-10', 'ótimo serviço, superou minhas expectativas!!', 3);
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,8 @@ CREATE TABLE `contratacoes` (
 
 INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `data_Contratacao`, `id_Pf`) VALUES
 (1, 1, 4, 40000, '2024-06-03', 1),
-(2, 3, 2, 120000, '2024-06-03', 1);
+(2, 3, 2, 120000, '2024-06-03', 1),
+(3, 4, 8, 55000, '2024-06-10', 3);
 
 -- --------------------------------------------------------
 
@@ -160,7 +162,8 @@ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro
 (5, 4, NULL, '08586010', 'Avenida Cardeal', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '150', ''),
 (6, NULL, 2, '08586-180', 'Rua do Bronze', 'Parque São Pedro', 'Itaquaquecetuba', 'SP', '250', ''),
 (7, NULL, 3, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '1150', ''),
-(8, 5, NULL, '08580-050', 'Rua dos Engenheiros', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '1245', '');
+(8, 5, NULL, '08580-050', 'Rua dos Engenheiros', 'Jardim Itaquá', 'Itaquaquecetuba', 'SP', '1245', ''),
+(9, NULL, 4, '01001-000', 'Praça da Sé', 'Sé', 'São Paulo', 'SP', '767', '');
 
 -- --------------------------------------------------------
 
@@ -183,7 +186,8 @@ CREATE TABLE `orcamento` (
 
 INSERT INTO `orcamento` (`id_orcamento`, `id_solicitacao`, `id_Pf`, `orcamento`, `status`, `msg_for_client`) VALUES
 (1, 1, 1, 40000, 'Aceito', 'Agradeço o seu interesse no serviço de suporte e configuração de rede sem fio. O valor enviado acima para a realização do serviço solicitado cobre a avaliação do ambiente para otimizar a cobertura do sinal, configuração dos roteadores e pontos de acesso, e reforço da segurança da rede. Além disso, suporte técnico contínuo para manutenção e resolução de problemas, garantindo uma rede Wi-Fi eficiente e segura para a sua residência.'),
-(2, 2, 1, 120000, 'Aceito', 'Agradeço pelo seu interesse em meu serviço de instalação de câmera de segurança. O valor para a realização do serviço solicitado será enviado juntamente com essa mensagem, cobrindo a avaliação do ambiente, instalação e configuração da câmera, além de oferecer suporte técnico contínuo para garantir o funcionamento eficiente do sistema. ');
+(2, 2, 1, 120000, 'Aceito', 'Agradeço pelo seu interesse em meu serviço de instalação de câmera de segurança. O valor para a realização do serviço solicitado será enviado juntamente com essa mensagem, cobrindo a avaliação do ambiente, instalação e configuração da câmera, além de oferecer suporte técnico contínuo para garantir o funcionamento eficiente do sistema. '),
+(3, 3, 3, 55000, 'Aceito', 'Boa tarde, parece ser algo simples, irei estruturar o projeto e logo envio um feedback.');
 
 -- --------------------------------------------------------
 
@@ -246,7 +250,7 @@ CREATE TABLE `prof` (
 INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `hashPass`, `cnpj`, `imgName`, `categorias`, `descPf`, `avaliacao_media`) VALUES
 (1, 'Rodrigo Nunes Almeida', '1995-10-12', 'rdrigo35@gmail.com', '(11) 98859-4468', 'm', 'ed999f05e1ed9818541fcd882b2c780ebac594fc', '45.645.646/0001-46', 'b5d58a2dba09f30c2bff598f81ba85bf.jpg', NULL, 'Sou Rodrigo Nunes Almeida, um profissional especializado em manutenção de servidores, instalação de câmeras e alarmes, infraestrutura de rede e manutenção de redes sem fio. Minha experiência me permite oferecer soluções confiáveis e eficientes para garantir o funcionamento ininterrupto dos sistemas de TI e segurança. Estou comprometido em fornecer serviços de alta qualidade para empresas e organizações, ajudando a maximizar o desempenho de sua infraestrutura tecnológica.', NULL),
 (2, 'Marcos Almeida Rocha', '2001-11-12', 'mcal@gmail.com', '(11) 98858-5589', 'm', '5a78d7207d53ee01ca20554180c9f80f44e7e61d', '79.945.646/0001-45', '80b35a95ed3b570c067da1de894c8b03.jpg', NULL, 'Eu sou Marcos, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL),
-(3, 'Ana Nunes Dos Santos', '1999-07-18', 'anunes@gmail.com', '(11) 90658-8689', 'm', 'e41079bf229d6ee9886927bb3326aa951cdae53e', '89.478.946/0001-66', 'eb00fa4b124ef87c7b8d962ff4d1e0e8.jpg', NULL, 'Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.', NULL),
+(3, 'Ana Nunes Dos Santos', '1999-07-18', 'anunes@gmail.com', '(11) 90658-8689', 'm', 'e41079bf229d6ee9886927bb3326aa951cdae53e', '89.478.946/0001-66', '23645276957e700da1641c1a7ce641f0.jpg', NULL, 'Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.', NULL),
 (4, 'black xyz', '2005-06-22', 'black@gmail.com', '(11) 96486-1525', 'm', '933f868ccf7ece7601793d3887f5522fbb341418', '16.545.646/5464-86', 'cf001da34629ede7c257171085b12244.jpg', NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', NULL),
 (5, 'Rafael Sousa Oliveira', '1998-02-05', 'rol@gmail.com', '(11) 98454-5689', 'm', 'fc6961fc54edac9228fd2d798fb3441f4940405f', '78.445.646/0001-25', 'b48bee7eaa944376ecaf9be3521d1e35.jpg', NULL, 'Sou Rafael Sousa, um profissional especializado em desenvolvimento de sistemas, Power BI e computação em nuvem. Minha paixão reside em criar soluções inovadoras e eficientes que atendam às necessidades específicas dos clientes. Com experiência em desenvolvimento de software, análise de dados e implementação de soluções em nuvem, estou comprometido em fornecer resultados de alta qualidade que impulsionem o sucesso dos projetos.', NULL);
 
@@ -275,7 +279,9 @@ INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `id_Pf`, `id
 (4, 'Suporte para rede sem fio', 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente.', 1, 3),
 (5, 'Desenvolvimento de Sistemas Java', 'Serviço especializados de desenvolvimento de sistemas em Java para atender às necessidades únicas do seu negócio. Com expertise na linguagem Java, desenvolvo soluções robustas e escaláveis, desde aplicativos corporativos até sistemas de gestão. ', 2, 6),
 (6, 'Analise de Dados com Power BI', 'Maximize o potencial dos dados com nossas soluções especializadas em Power BI. Visualizações dinâmicas e análises avançadas transformam dados em insights acionáveis para impulsionar estratégias de negócios. De pequenas a grandes empresas, nossas soluções escaláveis fornecem as ferramentas necessárias para tomar decisões informadas e estratégicas.', 2, 9),
-(7, 'Cloud Computing com AWS', 'Armazenamento seguro, processamento eficiente e escalabilidade flexível são apenas o começo com os serviços de cloud computing AWS. De startups a grandes corporações, esses serviços oferecem as ferramentas necessárias para impulsionar sua empresa para o futuro. Aproveite ao máximo recursos, reduza custos e aumente a agilidade com esta solução de cloud computing líder de mercado. Entre em contato para saber mais sobre como podemos ajudar a impulsionar o sucesso na nuvem com a AWS.', 2, 12);
+(7, 'Cloud Computing com AWS', 'Armazenamento seguro, processamento eficiente e escalabilidade flexível são apenas o começo com os serviços de cloud computing AWS. De startups a grandes corporações, esses serviços oferecem as ferramentas necessárias para impulsionar sua empresa para o futuro. Aproveite ao máximo recursos, reduza custos e aumente a agilidade com esta solução de cloud computing líder de mercado. Entre em contato para saber mais sobre como podemos ajudar a impulsionar o sucesso na nuvem com a AWS.', 2, 12),
+(8, 'Desenvolvimento de Web sites e aplicações web.', 'O serviço de Desenvolvimento Web utiliza as mais recentes tecnologias e frameworks, incluindo HTML5, CSS3, JavaScript e php, para criar websites e aplicações web de alto desempenho. Com um monitoramento contínuo do progresso do projeto, identificamos e resolvemos proativamente quaisquer desafios, garantindo um desenvolvimento suave e eficaz. Além disso, oferecemos atualizações regulares de software e implementação de novos recursos para manter seu site ou aplicação atualizados e relevantes.', 3, 4),
+(9, 'Desenvolvimento de Jogos MMORPG', 'O serviço de Desenvolvimento de Jogos oferece uma solução completa, empregando tecnologias avançadas e ferramentas líderes de mercado. Utilizando de PixelArt e C#, como principais pontos.  ', 3, 5);
 
 -- --------------------------------------------------------
 
@@ -298,7 +304,8 @@ CREATE TABLE `servicos_realizados` (
 
 INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_Pf`, `id_Usr`, `id_Service`, `data_realizacao`) VALUES
 (1, 1, 1, 1, 4, '2024-06-03'),
-(2, 2, 1, 3, 2, '2024-06-03');
+(2, 2, 1, 3, 2, '2024-06-03'),
+(3, 3, 3, 4, 8, '2024-06-10');
 
 -- --------------------------------------------------------
 
@@ -323,7 +330,8 @@ CREATE TABLE `solicitacoes_servico` (
 
 INSERT INTO `solicitacoes_servico` (`id_solicitacao`, `id_Service`, `id_Pf`, `id_Usr`, `descricao_servico`, `mensagem_cliente`, `data_Solicitacao`, `status`) VALUES
 (1, 4, 1, 1, 'O serviço de Manutenção de Rede Sem Fio oferece uma solução abrangente para garantir a estabilidade e o desempenho de sua rede Wi-Fi. Este serviço inclui monitoramento contínuo da rede sem fio para identificar e resolver proativamente problemas de conectividade e desempenho. Nossos especialistas realizam ajustes na configuração da rede, otimizando canais e frequências para evitar interferências e garantir uma cobertura uniforme em todo o ambiente.', 'Estou interessado em obter um orçamento para suporte e configuração de rede sem fio na minha residência. Atualmente, estamos enfrentando alguns problemas de conectividade e gostaria de melhorar a performance e segurança da nossa rede Wi-Fi. Precisamos de uma avaliação do ambiente para otimizar a cobertura do sinal, configuração de roteadores e pontos de acesso, reforço da segurança da rede e suporte técnico contínuo para manutenção e resolução de problemas.', '2024-06-03', 'Orçamento Enviado'),
-(2, 2, 1, 3, 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 'Estou interessada em obter um orçamento para instalação de câmeras de segurança na minha residência. Atualmente, estou buscando melhorar a segurança do local e gostaria de implementar um sistema de vigilância por vídeo. Preciso de uma avaliação do ambiente para identificar os pontos estratégicos de instalação, instalação e configuração das câmeras, e suporte técnico contínuo para garantir o funcionamento adequado do sistema. Agradeço desde já pela atenção e aguardo um retorno com as informações solicitadas.', '2024-06-03', 'Orçamento Enviado');
+(2, 2, 1, 3, 'O serviço de Instalação de Câmeras/Alarmes oferece uma solução abrangente para proteger sua residência ou empresa. Este serviço inclui a instalação profissional de câmeras de vigilância e sistemas de alarme, garantindo a segurança e a tranquilidade do ambiente. Nossos especialistas realizam uma avaliação detalhada das necessidades de segurança do local, seguida pela instalação estratégica dos equipamentos. Além disso, fornecemos orientação sobre o funcionamento dos sistemas e opções de monitoramento remoto para garantir uma proteção contínua.', 'Estou interessada em obter um orçamento para instalação de câmeras de segurança na minha residência. Atualmente, estou buscando melhorar a segurança do local e gostaria de implementar um sistema de vigilância por vídeo. Preciso de uma avaliação do ambiente para identificar os pontos estratégicos de instalação, instalação e configuração das câmeras, e suporte técnico contínuo para garantir o funcionamento adequado do sistema. Agradeço desde já pela atenção e aguardo um retorno com as informações solicitadas.', '2024-06-03', 'Orçamento Enviado'),
+(3, 8, 3, 4, 'O serviço de Desenvolvimento Web utiliza as mais recentes tecnologias e frameworks, incluindo HTML5, CSS3, JavaScript e php, para criar websites e aplicações web de alto desempenho. Com um monitoramento contínuo do progresso do projeto, identificamos e resolvemos proativamente quaisquer desafios, garantindo um desenvolvimento suave e eficaz. Além disso, oferecemos atualizações regulares de software e implementação de novos recursos para manter seu site ou aplicação atualizados e relevantes.', 'Olá, preciso de um blog privado para mim e meus amigos.  Não tenho restrições, pois preciso de algo simples.', '2024-06-10', 'Orçamento Enviado');
 
 -- --------------------------------------------------------
 
@@ -350,7 +358,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
 (1, 'Joana da Silva Santos', '1985-04-25', 'joanadssantos@email.com', 'm', '6ba10752e261b7cc53a6d7c5a92cabe0.jpg', '(11) 98765-4321', '4c6b8c96eace94c96cdba7ca44af939ed93ea3cb', '219.876.543-21'),
 (2, 'black xyz', '2005-05-26', 'black@gmail.com', 'm', '554834f3cd8f1fa71026f9a6434ed0f7.jpg', '(11) 96464-8612', '933f868ccf7ece7601793d3887f5522fbb341418', '186.841.648-61'),
-(3, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@gmail.com', 'f', '4090f199d24d6125b68e9dece5fb5692.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
+(3, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@gmail.com', 'f', '4090f199d24d6125b68e9dece5fb5692.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00'),
+(4, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@email.com', 'f', 'df9b831bd09209cc4cb3216237d63e60.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
 
 --
 -- Índices para tabelas despejadas
@@ -453,7 +462,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
-  MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `categorias`
@@ -471,19 +480,19 @@ ALTER TABLE `cat_sel`
 -- AUTO_INCREMENT de tabela `contratacoes`
 --
 ALTER TABLE `contratacoes`
-  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id_orcamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_orcamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `portfolio`
@@ -501,25 +510,25 @@ ALTER TABLE `prof`
 -- AUTO_INCREMENT de tabela `services`
 --
 ALTER TABLE `services`
-  MODIFY `id_Service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_Service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `servicos_realizados`
 --
 ALTER TABLE `servicos_realizados`
-  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `solicitacoes_servico`
 --
 ALTER TABLE `solicitacoes_servico`
-  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
