@@ -4,7 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include ('connect.php');
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,9 +33,20 @@ session_start();
 <body>
     <?php
     include_once ('navHome.php');
-        ?>
+    ?>
     <section class="container">
+        <?php
+        if (isset($_SESSION['repita']) && $_SESSION['repita']) {
+            echo '<div class="cap_shadow">';
+            echo '<div class="opa">';
+            echo '  <p>Usuário ou senha incorreto!</p>';
+            echo '  <button class="closeButton" onclick="closeAlert()">Fechar</button>';
+            echo '</div>';
+            echo '</div>';
 
+            $_SESSION['repita'] = false;
+        }
+        ?>
         <div class="contentBoxPf" style="display: none;">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
                 class="btn_back_ini_esc-opcs" id="btn_back_ini_esc-opcsPf">
@@ -119,7 +129,7 @@ session_start();
 
                     <input type="submit" value="Login" name="enviarForm" class="btn-login btn_cdst_sub">
                     <div class="div_ajust_linksCad_linkMlg">
-                    <span class="linksCad" id="linkUsr" onclick="mdFormUsr()">Não possui Cadastro?</span>
+                        <span class="linksCad" id="linkUsr" onclick="mdFormUsr()">Não possui Cadastro?</span>
                     </div>
                 </form>
 
@@ -140,7 +150,8 @@ session_start();
                     <span class="span-require">*Escreva seu nome completo*</span>
 
                     <label for="dtNasUsr" id="lblDtNas" class="label-require">Data de Nascimento:</label>
-                    <input type="date" oninput="dataValidate()" name="dtNasUsr" id="dtNas" class="dtNas inputs require" required >
+                    <input type="date" oninput="dataValidate()" name="dtNasUsr" id="dtNas" class="dtNas inputs require"
+                        required>
                     <span id="spanErrorNameUsr" class="span-require">*A idade mínima é 18 anos!*</span>
 
                     <label for="email" class="label-require">Email:</label>
@@ -149,30 +160,37 @@ session_start();
                     <span class="span-require">*Digite um email válido*</span>
 
                     <label for="celUsr" id="lblCelUsr" class="label-require">Celular</label>
-                    <input type="text" name="celUsr" id="inputCelUsr" placeholder="Digite seu Número:" autocomplete="off" required oninput="formatCell(this); celValidate()" maxlength="11" class="inputs require">
+                    <input type="text" name="celUsr" id="inputCelUsr" placeholder="Digite seu Número:"
+                        autocomplete="off" required oninput="formatCell(this); celValidate()" maxlength="11"
+                        class="inputs require">
                     <span id="spanErrorCllrUsr" class="span-require"></span>
 
                     <label for="cpf" id="lblcpfUsrVal" class="label-require">CPF:</label>
-                    <input type="text" id="inputCpfUsrVal" name="cpf" placeholder="Informe seu CPF:" class="doc inputs require" onkeyup="formatDoc(this)" oninput="cpfUsrVal()" maxlength="11" autocomplete="off" required>
+                    <input type="text" id="inputCpfUsrVal" name="cpf" placeholder="Informe seu CPF:"
+                        class="doc inputs require" onkeyup="formatDoc(this)" oninput="cpfUsrVal()" maxlength="11"
+                        autocomplete="off" required>
                     <span id="spanErrorCpfUsr" class="span-require">*CPF Inválido*</span>
 
                     <label for="usrPass" id="labelPassUsr" class="label-require">Digite uma senha:</label>
-                    <input type="password" name="usrPass" placeholder="Senha:" class="inputs require" autocomplete="off" id="inputPassUsr" required oninput="PassUsrVal()">
-                    <span class="span-require" id="spanErrorPassUsr" >*A senha deve conter no mínimo 8 caracteres!*</span>
+                    <input type="password" name="usrPass" placeholder="Senha:" class="inputs require" autocomplete="off"
+                        id="inputPassUsr" required oninput="PassUsrVal()">
+                    <span class="span-require" id="spanErrorPassUsr">*A senha deve conter no mínimo 8
+                        caracteres!*</span>
 
                     <label for="usrRpPass" id="labelCfPassUsr" class="label-require">Repita a senha:</label>
-                    <input type="password" id="inputCfPassUsr" name="usrRpPass" placeholder="Senha:" oninput="PassCfUsrVal()" class="inputs require" autocomplete="off" required>
+                    <input type="password" id="inputCfPassUsr" name="usrRpPass" placeholder="Senha:"
+                        oninput="PassCfUsrVal()" class="inputs require" autocomplete="off" required>
                     <span class="span-require" id="spanErrorCfPassUsr">*As senhas não conferem, verifique*</span>
 
                     <div class="gender">
-                        <span class="custom-legend" >Gênero:</span>
+                        <span class="custom-legend">Gênero:</span>
                         <label for="f" class=" label_fem">Feminino
                         </label>
                         <input class="option" name="gender" type="radio" value="f">
                         <label for="m" class=" label_masc">Masculino
                         </label>
                         <input class="option" name="gender" type="radio" value="m">
-                        <label for="o" class=" label_pnd" >P.N.D
+                        <label for="o" class=" label_pnd">P.N.D
                         </label>
                         <input class="option" name="gender" type="radio" value="o" required>
 
@@ -181,7 +199,7 @@ session_start();
                         <input type="submit" value="Cadastrar" name="enviarForm" class="btn_cdst_sub">
                     </div>
                     <div class="div_ajust_linksCad_linkMlg">
-                    <span class="linkMlg" id="linkUsr" onclick="mdFormCdUsr()">Já possui Cadastro?</span>
+                        <span class="linkMlg" id="linkUsr" onclick="mdFormCdUsr()">Já possui Cadastro?</span>
                     </div>
                 </form>
             </div>
@@ -211,80 +229,84 @@ session_start();
                     <input type="password" name="pfPass" placeholder="Senha:">
                     <input type="submit" value="Login" name="enviarForm" class="btn-login btn_cdst_sub">
                     <div class="div_ajust_linksCad_linkMlg">
-                    <span class="linksCad" id="linkPf" onclick="mdFormPf()">Não possui Cadastro?</span>
+                        <span class="linksCad" id="linkPf" onclick="mdFormPf()">Não possui Cadastro?</span>
                     </div>
                 </form>
 
 
-<form action="registerPfBd.php" method="post" class="cdPf">
-    <div class="container-pf">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
-                class="btn_back_ini_esc-opcs btn_back_ini_esc-opcsUser" id="btn_back_ini_esc-opcsUsr"
-                onclick="backPf()">
-                <path fill="rgb(0, 148, 128)"
-                    d="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z" />
-            </svg>
+                <form action="registerPfBd.php" method="post" class="cdPf">
+                    <div class="container-pf">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                            class="btn_back_ini_esc-opcs btn_back_ini_esc-opcsUser" id="btn_back_ini_esc-opcsUsr"
+                            onclick="backPf()">
+                            <path fill="rgb(0, 148, 128)"
+                                d="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z" />
+                        </svg>
 
 
-            <h1 class="titleForms">Cadastro <br> Profissional</h1>
+                        <h1 class="titleForms">Cadastro <br> Profissional</h1>
 
-            <label for="pfName" class="label-require">Nome:</label>
-            <input type="text" name="pfName" placeholder="Digite seu Nome:" class="require"
-                oninput="nameValidate()">
-            <span class="span-require">*Escreva seu nome completo*</span>
+                        <label for="pfName" class="label-require">Nome:</label>
+                        <input type="text" name="pfName" placeholder="Digite seu Nome:" class="require"
+                            oninput="nameValidate()">
+                        <span class="span-require">*Escreva seu nome completo*</span>
 
-            <label for="dtNasPf" id="lblDtNasPf" class="label-require lblDtNasPf">Data de Nascimento:</label>
-            <input type="date" oninput="dataValidatePf()" name="dtNasPf" class="dtNas" id="inputDataNascPf">
-            <span class="span-require" id="spanErrorDataNascUsr">*A idade mínima é 18 anos!*</span>
+                        <label for="dtNasPf" id="lblDtNasPf" class="label-require lblDtNasPf">Data de
+                            Nascimento:</label>
+                        <input type="date" oninput="dataValidatePf()" name="dtNasPf" class="dtNas" id="inputDataNascPf">
+                        <span class="span-require" id="spanErrorDataNascUsr">*A idade mínima é 18 anos!*</span>
 
-            <label for="email" class="label-require" id="labelEmailpf">Email:</label>
-            <input type="email" oninput="emailValidatepf()" name="email" class="require" id="inputEmailPf" placeholder="Digite seu Email:" require>
-            <span id="emailError" class="span-require"></span>
+                        <label for="email" class="label-require" id="labelEmailpf">Email:</label>
+                        <input type="email" oninput="emailValidatepf()" name="email" class="require" id="inputEmailPf"
+                            placeholder="Digite seu Email:" require>
+                        <span id="emailError" class="span-require"></span>
 
-            <label for="celPf" class="label-require" id="labelCllrPf">Celular:</label>
-            <input type="text" name="celPf" id="inputCllrPf" placeholder="Digite seu Número:" class="require"
-                oninput="formatCell(this); celValidatepf()">
-            <span id="phoneError" class="span-require" id="spanErrorCllrPf"></span>
+                        <label for="celPf" class="label-require" id="labelCllrPf">Celular:</label>
+                        <input type="text" name="celPf" id="inputCllrPf" placeholder="Digite seu Número:"
+                            class="require" oninput="formatCell(this); celValidatepf()">
+                        <span id="phoneError" class="span-require" id="spanErrorCllrPf"></span>
 
-            <label for="cnpj" class="label-require">CNPJ:</label>
-            <input type="text" name="cnpj" placeholder="Informe seu CNPJ:" class="doc"
-                oninput="cpfValidate()" maxlength="14" autocomplete="off">
-            <span class="span-require"></span>
-
-
-            <label for="pfPass" id="labelPass">Digite uma Senha:</label>
-            <input type="password" name="pfPass" id="inputPasswordpf" placeholder="Senha:" autocomplete="off" oninput="passwordPf()">
-            <span class="span-require" id="erroMsgPassPf">*CNPJ Inválido! Verifique e corrija*</span>
-
-            <label for="pfRpPass" id="labelCfpassPf">Repita a Senha:</label>
-            <input type="password" name="pfRpPass" id="inputCfPfPass" placeholder="Senha:" autocomplete="off" oninput="passwordPfCf()">
-            <span class="span-require" id="erroMsgPassCfPf"></span>
-
-            <div class="gender">
-                <span class="custom-legend">Gênero:</span>
-
-                <label for="f" class="label_fem">Feminino </label>
-                <input class="option" name="gender" type="radio" value="f">
-
-                <label for="m" class="label_masc">Masculino</label>
-                <input class="option" name="gender" type="radio" value="m">
-
-                <label for="o" class="label_pnd">P.N.D</label>
-                <input class="option" name="gender" type="radio" value="o" >
-            </div>
-
-            <div class="buttonsForm">
-                <input type="submit" value="Cadastrar" class="btn_cdst_sub" name="enviarForm">
-            </div>
-            <div class="div_ajust_linksCad_linkMlg">
-            <span class="linkMlg" id="linkPf" onclick="mdFormCdPf()">Já possui Cadastro?</span>
-            </div>
-    </div>
-</form>
+                        <label for="cnpj" class="label-require">CNPJ:</label>
+                        <input type="text" name="cnpj" placeholder="Informe seu CNPJ:" class="doc"
+                            oninput="cpfValidate()" maxlength="14" autocomplete="off">
+                        <span class="span-require"></span>
 
 
+                        <label for="pfPass" id="labelPass">Digite uma Senha:</label>
+                        <input type="password" name="pfPass" id="inputPasswordpf" placeholder="Senha:"
+                            autocomplete="off" oninput="passwordPf()">
+                        <span class="span-require" id="erroMsgPassPf">*CNPJ Inválido! Verifique e corrija*</span>
+
+                        <label for="pfRpPass" id="labelCfpassPf">Repita a Senha:</label>
+                        <input type="password" name="pfRpPass" id="inputCfPfPass" placeholder="Senha:"
+                            autocomplete="off" oninput="passwordPfCf()">
+                        <span class="span-require" id="erroMsgPassCfPf"></span>
+
+                        <div class="gender">
+                            <span class="custom-legend">Gênero:</span>
+
+                            <label for="f" class="label_fem">Feminino </label>
+                            <input class="option" name="gender" type="radio" value="f">
+
+                            <label for="m" class="label_masc">Masculino</label>
+                            <input class="option" name="gender" type="radio" value="m">
+
+                            <label for="o" class="label_pnd">P.N.D</label>
+                            <input class="option" name="gender" type="radio" value="o">
+                        </div>
+
+                        <div class="buttonsForm">
+                            <input type="submit" value="Cadastrar" class="btn_cdst_sub" name="enviarForm">
+                        </div>
+                        <div class="div_ajust_linksCad_linkMlg">
+                            <span class="linkMlg" id="linkPf" onclick="mdFormCdPf()">Já possui Cadastro?</span>
+                        </div>
                     </div>
+                </form>
+
+
             </div>
+        </div>
     </section>
 
     <script src="./js/endereco.js"></script>
@@ -293,8 +315,12 @@ session_start();
     <script>
         document.querySelector(".linkRegister").style.display = "none";
         document.querySelector("#loginOpen").style.display = "none";
+        function closeAlert() {
+            document.querySelector('.opa').style.display = 'none';
+            document.querySelector('.cap_shadow').style.display = 'none';
+        }
     </script>
-    
+
 
 </body>
 

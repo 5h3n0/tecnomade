@@ -32,10 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST['enviarForm']))) {
                 $_SESSION['dtNasPf'] = $row['dtNasPf'];
                 header("location: homePf.php");
             } else {
-                echo "Senha incorreta";
+                header("Location: lgcd.php");
+                $_SESSION['repita'] = true;
             }
         } else {
-            echo "Usuário não encontrado";
+            header("Location: lgcd.php");
+                $_SESSION['repita'] = true;
         }
     }
 }

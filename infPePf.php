@@ -11,10 +11,20 @@ include 'connect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style_footer.css">
+    <link rel="stylesheet" href="./css/default.css">
     <title>Document</title>
 </head>
 
 <body>
+    <?php
+    include_once('navPf.php');
+    ?>
+    <br>
+    <br>
+    <br>
+    <br>
     <ul>
         <a href="updatePf.php">
             <li>Alterar Senha</li>
@@ -23,6 +33,9 @@ include 'connect.php';
             <li>Excluir conta</li>
         </a>
     </ul>
+    <?php
+    include_once('footer.php');
+    ?>
 </body>
 
 </html>

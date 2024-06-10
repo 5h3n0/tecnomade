@@ -58,7 +58,9 @@ padding: 10px;
   padding: 10px 20px;
   font-size: 14pt;
 }
-
+.nav a:hover {
+  cursor: pointer;
+}
 
 .nav-links,.nav-link {
   color: #ffffff;
