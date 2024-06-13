@@ -15,18 +15,22 @@ $result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
     <link rel="stylesheet" href="./css/portifolio.css">
-    
+    <link rel="stylesheet" href="./css/style_footer.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <div id="topPage">
     <h1 id="titlePage">Meu Portfólio</h1>
+    </div>
    <p class="insert_service"> <a href="insert_portifolio.php" class="insert_service">Inserir Serviço</a></p>
     <div class="portfolio">
         <?php while($row = $result->fetch_assoc()): ?>
             
             <div class="project">
-                <h2><?php echo htmlspecialchars($row['title']); ?></h2>
-                <p><?php echo htmlspecialchars($row['description']); ?></p>
-                <p><?php echo htmlspecialchars($row['date']); ?></p>
+                <h2 id="title_project"><?php echo $row['title']; ?></h2>
+                <p id="desc_project"><?php echo $row['description']; ?></p>
+                <p id="date_project"><?php echo $data = date('d/m/Y', strtotime($row['date']));?></p>
                 <div class="carousel">
                     <div class="carousel_inner">
                         <?php for ($i = 1; $i <= 10; $i++): ?>
@@ -106,5 +110,8 @@ $result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
             });
         });
     </script>
+    <?php
+    include_once("footer.php");
+    ?>
 </body>
 </html>

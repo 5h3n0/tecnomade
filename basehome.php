@@ -11,11 +11,10 @@
             </div>
 
             <div class="box_button">
-                <button>Técnicos</button>
-                <button>Desenvolvedores</button>
-                <button>Serviços</button>
+                <button><a class="button_top_home" href="prof.php">Técnicos</a></button>
+                <button><a class="button_top_home" href="prof.php">Desenvolvedores</a></button>
+                <button><a  class="button_top_home" href="services.php">Serviços</a></button>
             </div>
-
             
         </section>
 
