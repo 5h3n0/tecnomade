@@ -361,11 +361,23 @@ INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgNam
 (3, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@gmail.com', 'f', '4090f199d24d6125b68e9dece5fb5692.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00'),
 (4, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@email.com', 'f', 'df9b831bd09209cc4cb3216237d63e60.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00');
 
+
+CREATE TABLE dados_bancarios (
+    id_bank INT(11) NOT NULL AUTO_INCREMENT,
+    id_Pf INT(11) NOT NULL,
+    banco VARCHAR(255) NOT NULL,
+    conta VARCHAR(255) NOT NULL,
+    agencia VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id_bank)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 --
 -- Índices para tabelas despejadas
 --
 
 --
+-- Índices para tabela `dados_bancarios`
+--
+
 -- Índices para tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
@@ -588,6 +600,13 @@ ALTER TABLE `solicitacoes_servico`
   ADD CONSTRAINT `solicitacoes_servico_ibfk_2` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`),
   ADD CONSTRAINT `solicitacoes_servico_ibfk_3` FOREIGN KEY (`id_Usr`) REFERENCES `users` (`id_Usr`);
 COMMIT;
+
+
+ALTER TABLE `dados_bancarios`
+  ADD KEY `fk_id_Pf_bank` (`id_Pf`);
+
+ALTER TABLE `dados_bancarios`
+  ADD CONSTRAINT `fk_id_Pf_bank` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

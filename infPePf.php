@@ -26,6 +26,9 @@ include 'connect.php';
     <br>
     <br>
     <ul>
+        <a href="dados_bank.php">
+            <li>Dados da sua conta</li>
+        </a>
         <a href="updatePf.php">
             <li>Alterar Senha</li>
         </a>
