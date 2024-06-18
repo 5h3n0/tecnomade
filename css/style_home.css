@@ -557,11 +557,13 @@ flex-wrap: wrap; */
 }
 
 .descrytion_of_box_perfils {
-  margin: 10px 0;
+  margin: 0 !important;
   text-align: center;
   font-size: 16pt !important;
 }
-
+.title_card_esp{
+  margin: 0 !important;
+}
 .box__perfil:hover {
   transform: scale(1.1);
 }

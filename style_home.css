@@ -624,6 +624,7 @@ padding: 10px;
 
 .box__perfil {
   background-color: #fff;
+  overflow: hidden !important;
   /* background-image: url("/imgs/Thunder-overlay_MP4.gif"); */
   height: 350px;
   width: 250px;
@@ -635,6 +636,7 @@ padding: 10px;
   border: solid 3px rgb(0, 128, 111);
   border-radius: 20px;
   box-shadow: 7px 7px 14px #000000;
+  text-overflow: ellipsis;
 }
 
 .img_perfil_of_box {
