@@ -99,10 +99,14 @@ if ($stmt = $conn->prepare($sql_select)) {
                 <div class='boxAddDadosBank'>
                     <label for='nameBanco'>Banco:</label>
                     <select name='nameBanco' id='nameBanco' required>
-                        <option value='Banco do Brasil'>Banco do Brasil</option>
-                        <option value='Caixa Econômica'>Caixa Econômica</option>
-                        <option value='Bradesco'>Bradesco</option>
-                        <option value='Itaú'>Itaú</option>
+                        <option value='Banco do Brasil'>  Banco do Brasil  </option>
+                        <option value='Caixa Econômica'>  Caixa Econômica  </option>
+                        <option value='Bradesco'>  Bradesco  </option>
+                        <option value='Itaú'>  Itaú  </option>
+                        <option value='Santander '>  Santander  </option>
+                        <option value='Nu Bank'>  Nu Bank  </option>
+                        <option value='Banco C6 S.A.'>  C6 S.A. </option>
+                        <option value='Banco Inter S.A.'>   Inter    </option>
                     </select>
                     <br>
                     <label for='Nconta'>Conta: </label>
@@ -138,6 +142,10 @@ if (isset($_SESSION['message'])) {
             <option value='Caixa Econômica' <?php if ($banco == 'Caixa Econômica') echo 'selected'; ?>>Caixa Econômica</option>
             <option value='Bradesco' <?php if ($banco == 'Bradesco') echo 'selected'; ?>>Bradesco</option>
             <option value='Itaú' <?php if ($banco == 'Itaú') echo 'selected'; ?>>Itaú</option>
+            <option value='Santander' <?php if ($banco == 'Santander') echo 'selected'; ?>>Santander</option>
+            <option value='Nu Bank' <?php if ($banco == 'Nu Bank') echo 'selected'; ?>>Nu Bank</option>
+            <option value='Banco C6 S.A.' <?php if ($banco == 'Banco C6 S.A.') echo 'selected'; ?>>C6 S.A.</option>
+            <option value='Banco Inter S.A.' <?php if ($banco == 'Banco Inter S.A.') echo 'selected'; ?>>Banco Inter S.A.</option>
         </select>
         <br>
         <label for='updateNconta'>Conta: </label>
