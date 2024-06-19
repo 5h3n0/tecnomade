@@ -30,7 +30,7 @@ include 'connect.php';
     <div class="container">
         <aside class="sidebar">
             <ul>
-                <li><a href="#">Dados da sua conta</a></li>
+                <li><a href="dados_bank.php">Dados da sua conta</a></li>
                 <li><a href="#">Alterar Senha</a></li>
                 <li><a href="#">Excluir conta</a></li>
             </ul>
