@@ -42,6 +42,7 @@ include 'connect.php';
                 <img src="./imgs/internet-banking-e-conexoes-de-rede-pagamentos-online-compras-e-negocios-de-tecnologia-digital_77174.jpg" alt="">
                 <h2>Seus Dados para Receber o pagamento</h2>
                 <p>Manter seus dados bancários atualizados e corretos é crucial para garantir que você receba seus pagamentos de forma rápida e segura. Nesta seção, você pode visualizar e editar as informações necessárias para o processamento de seus recebimentos, como o nome do banco, número da conta, e agência. É essencial que todos os detalhes fornecidos sejam precisos para evitar atrasos ou erros nas transferências. Certifique-se de revisar periodicamente essas informações, especialmente se você mudar de banco ou atualizar seus dados bancários. Além disso, ao fornecer suas informações bancárias, você pode ter a certeza de que seguimos rigorosas políticas de segurança e privacidade para proteger seus dados contra acessos não autorizados. Recomendamos também que você mantenha registros de todas as alterações feitas, para fins de auditoria e controle pessoal. Garantir que seus dados bancários estejam sempre corretos não só facilita os pagamentos, mas também fortalece a confiança e a transparência entre você e nossa plataforma. <a href="">Ver os dados da sua conta</a></p>
+                <img src="./imgs/transacao.png" class="icon_trans_floting">
             </section>
             <section class="card" id="alterar-senha">
                 <img src="./imgs/0x0.jpg" alt="">
@@ -50,12 +51,13 @@ include 'connect.php';
 
             </section>
             <section class="card" id="excluir-conta">
-                <img src="./imgs/Limpeza-de-dados-5-boas-praticas-para-fazer-na-sua-empresa.jpg" alt="">
+                <img src="./imgs/Limpeza-de-dados-5-boas-praticas-para-fazer-na-sua-empresa.jpg" >
                 <h2>Excluir conta</h2>
                 <p>
                     Atenção! A exclusão da sua conta é uma ação permanente e irreversível. Ao optar por excluir sua conta, todos os seus dados serão apagados de nosso sistema, incluindo informações pessoais, dados de pagamento, histórico de serviços e qualquer outro dado associado ao seu perfil. Esta ação não pode ser desfeita, e não haverá possibilidade de recuperar sua conta ou os dados uma vez que a exclusão seja confirmada. <a href="#" id="deleteAccountBtn"> Excluir conta</a>
                 </p>
-                
+                <img src="./imgs/reject_11724657.png" class="laystall_floting">
+
                 <div id="confirmModal" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>

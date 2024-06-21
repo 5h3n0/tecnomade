@@ -4,17 +4,17 @@ main{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    gap:  30px 0;
 }
 
 .card {
     background-color: #000000;
     padding: 2rem;
-    width: 130%;
+    width: 100%;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgb(0, 123, 111);
     border: 3px solid #00917e;
     border-radius: 20px;
-    overflow: hidden;
     text-align: justify;
 }
 .card img{
@@ -126,3 +126,38 @@ main{
   .modal-content button:hover:before {
     transform: translateX(55rem);
   }
+
+  .laystall_floting, .icon_trans_floting{ 
+    position: absolute;
+    left: 115%;
+    top: 32%;
+    height: 350px !important;
+    width: auto !important;
+    animation: laystall_floting  3s ease-in-out infinite;
+}
+
+@keyframes laystall_floting {
+    0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0px 0px 0px red);
+    }
+    50% {
+        transform: translateY(-80px);
+        filter: drop-shadow(0px 0px 60px red);
+    }
+}
+
+.icon_trans_floting {
+    animation: icon_trans_floting  3s ease-in-out infinite;
+}
+
+@keyframes icon_trans_floting {
+    0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0px 0px 0px #00917e);
+    }
+    50% {
+        transform: translateY(-80px);
+        filter: drop-shadow(0px 0px 60px #00917e);
+    }
+}
