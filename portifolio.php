@@ -18,6 +18,11 @@ $result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
     <link rel="stylesheet" href="./css/style_footer.css">
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+    div.portifolio{
+        height:80% !important;
+    }
+</style>
 </head>
 <body>
     <div id="topPage">

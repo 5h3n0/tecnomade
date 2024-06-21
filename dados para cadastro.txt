@@ -47,6 +47,14 @@ F
 07190065 1721
 Eu sou Ana Nunes dos Santos, uma entusiasta do desenvolvimento de jogos e sistemas, bem como de aplicações para dispositivos móveis. Minha paixão é criar experiências interativas e cativantes que inspirem e entretenham os usuários. Com experiência em diversas plataformas e tecnologias, estou comprometida em desenvolver produtos inovadores e de alta qualidade que atendam às necessidades e expectativas do mercado.
 img 7
+
+Ana Carolina Santos Lima
+15/03/1986
+anaclima@email.com
+21998765432
+65498732100
+Ana98@30d
+04020-050
 ---------------------------------------------------------------------------------
 
 
@@ -87,10 +95,3 @@ pedrohsouza@email.com
 Ped3350$
 03015000
 
-Ana Carolina Santos Lima
-15/03/1986
-anaclima@email.com
-21998765432
-65498732100
-Ana98@30d
-04020-050

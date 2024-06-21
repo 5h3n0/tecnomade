@@ -6,7 +6,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 require_once "connect.php";
-require_once 'navUsr.php';
+if (!isset($_SESSION['usrLogado'])) {
+    require_once 'navHome.php';
+}
+if (isset($_SESSION['usrLogado'])) {
+    require_once 'navUsr.php';
+}
 
 $sql_estrelas = "SELECT AVG(estrelas) AS average FROM avaliacoes WHERE id_Pf = ?";
 $stmt = $conn->prepare($sql_estrelas);

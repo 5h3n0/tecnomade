@@ -29,11 +29,10 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (!$_SESSION['usrLogado']) {
+if (!isset($_SESSION['usrLogado'])) {
     require_once 'navHome.php';
-    header("Location: lgcd.php");
 }
-if ($_SESSION['usrLogado']) {
+if (isset($_SESSION['usrLogado'])) {
     require_once 'navUsr.php';
 }
 require_once 'connect.php';
