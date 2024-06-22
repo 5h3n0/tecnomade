@@ -33,7 +33,7 @@ error_reporting(E_ALL);
       <li><a href="homePf.php" class="nav-links linkHome">Home</a></li>
       <li><a href="paginaDeServicosParaPrestador.php" class="nav-links linkServices">Serviços</a></li>
       <!-- <li><a href="#" class="nav-links">Contato</a></li> -->
-      <li><a href="sobre.php" class="nav-links linkSobre">Sobre nós</a></li>
+      <li><a href="sobrePf.php" class="nav-links linkSobre">Sobre nós</a></li>
 
       <li class="nav-item dropdown_nav">
         <a class="nav-img">

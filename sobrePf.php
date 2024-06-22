@@ -37,7 +37,10 @@
 <body>
 
     <?php
-        require_once "navHome.php";
+    session_start();
+    if (isset($_SESSION['pfLogado'])) {
+        require_once "navPf.php";
+    }
     ?>
 
     <section class="section_ini_abouts">

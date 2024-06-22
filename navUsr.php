@@ -39,7 +39,7 @@ error_reporting(E_ALL);
       <li><a href="services.php" class="nav-links linkServices">Serviços</a></li>
       <li><a href="prof.php" class="nav-links linkProf">Profissionais</a></li>
       <!-- <li><a href="#" class="nav-links ">Contato</a></li> -->
-			<li><a href="sobre.php" class="nav-links linkSobre">Sobre nós</a></li>
+			<li><a href="sobreUsr.php" class="nav-links linkSobre">Sobre nós</a></li>
       <li class="nav-item" id="div_img">
         <a class="nav-link " role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <?php

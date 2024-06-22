@@ -36,8 +36,11 @@
 
 <body>
 
-    <?php
-        require_once "navHome.php";
+<?php
+    session_start();
+    if (isset($_SESSION['usrLogado'])) {
+        require_once "navUsr.php";
+    }
     ?>
 
     <section class="section_ini_abouts">
