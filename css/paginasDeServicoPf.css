@@ -389,6 +389,8 @@ button.closeButton {
   background: #081a17;
   padding: 1%;
   border-radius: 15px;
+  word-wrap: break-word !important;
+
 }
 
 #msg_cliente{

@@ -64,7 +64,7 @@ error_reporting(E_ALL);
           <li><a class="dropdown-element nav-links" href="paginaDeServicosParaUsr.php">Minha Contrações</a></li>
           <li><a class="dropdown-element nav-links" href="infPeUsr.php">Informações Pessoais</a></li>
         <li><a href="formasPay.php" class="dropdown-element nav-links">Configurações</a></li>
-        <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
+        <li><a class="dropdown-element nav-links" href="logoutUsr.php">Log out</a></li>
         </ul>
       </li>
 

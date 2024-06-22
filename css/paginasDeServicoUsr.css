@@ -385,6 +385,8 @@ html, body{
   background: #081a17;
   padding: 1%;
   border-radius: 15px;
+  word-wrap: break-word !important;
+
 }
 #desc_orcamento{
   text-indent: 15px;
@@ -483,6 +485,8 @@ html, body{
   width: 80%;
   text-align: center !important;
   hyphens: auto;
+  word-wrap: break-word !important;
+
 }
 .btn_success{
   width: 100%;
@@ -577,6 +581,8 @@ html, body{
   margin-bottom: 5px !important;
   color: white !important;
   line-height: 1.5rem;
+  word-wrap: break-word !important;
+
 }
 #desc_realizado{
   text-indent: 15px !important;
@@ -615,6 +621,7 @@ html, body{
   width: 100%;
   text-align: center;
   font-size: 22px !important;
+  word-wrap: break-word !important;
 }
 /* ---------------------------------------------- */
 .servicosEmAndamento{
@@ -650,6 +657,7 @@ html, body{
   text-align: center;
   font-size: 22px;
   margin: 5px;
+  word-wrap: break-word !important;
 }
 #desc_andamento{
   text-indent: 15px;

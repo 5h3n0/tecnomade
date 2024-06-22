@@ -118,9 +118,24 @@
 .bloco_servicos_ofe{
     overflow: auto;
     width: 100%;
-    height: 60pc;
+    height: 100% !important;
+}
+.button_ver_mais {
+  text-decoration: none;
+  font-size: 15pt !important;
+  background-color: black !important;
+  color: rgb(0, 128, 111) !important;
+  border-radius: 10px !important;
+  border: solid 2px rgb(0, 128, 111) !important;
+  position: absolute;
+  padding: 5px 15px;z-index: 10;
 }
 
+.button_ver_mais:hover {
+  background: linear-gradient( 120deg, rgb(0,128,111) 20%, #000000);
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
 
 .label_filtro{ color: #00917e;}
 
@@ -136,6 +151,33 @@
     border: 2px solid #00917e;
 
 }
+.cap_shadow{
+  background: #000000b3;
+  border-top:5px solid #00917e ;
+  padding-top: 25px;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  margin-top: -200px;
+  transition: opacity 1s ease;
+  animation: fadeIn 2s ease forwards;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 
 #filtro{
     margin-left: 5px;
@@ -222,16 +264,20 @@ input[type="search"]::-webkit-search-cancel-button {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    
+    height: 100% !important;
 }
 
 div#mensagemNaoEncontrado p {
     color: #00917e;
     font-size: 50pt !important;
     text-align: center;
-    margin-top: -27%;
+    margin-top: 0;
     text-shadow: 0 0 60px #00917e;
     animation: float 3s ease-in-out infinite;
     position: relative; 
+    left:300px;
+    top: 400px;
 }
 
 div#mensagemNaoEncontrado p::after {
@@ -303,7 +349,8 @@ div#mensagemNaoEncontrado p::after {
 
   svg#ghostsSVG {
       width: 1220px;
-      margin-top: -509px;
+      margin-top: -150px;
+      margin-bottom: 200px;
       position: relative;
       animation: float 3s ease-in-out infinite;
     }
@@ -314,7 +361,7 @@ div#mensagemNaoEncontrado p::after {
         rotate: -11deg;
         color: #00917e;
     margin-left: 120px;
-    margin-top: -290px;
+    margin-top: 65px;
     z-index: 1;
     animation: float 3s ease-in-out infinite;
 }

@@ -51,6 +51,7 @@ if ($result->num_rows > 0) {
             $valor = number_format($valor, 2, ',', '.');
             $data = $row['data_Solicitacao'];
                 $data = date('d/m/Y', strtotime($data));
+                echo $row['id_Contratacao'];
         echo "<div class='contratacao'>";
         echo"<label class='lbl_contratacao'>Serviço</label>";
 

@@ -60,7 +60,7 @@ error_reporting(E_ALL);
           <li><a class="dropdown-element nav-links" href="portifolio.php">Portifolio</a></li>
           <li><a class="dropdown-element nav-links" href="infPePf.php">Informações Pessoais</a></li>
           <li><a href="#" class="dropdown-element nav-links">Configurações</a></li>
-          <li><a class="dropdown-element nav-links" href="logout.php">Log out</a></li>
+          <li><a class="dropdown-element nav-links" href="logoutPf.php">Log out</a></li>
         </ul>
       </li>
 
