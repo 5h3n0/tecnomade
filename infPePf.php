@@ -1,9 +1,28 @@
 <?php
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+if (!isset($_SESSION)) {
+    session_start();
+}
 include 'connect.php';
+
+if (!isset($_SESSION['id_Pf'])) {
+    die("Vc precisa estar logado para ver esta página.");
+}
+
+$id_Pf = $_SESSION['id_Pf'];
+
+$sql = "
+    SELECT prof.pfName, prof.dtNasPf, prof.email, prof.imgName, enderecos.cidade 
+    FROM prof 
+    LEFT JOIN enderecos ON prof.id_Pf = enderecos.id_Pf 
+    WHERE prof.id_Pf = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_Pf);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$profile = $result->fetch_assoc();
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,6 +35,13 @@ include 'connect.php';
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/style_infPePf.css">
     <title>Dados</title>
+
+    <style>
+        .background_card{
+            background: linear-gradient(90deg, black 50%, transparent), url(./imgs/1110251_Animation_Envelope_Glow_1280x720.gif);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -28,16 +54,55 @@ include 'connect.php';
     <br>
     
     <div class="container">
-        <aside class="sidebar">
-            <ul>
-                <li><a href="dados_bank.php">Dados da sua conta</a></li>
-                <li><a href="#">Alterar Senha</a></li>
-                <li><a href="#">Excluir conta</a></li>
-            </ul>
-        </aside>
-        <main>
         
-            
+        <main>
+
+        
+        
+        <section class="card background_card" style="margin: 50px 0 0 0;">
+                <?php
+                $dataNsc = $row['dtNasPf'];
+                $dataNscFormat = date('d/m/Y', strtotime($dataNsc));
+
+                if ($profile) {
+                    echo '<div class="profile-card">';
+
+                    echo '<div class="box_img_sobre_membros">';
+                    if (!empty($row['imgName'])) {
+                        $imgPf = "upload/".$row['imgName'];
+                        echo "<img src='$imgPf' alt='Imagem do Profissional' class='imgPf'><br><br>";
+                    } 
+                    if (empty($row['imgName'])) {
+                        echo "<img src='./imgs/user.png' alt='Imagem do Profissional' class='imgPf sem_foto'><br><br>";
+                    } 
+                    echo '</div>';
+
+                    echo '<div>';
+                    echo '<h2>' . htmlspecialchars($profile['pfName']) . '</h2>';
+                    echo '<p>Email: ' . htmlspecialchars($profile['email']) . '</p>';
+                    echo '<p>Data de Nascimento: ' . htmlspecialchars($dataNscFormat) . '</p>';
+                    echo '<p>Cidade: ' . htmlspecialchars($profile['cidade']) . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+
+                } else {
+                    echo '<p>Perfil não encontrado.</p>';
+                }
+                ?>
+            </section>
+
+            <aside class="sidebar">
+                <img src="./imgs/usuario-de-configuracao.png" class="icons_interation_user">
+                <h1>Gerencie Sua Conta</h1>
+                <p>Explore as opções abaixo para atualizar seus dados, proteger sua conta e mais.</p>
+                <ul>
+                    <li><a href="dados_bank.php">Dados da sua conta</a></li>
+                    <li><a href="#">Alterar Senha</a></li>
+                    <li><a href="#">Excluir conta</a></li>
+                </ul>
+                <p> Manter suas informações atualizadas não apenas facilita sua experiência conosco, mas também ajuda a prevenir fraudes e acessos não autorizados. A qualquer momento, você pode revisar suas configurações de segurança e fazer os ajustes necessários para manter seu perfil seguro e em conformidade com nossas políticas de privacidade.</p>
+            </aside>
+
             <section class="card" id="dados-conta">
                 <img src="./imgs/internet-banking-e-conexoes-de-rede-pagamentos-online-compras-e-negocios-de-tecnologia-digital_77174.jpg" alt="">
                 <h2>Seus Dados para Receber o pagamento</h2>
@@ -45,10 +110,11 @@ include 'connect.php';
                 <img src="./imgs/transacao.png" class="icon_trans_floting">
             </section>
             <section class="card" id="alterar-senha">
-                <img src="./imgs/0x0.jpg" alt="">
+                <img src="./imgs/0x0.jpg">
                 <h2>Alterar Senha</h2>
                 <p>Alterar sua senha regularmente é uma das melhores práticas para manter sua conta segura. A senha é a primeira linha de defesa contra acessos não autorizados e, por isso, deve ser forte e única. Nesta seção, você pode facilmente atualizar sua senha, garantindo que somente você tenha acesso à sua conta. Recomendamos que sua nova senha tenha pelo menos oito caracteres, incluindo uma combinação de letras maiúsculas e minúsculas, números e símbolos. Evite usar senhas óbvias ou fáceis de adivinhar, como datas de aniversário ou sequências numéricas simples. Além disso, é uma boa prática não reutilizar senhas de outros sites ou serviços. Após alterar sua senha, certifique-se de armazená-la em um local seguro e considere o uso de um gerenciador de senhas para mantê-la protegida. Lembre-se de que a segurança da sua conta é uma responsabilidade compartilhada, e manter suas credenciais seguras ajuda a proteger não apenas suas informações, mas também a integridade de toda a nossa plataforma. <a href="">Redefinir Senha.</a></p>
-
+                <img src="./imgs/escudo-de-seguranca.png" class="escudo_floting">
+                <img src="./imgs/key1.png" class="key_move">
             </section>
             <section class="card" id="excluir-conta">
                 <img src="./imgs/Limpeza-de-dados-5-boas-praticas-para-fazer-na-sua-empresa.jpg" >
