@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/06/2024 às 03:29
+-- Tempo de geração: 22-Jun-2024 às 23:28
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `tecnomadedb`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacoes`
+-- Estrutura da tabela `avaliacoes`
 --
 
 CREATE TABLE `avaliacoes` (
@@ -38,7 +38,7 @@ CREATE TABLE `avaliacoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `avaliacoes`
+-- Extraindo dados da tabela `avaliacoes`
 --
 
 INSERT INTO `avaliacoes` (`id_avaliacao`, `estrelas`, `data_avaliacao`, `mensagem_avaliacao`, `id_Pf`) VALUES
@@ -46,12 +46,14 @@ INSERT INTO `avaliacoes` (`id_avaliacao`, `estrelas`, `data_avaliacao`, `mensage
 (2, 5, '2024-06-03', 'Ótimo serviço, supriu todas as necessidades do ambiente!', 1),
 (3, 5, '2024-06-10', 'ótimo serviço, superou minhas expectativas!!', 3),
 (4, 5, '2024-06-20', 'ótimo atendimento, profissional muito bem qualificada, realizou o serviço muito bem.', 12),
-(5, 4, '2024-06-20', 'excelente profissional, atendimento bacana.', 9);
+(5, 4, '2024-06-20', 'excelente profissional, atendimento bacana.', 9),
+(6, 3, '2024-06-22', 'Gostei bastante, não tive tanto feedback do profissional.', 14),
+(7, 3, '2024-06-22', 'Nada a declarar, apenas não gostei muito.', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categorias`
+-- Estrutura da tabela `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -60,7 +62,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Despejando dados para a tabela `categorias`
+-- Extraindo dados da tabela `categorias`
 --
 
 INSERT INTO `categorias` (`id_Cat`, `nome`) VALUES
@@ -80,7 +82,7 @@ INSERT INTO `categorias` (`id_Cat`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cat_sel`
+-- Estrutura da tabela `cat_sel`
 --
 
 CREATE TABLE `cat_sel` (
@@ -90,7 +92,7 @@ CREATE TABLE `cat_sel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Despejando dados para a tabela `cat_sel`
+-- Extraindo dados da tabela `cat_sel`
 --
 
 INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
@@ -146,7 +148,7 @@ INSERT INTO `cat_sel` (`id_Cat_Sel`, `id_Pf`, `id_Cat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `contratacoes`
+-- Estrutura da tabela `contratacoes`
 --
 
 CREATE TABLE `contratacoes` (
@@ -159,7 +161,7 @@ CREATE TABLE `contratacoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `contratacoes`
+-- Extraindo dados da tabela `contratacoes`
 --
 
 INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `data_Contratacao`, `id_Pf`) VALUES
@@ -168,12 +170,14 @@ INSERT INTO `contratacoes` (`id_Contratacao`, `id_Usr`, `id_Service`, `valor`, `
 (3, 4, 8, 55000, '2024-06-10', 3),
 (4, 5, 20, 50000, '2024-06-20', 12),
 (5, 5, 15, 70000, '2024-06-20', 9),
-(6, 5, 14, 100000, '2024-06-20', 9);
+(6, 5, 14, 100000, '2024-06-20', 9),
+(7, 6, 26, 90000, '2024-06-22', 14),
+(8, 6, 9, 90000, '2024-06-22', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dados_bancarios`
+-- Estrutura da tabela `dados_bancarios`
 --
 
 CREATE TABLE `dados_bancarios` (
@@ -187,7 +191,7 @@ CREATE TABLE `dados_bancarios` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `enderecos`
+-- Estrutura da tabela `enderecos`
 --
 
 CREATE TABLE `enderecos` (
@@ -204,7 +208,7 @@ CREATE TABLE `enderecos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `enderecos`
+-- Extraindo dados da tabela `enderecos`
 --
 
 INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `num`, `comp`) VALUES
@@ -226,12 +230,13 @@ INSERT INTO `enderecos` (`id_Endereco`, `id_Pf`, `id_Usr`, `cep`, `rua`, `bairro
 (19, 12, NULL, '08574150', 'Rua Cambará', 'Jardim Aracaré', 'Itaquaquecetuba', 'SP', '800', ''),
 (20, 13, NULL, '08573250', 'Rua Itamogi', 'Vila Virgínia', 'Itaquaquecetuba', 'SP', '12', 'Casa dos fundos'),
 (21, NULL, 5, '08596-682', 'Rua Cely Campello', 'Jardim Santa Rita', 'Itaquaquecetuba', 'SP', '90', ''),
-(22, 14, NULL, '14090-344', 'Rua José da Silva', 'Jardim Paulistano', 'Ribeirão Preto', 'SP', '98', 'bloco A, ap. 31');
+(22, 14, NULL, '14090-344', 'Rua José da Silva', 'Jardim Paulistano', 'Ribeirão Preto', 'SP', '98', 'bloco A, ap. 31'),
+(23, NULL, 6, '08580-730', 'Rua Marciliano Faustino', 'Jardim Ipê', 'Itaquaquecetuba', 'SP', '73', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `orcamento`
+-- Estrutura da tabela `orcamento`
 --
 
 CREATE TABLE `orcamento` (
@@ -244,7 +249,7 @@ CREATE TABLE `orcamento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `orcamento`
+-- Extraindo dados da tabela `orcamento`
 --
 
 INSERT INTO `orcamento` (`id_orcamento`, `id_solicitacao`, `id_Pf`, `orcamento`, `status`, `msg_for_client`) VALUES
@@ -253,12 +258,14 @@ INSERT INTO `orcamento` (`id_orcamento`, `id_solicitacao`, `id_Pf`, `orcamento`,
 (3, 3, 3, 55000, 'Aceito', 'Boa tarde, parece ser algo simples, irei estruturar o projeto e logo envio um feedback.'),
 (4, 4, 12, 50000, 'Aceito', 'obrigada pela preferencia'),
 (5, 5, 9, 70000, 'Aceito', 'obrigada pela preferencia'),
-(6, 7, 9, 100000, 'Aceito', 'aaaaaaaaa');
+(6, 7, 9, 100000, 'Aceito', 'aaaaaaaaa'),
+(7, 8, 14, 90000, 'Aceito', 'Olá, tudo bem? Em aproximadamente dois meses consigo entregar, pois trabalho sozinha.'),
+(8, 9, 3, 90000, 'Aceito', 'dasdasdasdasdasdasdas');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `portfolio`
+-- Estrutura da tabela `portfolio`
 --
 
 CREATE TABLE `portfolio` (
@@ -280,7 +287,7 @@ CREATE TABLE `portfolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `portfolio`
+-- Extraindo dados da tabela `portfolio`
 --
 
 INSERT INTO `portfolio` (`id_portifolio`, `title`, `description`, `date`, `image1`, `image2`, `image3`, `image4`, `image5`, `image6`, `image7`, `image8`, `image9`, `image10`, `id_Pf`) VALUES
@@ -300,7 +307,7 @@ INSERT INTO `portfolio` (`id_portifolio`, `title`, `description`, `date`, `image
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `prof`
+-- Estrutura da tabela `prof`
 --
 
 CREATE TABLE `prof` (
@@ -319,7 +326,7 @@ CREATE TABLE `prof` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `prof`
+-- Extraindo dados da tabela `prof`
 --
 
 INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `hashPass`, `cnpj`, `imgName`, `categorias`, `descPf`, `avaliacao_media`) VALUES
@@ -341,7 +348,7 @@ INSERT INTO `prof` (`id_Pf`, `pfName`, `dtNasPf`, `email`, `celPf`, `gender`, `h
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `services`
+-- Estrutura da tabela `services`
 --
 
 CREATE TABLE `services` (
@@ -353,7 +360,7 @@ CREATE TABLE `services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `services`
+-- Extraindo dados da tabela `services`
 --
 
 INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `id_Pf`, `id_Cat`) VALUES
@@ -387,7 +394,7 @@ INSERT INTO `services` (`id_Service`, `nomeService`, `descService`, `id_Pf`, `id
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `servicos_realizados`
+-- Estrutura da tabela `servicos_realizados`
 --
 
 CREATE TABLE `servicos_realizados` (
@@ -400,7 +407,7 @@ CREATE TABLE `servicos_realizados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `servicos_realizados`
+-- Extraindo dados da tabela `servicos_realizados`
 --
 
 INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_Pf`, `id_Usr`, `id_Service`, `data_realizacao`) VALUES
@@ -408,12 +415,15 @@ INSERT INTO `servicos_realizados` (`id_ServicoRealizado`, `id_contratacao`, `id_
 (2, 2, 1, 3, 2, '2024-06-03'),
 (3, 3, 3, 4, 8, '2024-06-10'),
 (4, 4, 12, 5, 20, '2024-06-20'),
-(5, 5, 9, 5, 15, '2024-06-20');
+(5, 5, 9, 5, 15, '2024-06-20'),
+(9, 7, 14, 6, 26, '2024-06-22'),
+(10, 7, 14, 6, 26, '2024-06-22'),
+(12, 8, 3, 6, 9, '2024-06-22');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `solicitacoes_servico`
+-- Estrutura da tabela `solicitacoes_servico`
 --
 
 CREATE TABLE `solicitacoes_servico` (
@@ -428,7 +438,7 @@ CREATE TABLE `solicitacoes_servico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `solicitacoes_servico`
+-- Extraindo dados da tabela `solicitacoes_servico`
 --
 
 INSERT INTO `solicitacoes_servico` (`id_solicitacao`, `id_Service`, `id_Pf`, `id_Usr`, `descricao_servico`, `mensagem_cliente`, `data_Solicitacao`, `status`) VALUES
@@ -438,12 +448,14 @@ INSERT INTO `solicitacoes_servico` (`id_solicitacao`, `id_Service`, `id_Pf`, `id
 (4, 20, 12, 5, 'realizo diagnósticos, reparos de hardware e software, instalação de sistemas operacionais e aplicativos, além de garantir a segurança e realizar backups de dados, proporcionando suporte técnico essencial.', 'troca de placa de vídeo, e memória ram', '2024-06-20', 'Orçamento Enviado'),
 (5, 15, 9, 5, 'Power BI envolve a transformação de dados em insights acionáveis. Crio dashboards e relatórios personalizados que ajudam a entenderem melhor seus dados e a tomarem decisões estratégicas informadas. Utilizamos o Power BI para visualizar informações complexas de maneira clara e intuitiva, capacitando as empresas a otimizarem suas operações e alcançarem melhores resultados.', 'preciso de um modelo de power BI para as finanças da minha empresa', '2024-06-20', 'Orçamento Enviado'),
 (6, 23, 12, 5, 'Ofereço um serviço completo de manutenção de servidores para empresas, focado na garantia de estabilidade e desempenho contínuo da infraestrutura de TI. Incluindo monitoramento proativo , gestão de atualizações e patches, manutenção preventiva e corretiva, além de suporte técnico especializado para resolver incidentes rapidamente. Minha abordagem visa minimizar o tempo de inatividade não planejado e maximizar a segurança e eficiência dos seus sistemas.', 'aaaaaaaaaaaaaa', '2024-06-20', 'Pendente'),
-(7, 14, 9, 5, ' é focado na criação de websites modernos, responsivos e funcionais. Utilizando as últimas tecnologias para garantir que cada projeto não apenas atenda, mas exceda suas expectativas . Desde o design inicial até a implementação final, o objetivo é proporcionar uma experiência de usuário intuitiva e eficiente, ajudando empresas a alcançarem seus objetivos online de forma eficaz.', 'aaaaaaaaaaaaaaaaaaaaaaa', '2024-06-20', 'Orçamento Enviado');
+(7, 14, 9, 5, ' é focado na criação de websites modernos, responsivos e funcionais. Utilizando as últimas tecnologias para garantir que cada projeto não apenas atenda, mas exceda suas expectativas . Desde o design inicial até a implementação final, o objetivo é proporcionar uma experiência de usuário intuitiva e eficiente, ajudando empresas a alcançarem seus objetivos online de forma eficaz.', 'aaaaaaaaaaaaaaaaaaaaaaa', '2024-06-20', 'Orçamento Enviado'),
+(8, 26, 14, 6, 'Desenvolvimento de jogos simples para Windows.', 'preciso de um jogo parecido com metal slug, como no máximo 6 fases.', '2024-06-22', 'Orçamento Enviado'),
+(9, 9, 3, 6, 'O serviço de Desenvolvimento de Jogos oferece uma solução completa, empregando tecnologias avançadas e ferramentas líderes de mercado. Utilizando de PixelArt e C#, como principais pontos.  ', 'asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsadasdasdas', '2024-06-22', 'Orçamento Enviado');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `users`
+-- Estrutura da tabela `users`
 --
 
 CREATE TABLE `users` (
@@ -459,7 +471,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `users`
+-- Extraindo dados da tabela `users`
 --
 
 INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgName`, `celUsr`, `hashPass`, `cpf`) VALUES
@@ -467,27 +479,28 @@ INSERT INTO `users` (`id_Usr`, `usrName`, `dtNasUsr`, `email`, `gender`, `imgNam
 (2, 'black xyz', '2005-05-26', 'black@gmail.com', 'm', '554834f3cd8f1fa71026f9a6434ed0f7.jpg', '(11) 96464-8612', '933f868ccf7ece7601793d3887f5522fbb341418', '186.841.648-61'),
 (3, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@gmail.com', 'f', '4090f199d24d6125b68e9dece5fb5692.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00'),
 (4, 'Marina Oliveira Costa', '1988-06-05', 'marinacosta@email.com', 'f', 'df9b831bd09209cc4cb3216237d63e60.jpg', '(11) 98765-4321', 'd8eb84b7736b6e5a8c3fdf47f0fccf987ae4aa2d', '321.654.987-00'),
-(5, 'Gabriela Duccini Duarte', '2005-02-22', 'gabiducciniduarte30@gmail.com', 'f', '99ff91815df5878984d43a83f30240a0.webp', '(11) 91334-7137', '0c24b51bc25fd6fba0df4a11f3ede8ddf3b73b03', '529.734.729-90');
+(5, 'Gabriela Duccini Duarte', '2005-02-22', 'gabiducciniduarte30@gmail.com', 'f', '99ff91815df5878984d43a83f30240a0.webp', '(11) 91334-7137', '0c24b51bc25fd6fba0df4a11f3ede8ddf3b73b03', '529.734.729-90'),
+(6, 'Sheno da SIlva Carvalho', '2005-11-12', 's.silvac@outlook.com', 'm', 'c44d61a94303d8090e2ccc50aae3cd09.webp', '(11) 93062-1466', 'fbcab2c304989652b76c3fff7267b5fee1b3262a', '479.187.418-89');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `avaliacoes`
+-- Índices para tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`id_avaliacao`),
   ADD KEY `fk_id_Pf_avaliacao` (`id_Pf`);
 
 --
--- Índices de tabela `categorias`
+-- Índices para tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_Cat`);
 
 --
--- Índices de tabela `cat_sel`
+-- Índices para tabela `cat_sel`
 --
 ALTER TABLE `cat_sel`
   ADD PRIMARY KEY (`id_Cat_Sel`),
@@ -495,7 +508,7 @@ ALTER TABLE `cat_sel`
   ADD KEY `id_Cat` (`id_Cat`);
 
 --
--- Índices de tabela `contratacoes`
+-- Índices para tabela `contratacoes`
 --
 ALTER TABLE `contratacoes`
   ADD PRIMARY KEY (`id_Contratacao`),
@@ -504,14 +517,14 @@ ALTER TABLE `contratacoes`
   ADD KEY `fk_contratacoes_prof` (`id_Pf`);
 
 --
--- Índices de tabela `dados_bancarios`
+-- Índices para tabela `dados_bancarios`
 --
 ALTER TABLE `dados_bancarios`
   ADD PRIMARY KEY (`id_bank`),
   ADD KEY `fk_id_Pf_bank` (`id_Pf`);
 
 --
--- Índices de tabela `enderecos`
+-- Índices para tabela `enderecos`
 --
 ALTER TABLE `enderecos`
   ADD PRIMARY KEY (`id_Endereco`),
@@ -519,7 +532,7 @@ ALTER TABLE `enderecos`
   ADD UNIQUE KEY `id_Usr` (`id_Usr`);
 
 --
--- Índices de tabela `orcamento`
+-- Índices para tabela `orcamento`
 --
 ALTER TABLE `orcamento`
   ADD PRIMARY KEY (`id_orcamento`),
@@ -527,20 +540,20 @@ ALTER TABLE `orcamento`
   ADD KEY `id_Pf` (`id_Pf`);
 
 --
--- Índices de tabela `portfolio`
+-- Índices para tabela `portfolio`
 --
 ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`id_portifolio`),
   ADD KEY `fk_id_Pf` (`id_Pf`);
 
 --
--- Índices de tabela `prof`
+-- Índices para tabela `prof`
 --
 ALTER TABLE `prof`
   ADD PRIMARY KEY (`id_Pf`);
 
 --
--- Índices de tabela `services`
+-- Índices para tabela `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id_Service`),
@@ -548,14 +561,14 @@ ALTER TABLE `services`
   ADD KEY `fk_services_categoria` (`id_Cat`);
 
 --
--- Índices de tabela `servicos_realizados`
+-- Índices para tabela `servicos_realizados`
 --
 ALTER TABLE `servicos_realizados`
   ADD PRIMARY KEY (`id_ServicoRealizado`),
   ADD KEY `id_contratacao` (`id_contratacao`);
 
 --
--- Índices de tabela `solicitacoes_servico`
+-- Índices para tabela `solicitacoes_servico`
 --
 ALTER TABLE `solicitacoes_servico`
   ADD PRIMARY KEY (`id_solicitacao`),
@@ -564,20 +577,20 @@ ALTER TABLE `solicitacoes_servico`
   ADD KEY `id_Usr` (`id_Usr`);
 
 --
--- Índices de tabela `users`
+-- Índices para tabela `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_Usr`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
-  MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `categorias`
@@ -595,7 +608,7 @@ ALTER TABLE `cat_sel`
 -- AUTO_INCREMENT de tabela `contratacoes`
 --
 ALTER TABLE `contratacoes`
-  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Contratacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `dados_bancarios`
@@ -607,13 +620,13 @@ ALTER TABLE `dados_bancarios`
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_Endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id_orcamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_orcamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `portfolio`
@@ -637,39 +650,39 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT de tabela `servicos_realizados`
 --
 ALTER TABLE `servicos_realizados`
-  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ServicoRealizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `solicitacoes_servico`
 --
 ALTER TABLE `solicitacoes_servico`
-  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_Usr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `avaliacoes`
+-- Limitadores para a tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
   ADD CONSTRAINT `fk_id_Pf_avaliacao` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
 
 --
--- Restrições para tabelas `cat_sel`
+-- Limitadores para a tabela `cat_sel`
 --
 ALTER TABLE `cat_sel`
   ADD CONSTRAINT `cat_sel_ibfk_1` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`),
   ADD CONSTRAINT `cat_sel_ibfk_2` FOREIGN KEY (`id_Cat`) REFERENCES `categorias` (`id_Cat`);
 
 --
--- Restrições para tabelas `contratacoes`
+-- Limitadores para a tabela `contratacoes`
 --
 ALTER TABLE `contratacoes`
   ADD CONSTRAINT `fk_contratacoes_prof` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`),
@@ -677,38 +690,38 @@ ALTER TABLE `contratacoes`
   ADD CONSTRAINT `fk_contratacoes_users` FOREIGN KEY (`id_Usr`) REFERENCES `users` (`id_Usr`);
 
 --
--- Restrições para tabelas `dados_bancarios`
+-- Limitadores para a tabela `dados_bancarios`
 --
 ALTER TABLE `dados_bancarios`
   ADD CONSTRAINT `fk_id_Pf_bank` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
 
 --
--- Restrições para tabelas `orcamento`
+-- Limitadores para a tabela `orcamento`
 --
 ALTER TABLE `orcamento`
   ADD CONSTRAINT `orcamento_ibfk_1` FOREIGN KEY (`id_solicitacao`) REFERENCES `solicitacoes_servico` (`id_solicitacao`),
   ADD CONSTRAINT `orcamento_ibfk_2` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
 
 --
--- Restrições para tabelas `portfolio`
+-- Limitadores para a tabela `portfolio`
 --
 ALTER TABLE `portfolio`
   ADD CONSTRAINT `fk_id_Pf` FOREIGN KEY (`id_Pf`) REFERENCES `prof` (`id_Pf`);
 
 --
--- Restrições para tabelas `services`
+-- Limitadores para a tabela `services`
 --
 ALTER TABLE `services`
   ADD CONSTRAINT `fk_services_categoria` FOREIGN KEY (`id_Cat`) REFERENCES `categorias` (`id_Cat`);
 
 --
--- Restrições para tabelas `servicos_realizados`
+-- Limitadores para a tabela `servicos_realizados`
 --
 ALTER TABLE `servicos_realizados`
   ADD CONSTRAINT `servicos_realizados_ibfk_1` FOREIGN KEY (`id_contratacao`) REFERENCES `contratacoes` (`id_Contratacao`);
 
 --
--- Restrições para tabelas `solicitacoes_servico`
+-- Limitadores para a tabela `solicitacoes_servico`
 --
 ALTER TABLE `solicitacoes_servico`
   ADD CONSTRAINT `solicitacoes_servico_ibfk_1` FOREIGN KEY (`id_Service`) REFERENCES `services` (`id_Service`),
