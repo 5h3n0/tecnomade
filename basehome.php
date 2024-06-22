@@ -375,7 +375,7 @@ while ($row = $result->fetch_assoc()) {
 
         <section>
             <div class="cap_shadow">
-                <a href="" class="button_ver_mais">Ver mais</a>
+                <a href="prof.php" class="button_ver_mais">Ver mais</a>
             </div>
             <div class="container_recommendations">
                 <div class="bloco_titulo_recomendação">
