@@ -1,0 +1,146 @@
+
+
+
+
+.boxAddDadosBank, .box_dadosBank {
+    background-color: #000000;
+    padding: 40px;
+    width: 800px;
+    margin: 10pc auto;
+    box-shadow: 0 0 60px rgb(0, 123, 111);
+    border: 3px solid #00917e;
+    border-radius: 20px;
+    text-align: justify;
+    transition: opacity 1s ease;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+  .btn_alt_save  {
+    --green: rgb(0,128,111);
+    font-size: 16pt;
+    font-weight: 600;
+    width: 100%;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    margin: 20px 0 30px 0;
+    border: 2px solid var(--green);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+    color: var(--green);
+    box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.685), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+  }
+  
+  .btn_alt_save:hover {
+    color: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 128, 111, 0.767), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+  }
+  
+  .btn_alt_save:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, rgba(0, 125, 110, 0.596), rgba(0, 125, 110, 0.596) 60% , transparent 100%);
+  }
+  
+  .btn_alt_save:hover:before {
+    transform: translateX(50em);
+  }
+  
+
+      .box_imgs_bank {
+        margin:  30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+      .img_of_bank{
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 20px;
+        border: #00917e 2px solid ;
+      }
+
+      .boxAddDadosBank label{
+        font-size: 18pt;
+        margin: 10px 10px 10px 15px;
+        color: #00917e;
+    }
+
+    .boxAddDadosBank input[type="text"]{
+        color: #00917e;
+        font-size: 14pt;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #00917e;
+    }
+
+    #nameBanco, option, #updateNameBanco{
+        font-size: 18pt;
+        background-color: black;
+        border: none;
+        border-bottom: 2px solid #00917e;
+        color: #00917e;
+        outline: none;
+    }
+
+    .bank_img_alt{
+      width: 100%;
+      object-fit: cover;
+      border: #00917e 3px solid;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .titulo_dadosBank{
+      font-size: 28pt;
+      color: #00917e;
+    }
+    .box_dadosBank p {color: #00917e; margin: 0 0 10px 0; font-size: 18pt;}
+    .box_dadosBank p span{ color: white;}
+
+    .footer_sigle_slim{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #fff;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 40px;
+      height: 90px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, rgb(0, 128, 111));
+  }
+  
+  .footer_sigle_slim p { margin: 0 !important; }
+  .footer_sigle_slim a {
+      color: #00917e;
+      font-size: 18pt;
+  }
