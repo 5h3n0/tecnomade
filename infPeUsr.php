@@ -90,7 +90,7 @@ $conn->close();
                 <p>Explore as opções abaixo para atualizar seus dados, proteger sua conta e mais.</p>
                 <ul>
                     <li><a href="perfilUsr.php">Perfil</a></li>
-                    <li><a href="updateUsr.php">Alterar Senha</a></li>
+                    <li><a href="updatePassUsr.php">Alterar Senha</a></li>
                     <li><a href="deleteUsr.php">Excluir conta</a></li>
                 </ul>
                 <p> Manter suas informações atualizadas não apenas facilita sua experiência conosco, mas também ajuda a prevenir fraudes e acessos não autorizados. A qualquer momento, você pode revisar suas configurações de segurança e fazer os ajustes necessários para manter seu perfil seguro e em conformidade com nossas políticas de privacidade.</p>
@@ -99,7 +99,7 @@ $conn->close();
             <section class="card" id="alterar-senha">
                 <img src="./imgs/0x0.jpg">
                 <h2>Alterar Senha</h2>
-                <p>Alterar sua senha regularmente é uma das melhores práticas para manter sua conta segura. A senha é a primeira linha de defesa contra acessos não autorizados e, por isso, deve ser forte e única. Nesta seção, você pode facilmente atualizar sua senha, garantindo que somente você tenha acesso à sua conta. Recomendamos que sua nova senha tenha pelo menos oito caracteres, incluindo uma combinação de letras maiúsculas e minúsculas, números e símbolos. Evite usar senhas óbvias ou fáceis de adivinhar, como datas de aniversário ou sequências numéricas simples. Além disso, é uma boa prática não reutilizar senhas de outros sites ou serviços. Após alterar sua senha, certifique-se de armazená-la em um local seguro e considere o uso de um gerenciador de senhas para mantê-la protegida. Lembre-se de que a segurança da sua conta é uma responsabilidade compartilhada, e manter suas credenciais seguras ajuda a proteger não apenas suas informações, mas também a integridade de toda a nossa plataforma. <a href="">Redefinir Senha.</a></p>
+                <p>Alterar sua senha regularmente é uma das melhores práticas para manter sua conta segura. A senha é a primeira linha de defesa contra acessos não autorizados e, por isso, deve ser forte e única. Nesta seção, você pode facilmente atualizar sua senha, garantindo que somente você tenha acesso à sua conta. Recomendamos que sua nova senha tenha pelo menos oito caracteres, incluindo uma combinação de letras maiúsculas e minúsculas, números e símbolos. Evite usar senhas óbvias ou fáceis de adivinhar, como datas de aniversário ou sequências numéricas simples. Além disso, é uma boa prática não reutilizar senhas de outros sites ou serviços. Após alterar sua senha, certifique-se de armazená-la em um local seguro e considere o uso de um gerenciador de senhas para mantê-la protegida. Lembre-se de que a segurança da sua conta é uma responsabilidade compartilhada, e manter suas credenciais seguras ajuda a proteger não apenas suas informações, mas também a integridade de toda a nossa plataforma. <a href="updatePassUsr.php">Redefinir Senha.</a></p>
                 <img src="./imgs/escudo-de-seguranca.png" class="escudo_floting">
                 <img src="./imgs/key1.png" class="key_move">
             </section>
