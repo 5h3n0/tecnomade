@@ -63,7 +63,7 @@
   }
   
   .btn_alt_save:hover:before {
-    transform: translateX(50em);
+    transform: translateX(20em);
   }
   
 

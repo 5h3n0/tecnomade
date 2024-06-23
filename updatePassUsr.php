@@ -29,6 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "UPDATE users SET hashPass='$newHashPass' WHERE id_Usr ='$id_Usr'";
                 if (mysqli_query($conn, $sql)) {
                    $_SESSION['senhaAlteradaUsr'] = true;
+                   echo "<script>
+                
+                setTimeout(redirecHome, 3000);
+                    function redirecHome(){ 
+                     window.location.href = 'homeUsr.php';
+                    };
+        
+                </script>";
+
                 } 
             } 
         } 
@@ -41,34 +50,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style_footer.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/style_redefinirPass.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Redefinir senha</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <form action="" method="post" style="margin-top:300px;">
-        Digite sua senha atual:
-        <br>
-        <input type="text" name="usrPass">
-        <br>
-        Digite sua nova senha:
-        <br>
-        <input type="text" name="newPass">
-        <br>
-        Repita a senha:
-        <br>
-        <input type="text" name="rpNewPass">
-        <br>
-        <input type="submit" value="enviar">
+
+<section class="cont">
+
+    <form action="" method="post">
+    <img src="./imgs/chave-inteligente.png" class="key_redefinir_img">
+            <h2>Redefinir senha</h2>
+            <p>Para criar uma senha forte, sua nova senha deve conter pelo menos 8 caracteres, incluindo uma combinação
+                de letras maiúsculas e minúsculas, números e caracteres especiais como @, # ou $.</p>
+            <label>Digite sua senha atual:</label>
+        <input type="password" name="usrPass">
+        <label for="">Digite sua nova senha:</label>
+        <input type="password" name="newPass">
+        <label for="">Repita a senha:</label>
+        <input type="password" name="rpNewPass">
+        <input type="submit" value="Redefinir" class="btn_rdf_pass">
         <?php
         if (isset($_SESSION['senhaAlteradaUsr']) && $_SESSION['senhaAlteradaUsr']) {
-            echo '  <p style="color:#00917e;">Senha alterada com sucesso!</p>';
+            echo '  <p style="color:#00917e; text-align:center; margin: 10px 0;">Senha alterada com sucesso!</p>';
             $_SESSION['senhaAlteradaUsr'] = false;
         }
         ?>
     </form>
 
+
+    <div class="comentario_alert">
+        <p> Evite utilizar palavras comuns, sequências de números ou informações pessoais facilmente descobertas. Por favor, insira sua nova senha nos campos abaixo para continuar.</p>
+    </div>
+
+    </section>
+
+    <canvas id="c"></canvas>
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("#loginOpen").style.display = 'none';
+        });
+
+    </script>
+
 </body>
 
-
-
 </html>
+<?php
+include_once "animacao.php";
+include 'footer.php';
+?>

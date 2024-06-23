@@ -28,6 +28,7 @@ if ($result->num_rows > 0) {
     <meta charset="uft-8">
     <title>Avaliação por Estrelas</title>
     <link rel="stylesheet" href="./css/avaliar.css">
+    <link rel="shortcut icon" type="image/png" sizes="512x512" href="./imgs/img_logo_black_and_white.png">
 </head>
 
 <body>
@@ -57,6 +58,9 @@ if ($result->num_rows > 0) {
                 <button type="submit" class="btn-avaliar">Avaliar</button>
             </form>
     </section>
+    <?php
+        include_once "animacao.php";
+    ?>
 </body>
 
 </html>

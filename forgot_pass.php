@@ -98,6 +98,9 @@
 
 
 <script src="./js/forgot_pass.js"></script>
+<script>
+        document.querySelector("#loginOpen").style.display='none';
+    </script>
 
 </body>
 </html>

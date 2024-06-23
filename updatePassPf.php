@@ -1,10 +1,9 @@
 <?php
 include 'navPf.php';
 include 'connect.php';
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+if (!isset($_SESSION)) {
+    session_start();
+}
 $id_Pf = $_SESSION['id_Pf'];
 ?>
 <?php
@@ -30,9 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "UPDATE prof SET hashPass='$newHashPass' WHERE id_Pf ='$id_Pf'";
                 if (mysqli_query($conn, $sql)) {
                     $_SESSION['senhaAlterada'] = true;
-                } 
-            } 
-        } 
+                // $redirecionar = header("Location: homePf.php");
+                    echo "<script>
+                
+                setTimeout(redirecHome, 3000);
+                    function redirecHome(){ 
+                     window.location.href = 'homePf.php';
+                    };
+        
+                </script>";
+
+                }
+            }
+        }
     }
 }
 ?>
@@ -44,62 +53,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style_footer.css">
     <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/style_redefinirPass.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Redefinir senha</title>
     <style>
-        .cont{
-            height: 80%;
-            display: flex;
-            margin: auto;
-            justify-content: center;
-            margin-top: 5%;
-            width:100%;
-        }
-        form{
-            width: 60%;
-            height: 20%;
-            justify-content: center;
-            
-            margin: auto;
 
-        }
-        input[type=text]{
-            width: 50%;
-            display: block;
-        }
-        label{
-            display: block;
-        }
     </style>
 </head>
 
 <body>
     <section class="cont">
         <form action="" method="post">
-            Digite sua senha atual:
-        <br>
-        <input type="text" name="pfPass">
-        <br>
-        Digite sua nova senha:
-        <br>
-        <input type="text" name="newPass">
-        <br>
-        Repita a senha:
-        <br>
-        <input type="text" name="rpNewPass">
-        <br>
-        <input type="submit" value="enviar">
-    <?php
-        if (isset($_SESSION['senhaAlterada']) && $_SESSION['senhaAlterada']) {
-            echo '<p style="color:#00917e;">Senha alterada com sucesso!</p>';
-            $_SESSION['senhaAlterada'] = false;
-        }
-        ?>
-    </form>
+            <img src="./imgs/chave-inteligente.png" class="key_redefinir_img">
+            <h2>Redefinir senha</h2>
+            <p>Para criar uma senha forte, sua nova senha deve conter pelo menos 8 caracteres, incluindo uma combinação
+                de letras maiúsculas e minúsculas, números e caracteres especiais como @, # ou $.</p>
+            <label>Digite sua senha atual:</label>
+            <input type="password" name="pfPass" placeholder="Senha Atual">
+            <label for="">Digite sua nova senha:</label>
+            <input type="password" name="newPass" placeholder="Nova senha">
+            <label for="">Repita a senha:</label>
+            <input type="password" name="rpNewPass" placeholder="Confirmar senha">
+
+            <input type="submit" value="Redefinir" class="btn_rdf_pass">
+            <?php
+            if (isset($_SESSION['senhaAlterada']) && $_SESSION['senhaAlterada']) {
+                echo '<p style="color:#00917e; text-align:center; margin: 10px 0;">Senha alterada com sucesso!</p>';
+                $_SESSION['senhaAlterada'] = false;
+            }
+            ?>
+        </form>
+
+      <div class="comentario_alert">
+        <p> Evite utilizar palavras comuns, sequências de números ou informações pessoais facilmente descobertas. Por favor, insira sua nova senha nos campos abaixo para continuar.</p>
+    </div>
+
     </section>
 
+    <canvas id="c"></canvas>
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("#loginOpen").style.display = 'none';
+        });
+
+    </script>
+
+
+
+
 </body>
+
 </html>
 <?php
+include_once "animacao.php";
 include 'footer.php';
 ?>
