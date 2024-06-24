@@ -17,6 +17,17 @@ if (isset($_SESSION['notification'])) {
     <title>Serviços Contratados</title>
     <link rel="stylesheet" href="./css/paginasDeServicoUsr.css">
     <link rel="shortcut icon" type="image/png" sizes="512x512" href="./imgs/img_logo_black_and_white.png">
+
+
+    <style>
+        canvas {
+            height: 100%;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+
 </head>
 
 
@@ -59,7 +70,9 @@ if (isset($_SESSION['notification'])) {
                 </svg> -->
     <?php // } ?>
 
-
+    <?php
+        include_once "animacao.php";
+    ?>
 
     <div id="content">
 

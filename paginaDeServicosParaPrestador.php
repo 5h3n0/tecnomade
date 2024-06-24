@@ -77,6 +77,17 @@ if ($result_orcamento) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/paginasDeServicoPf.css">
     <link rel="shortcut icon" type="image/png" sizes="512x512" href="./imgs/img_logo_black_and_white.png">
+
+    <style>
+        canvas {
+            height: 100%;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+
+
 </head>
 
 
@@ -136,6 +147,7 @@ if ($result_orcamento) {
 
         $_SESSION['servicoInserido'] = false;
     }
+    include_once "animacao.php";
     ?>
     <script>
          window.onload = function () {

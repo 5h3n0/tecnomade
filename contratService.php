@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="./css/default.css">
     <style>
 
+        canvas {
+            height: 100%;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+        }
 
     </style>
 </head>
@@ -71,6 +77,7 @@
         } else {
             echo "<p class='text-danger'>Nenhum serviço selecionado.</p>";
         }
+        include_once "animacao.php";
         ?>
     </div>
 

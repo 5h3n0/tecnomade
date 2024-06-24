@@ -61,7 +61,7 @@ width: 100%;
 
 
             <div>
-                <img src="./imgs/489-rocket-space.svg" class="roguete_animation">
+                <img src="./imgs/roquete.gif" class="roguete_animation">
             </div>
 
             <div class="conteiner_text_services_ofe">

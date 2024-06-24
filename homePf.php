@@ -65,7 +65,7 @@ if(!isset($_SESSION['pfLogado'])){
 
 
             <div>
-                <img src="https://mtc-network.com/wp-content/uploads/2023/03/MTC-Rakete.gif" class="roguete_animation">
+                <img src="./imgs/roquete.gif" class="roguete_animation">
             </div>
 
             <div class="conteiner_text_services_ofe">
