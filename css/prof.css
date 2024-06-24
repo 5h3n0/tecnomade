@@ -166,5 +166,7 @@ body{
             float: right;
         }
         #naoAvaliado{
-            font-size: 20px !important;
+            font-size: 20pt !important;
+            color: white !important;
+
         }

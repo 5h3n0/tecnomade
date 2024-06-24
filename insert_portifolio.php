@@ -12,6 +12,18 @@ $id_Pf = $_SESSION['id_Pf'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Projeto</title>
     <link rel="stylesheet" href="./css/insert_portifolio.css">
+    <link rel="shortcut icon" type="image/png" sizes="512x512" href="./imgs/img_logo_black_and_white.png">
+
+    <style>
+        canvas {
+        position: absolute;
+        top: 0;
+        }
+        .insert_portifolio{
+            z-index: 1;
+        }
+</style>
+
 </head>
 
 <body>
@@ -70,6 +82,11 @@ $id_Pf = $_SESSION['id_Pf'];
             <input class="btn_enviar" type="submit" value="Adicionar Projeto">
         </form>
     </div>
+
+    <?php
+include_once("animacao.php");
+?>
+
 </body>
 
 </html>

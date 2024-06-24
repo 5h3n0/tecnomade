@@ -207,7 +207,7 @@
         <a name="perfilGabriela"></a>
         <div class="bloco_detalhes_membro_team">
             <div class="box_img_sobre_membros">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
+                <img src="./imgs/gabi.jpg"
                     class="dt_img_perfil">
             </div>
             <div class="box_detalhes_membro">
@@ -239,7 +239,7 @@
             </div>
 
             <div class="box_img_sobre_membros ajst_margin_dt_mbo">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
+                <img src="./imgs/jailson1.jpg"
                     class="dt_img_perfil ">
             </div>
 
@@ -247,7 +247,7 @@
         <a name="perfilLeonardo"></a>
         <div class="bloco_detalhes_membro_team">
             <div class="box_img_sobre_membros">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
+                <img src="./imgs/"
                     class="dt_img_perfil">
             </div>
             <div class="box_detalhes_membro">
@@ -273,7 +273,7 @@
             </div>
 
             <div class="box_img_sobre_membros ajst_margin_dt_mbo">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
+                <img src="./imgs/luiz.jpg"
                     class="dt_img_perfil ">
             </div>
 
@@ -282,7 +282,7 @@
         <a name="perfilRafael"></a>
         <div class="bloco_detalhes_membro_team">
             <div class="box_img_sobre_membros">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
+                <img src="./imgs/rafaelftPerfil.jpeg"
                     class="dt_img_perfil">
             </div>
             <div class="box_detalhes_membro">
@@ -313,10 +313,8 @@
             </div>
 
             <div class="box_img_sobre_membros ajst_margin_dt_mbo">
-                <img src="https://imagens.net.br/wp-content/uploads/2023/07/fotos-tristes-para-perfil-do-whatsapp-feminino-36.jpg"
-                    class="dt_img_perfil ">
+                <img src="./imgs/sheno.jpg" class="dt_img_perfil">
             </div>
-
         </div>
 
     </section>
@@ -332,7 +330,7 @@
 
         <div class="container_team">
             <div class="cardClient" onclick="RedpfG()">
-                <img src="https://t2.tudocdn.net/319406?w=824&h=494" class="foto_perfil_membro">
+                <img src="./imgs/gabi.jpg" class="foto_perfil_membro">
                 <p class="name-client"> Gabriela Duccini
                     <span>Designer
                     </span>
@@ -374,7 +372,7 @@
             </div>
             <div class="container_team">
                 <div class="cardClient" onclick="RedpfJ()">
-                    <img src="https://t2.tudocdn.net/319406?w=824&h=494" class="foto_perfil_membro">
+                    <img src="./imgs/jailson1.jpg" class="foto_perfil_membro">
                     <p class="name-client"> Jailson B. Silva
                         <span>Desenvolvedor
                         </span>
@@ -459,7 +457,7 @@
                     </div>
                     <div class="container_team">
                         <div class="cardClient" onclick="RedpfLu()">
-                            <img src="https://t2.tudocdn.net/319406?w=824&h=494" class="foto_perfil_membro">
+                            <img src="./imgs/luiz.jpg" class="foto_perfil_membro">
                             <p class="name-client"> Luiz Jorge
                                 <span>Designer
                                 </span>
@@ -501,7 +499,7 @@
                         </div>
                         <div class="container_team">
                             <div class="cardClient" onclick="RedpfR()">
-                                <img src="https://t2.tudocdn.net/319406?w=824&h=494" class="foto_perfil_membro">
+                                <img src="./imgs/rafaelftPerfil.jpeg" class="foto_perfil_membro">
                                 <p class="name-client"> Rafael Bezerrati
                                     <span>analista de testes
                                     </span>
@@ -543,7 +541,7 @@
                             </div>
                             <div class="container_team">
                                 <div class="cardClient" onclick="RedpfS()">
-                                    <img src="https://t2.tudocdn.net/319406?w=824&h=494" class="foto_perfil_membro">
+                                    <img src="./imgs/ftSheno.jpg" class="foto_perfil_membro">
                                     <p class="name-client"> Sheno Carvalho
                                         <span>Desenvolvedor
                                         </span>

@@ -55,6 +55,11 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        p#nAvaliadoPf {
+            margin: 10px 15px;
+            width: 350px;
+        }
     </style>
 
     <title>Profissional</title>
@@ -121,7 +126,7 @@ $star_gray = '<svg height="40px" version="1.1" class="star" viewBox="0 0 58 58" 
 
 
                     } else {
-                        echo "Profissional ainda não avaliado.";
+                        echo "<p id='nAvaliadoPf'>Profissional ainda não avaliado.</p>";
                     }
 
                     echo "</div>";

@@ -52,9 +52,9 @@ if(!isset($_SESSION['pfLogado'])){
             </div>
 
             <div class="box_button">
-                <button>Técnicos</button>
-                <button>Desenvolvedores</button>
-                <button>Serviços</button>
+            <button onclick="location.href='sobrePf.php#entraEmContato'">Suporte</button>
+                <button onclick="location.href='portifolio.php'">Portifólio</button>
+                <button onclick="location.href='paginaDeServicosParaPrestador.php'">Serviços</button>
             </div>
 
             
@@ -114,7 +114,7 @@ if(!isset($_SESSION['pfLogado'])){
                 <div class="bloco_de_texto">
                     <p> Na nossa plataforma, os profissionais têm acesso a uma gama incomparável de oportunidades de carreira. Além disso, oferecemos uma ferramenta exclusiva: o Portfólio Integrado. Com essa funcionalidade, os usuários podem destacar suas habilidades de forma visualmente cativante, enviando imagens e descrições dos projetos em que trabalharam anteriormente. Essa ferramenta não só permite que os talentos de TI exibam seu trabalho de maneira eficaz, mas também ajuda a demonstrar sua experiência e expertise para potenciais empregadores</p>
                 </div>
-                <button class="btn-saiba_more_story" id="redirecPorti">Saiba Mais</button>
+                <button class="btn-saiba_more_story" id="redirecPorti" onclick="location.href='portifolio.php'">Saiba Mais</button>
 
             </div>
         </section>
@@ -255,7 +255,6 @@ if(!isset($_SESSION['pfLogado'])){
                     que garantimos sua total satisfação com a grantia tecnomade. Se, por qualquer motivo, você não
                     estiver completamente satisfeito com a contratação dos serviços, estamos prontos para oferecer um
                     reembolso rápido e sem complicações.</p>
-                <button class="btn-saiba_more_garantia">Saiba Mais</button>
             </div>
 
             <div>
@@ -276,7 +275,7 @@ if(!isset($_SESSION['pfLogado'])){
 
         <section>
             <div class="cap_shadow">
-                <a href="#test_rolagem" class="button_ver_mais">Ver mais</a>
+                <a href="paginaDeServicosParaPrestador.php" class="button_ver_mais">Ver mais</a>
             </div>
             <div class="container_recommendations">
                 <div class="bloco_titulo_recomendação">
@@ -376,7 +375,7 @@ if(!isset($_SESSION['pfLogado'])){
                         Se conectar com outras pessoas, criar laços e mantê-los vivos são fundamentos cruciais para a
                         longevidade e desenvolvimento em cada aspecto da plataforma.</p>
                 </div>
-                <button class="btn-saiba_more_story">saiba mais</button>
+                <button class="btn-saiba_more_story" onclick="location.href='sobrePf.php'">saiba mais</button>
 
             </div>
 

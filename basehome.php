@@ -95,7 +95,7 @@ width: 100%;
                         qualquer desafio que você possa encontrar. Desde questões técnicas até problemas complexos,
                         estamos aqui para oferecer soluções confiáveis e eficazes</p>
                 </div>
-                <button class="btn-saiba_more_story">saiba mais</button>
+                <button class="btn-saiba_more_story" onclick="location.href='prof.php'">saiba mais</button>
             </div>
 
             <img src="./imgs/acordo.jpeg" class="img_ctrtPf">
@@ -120,7 +120,7 @@ width: 100%;
                         reputação e seja contratado por clientes que valorizam o talento e a expertise. Junte-se a nós
                         na Tecnomade e transforme seu conhecimento em oportunidades reais.</p>
                 </div>
-                <button class="btn-saiba_more_story">Saiba Mais</button>
+                <button class="btn-saiba_more_story" onclick="location.href='lgcd.php'">Saiba Mais</button>
 
             </div>
         </section>
@@ -261,7 +261,6 @@ width: 100%;
                     que garantimos sua total satisfação com a grantia tecnomade. Se, por qualquer motivo, você não
                     estiver completamente satisfeito com a contratação dos serviços, estamos prontos para oferecer um
                     reembolso rápido e sem complicações.</p>
-                <button class="btn-saiba_more_garantia">Saiba Mais</button>
             </div>
 
             <div>
@@ -375,7 +374,7 @@ while ($row = $result->fetch_assoc()) {
 
         <section>
             <div class="cap_shadow">
-                <a href="prof.php" class="button_ver_mais">Ver mais</a>
+                <a href="prof.php" class="button_ver_mais" onclick="location.href='prof.php'">Ver mais</a>
             </div>
             <div class="container_recommendations">
                 <div class="bloco_titulo_recomendação">
@@ -475,7 +474,7 @@ while ($row = $result->fetch_assoc()) {
                         Se conectar com outras pessoas, criar laços e mantê-los vivos são fundamentos cruciais para a
                         longevidade e desenvolvimento em cada aspecto da plataforma.</p>
                 </div>
-                <button class="btn-saiba_more_story">saiba mais</button>
+                <button class="btn-saiba_more_story" onclick="location.href='sobreUsr.php'">saiba mais</button>
 
             </div>
 

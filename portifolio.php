@@ -22,6 +22,13 @@ $result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
     div.portifolio{
         height:80% !important;
     }
+
+    canvas {
+    /* height: 100%; */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    }
 </style>
 </head>
 <body>
@@ -116,6 +123,8 @@ $result = $conn->query("SELECT * FROM portfolio WHERE id_Pf = '$id_Pf'");
         });
     </script>
     <?php
+
+    include_once("animacao.php");
     include_once("footer.php");
     ?>
 </body>

@@ -520,6 +520,7 @@ p {
 .dt_img_perfil {
   height: 455px;
   width: 455px;
+  object-fit: cover !important;
   position: absolute;
   z-index: 1;
   border: 2px solid #00917e;
