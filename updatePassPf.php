@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="comentario_alert">
         <p> Evite utilizar palavras comuns, sequências de números ou informações pessoais facilmente descobertas. Por favor, insira sua nova senha nos campos abaixo para continuar.</p>
-    </div>
+      </div>
 
     </section>
 

@@ -20,9 +20,14 @@
   opacity: 1;
 }
 .button_top_home{
-  text-decoration: none;
+  text-decoration: none !important;
   color: white !important;
 }
+.button_top_home:hover{
+
+  color: white !important;
+}
+
 .row{
   width: 110% !important;
   margin-left: -5%;
@@ -537,8 +542,8 @@ flex-wrap: wrap; */
 .box__perfil {
   background-image: url("https://i.gifer.com/origin/d4/d490dc54beef3be1ddd68434d8dea621_w200.gif") !important;
   background-size: cover;
-  height: 475px;
-  width: 330px;
+  height: 550px;
+  width: 350px;
   margin: 20px;
   padding: 20px;
   display: grid;
@@ -557,6 +562,7 @@ flex-wrap: wrap; */
   display: block;
   margin: 20px 0 20px 25px;
   border-radius: 50%;
+  object-fit: cover !important;
 }
 
 .name_of_box_perfils {

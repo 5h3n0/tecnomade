@@ -41,17 +41,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_update->bind_param("i", $id_orcamento);
 
         if ($stmt_update->execute()) {
-            // Insere os dados na tabela contratacoes
-            $data_contratacao = date("Y-m-d");
+            if ($acao === 'aceitar') {
+                // Insere os dados na tabela contratacoes
+                $data_contratacao = date("Y-m-d");
 
-            $sql_insert_contratacoes = "INSERT INTO contratacoes (id_Pf, id_Usr, id_Service, valor, data_contratacao) VALUES (?, ?, ?, ?, ?)";
-            $stmt_insert_contratacoes = $conn->prepare($sql_insert_contratacoes);
-            $stmt_insert_contratacoes->bind_param("iiids", $id_Pf, $id_Usr, $id_service, $valor_orcamento, $data_contratacao);
+                $sql_insert_contratacoes = "INSERT INTO contratacoes (id_Pf, id_Usr, id_Service, valor, data_contratacao) VALUES (?, ?, ?, ?, ?)";
+                $stmt_insert_contratacoes = $conn->prepare($sql_insert_contratacoes);
+                $stmt_insert_contratacoes->bind_param("iiids", $id_Pf, $id_Usr, $id_service, $valor_orcamento, $data_contratacao);
 
-            if ($stmt_insert_contratacoes->execute()) {
-                header("location: formasPay.php");
+                if ($stmt_insert_contratacoes->execute()) {
+                    header("Location: formasPay.php");
+                    exit;
+                } else {
+                    echo "Erro ao inserir dados na tabela contratacoes: " . $stmt_insert_contratacoes->error;
+                }
             } else {
-                echo "Erro ao inserir dados na tabela contratacoes: " . $stmt_insert_contratacoes->error;
+                // Redireciona para paginaDeServicosParaUsr.php se o orçamento for rejeitado
+                header("Location: paginaDeServicosParaUsr.php");
+                exit;
             }
         } else {
             echo "Erro ao processar o orçamento: " . $stmt_update->error;
