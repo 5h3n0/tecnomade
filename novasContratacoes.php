@@ -12,19 +12,17 @@ if (!isset($_SESSION['id_Pf'])) {
 
 $id_Pf = $_SESSION['id_Pf'];
 
-// Consulta SQL para obter os serviços contratados em que o orçamento foi aceito
+// Consulta SQL para obter os serviços contratados em que o orçamento foi aceito e o serviço não está concluído
 $sql = "SELECT s.*, o.id_solicitacao AS id_Contratacao, o.orcamento, se.nomeService, se.descService, u.usrName AS usrName, s.mensagem_cliente
         FROM solicitacoes_servico s
         INNER JOIN orcamento o ON s.id_solicitacao = o.id_solicitacao
         INNER JOIN services se ON s.id_Service = se.id_Service
         INNER JOIN users u ON s.id_Usr = u.id_Usr
-        WHERE s.id_Pf = ? AND o.status = 'Aceito'
+        WHERE s.id_Pf = ? AND o.status = 'Aceito' AND s.status != 'Concluído'
         AND NOT EXISTS (
             SELECT 1 FROM servicos_realizados sr
             WHERE sr.id_contratacao = o.id_solicitacao
         )";
-
-
 
 $stmt = $conn->prepare($sql);
 

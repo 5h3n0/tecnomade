@@ -41,11 +41,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $newIdContratacao--;
             } else {
                 // Preparar e executar a consulta SQL para inserir os dados na tabela servicos_realizados
-                $sql_insert = "INSERT INTO servicos_realizados (id_Pf, id_Usr, id_Contratacao, id_Service, data_realizacao) VALUES (?, ?, ?, ?, ?)";
+                $sql_insert = "INSERT INTO servicos_realizados (id_Pf, id_Usr, id_contratacao, id_Service, data_realizacao) VALUES (?, ?, ?, ?, ?)";
                 $stmt_insert = $conn->prepare($sql_insert);
                 $stmt_insert->bind_param("iiiss", $id_Pf, $id_Usr, $newIdContratacao, $id_Service, $data_realizacao);
                 
                 if ($stmt_insert->execute()) {
+                    // Atualizar o status da solicitação de serviço
+                    $sql_update_status = "UPDATE solicitacoes_servico SET status = 'Concluído' WHERE id_solicitacao = ?";
+                    $stmt_update_status = $conn->prepare($sql_update_status);
+                    $stmt_update_status->bind_param("i", $id_Contratacao);
+                    $stmt_update_status->execute();
+                    
                     $insertion_successful = true;
                     // Definir a notificação na sessão
                     $_SESSION['notification'] = true;
