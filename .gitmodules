@@ -1,5 +1,5 @@
 [submodule "tecnomade"]
-  path = tecnomade/tree/main
+  path = https://github.com/5h3n0/tecnomade/new/main
   url = https://github.com/5h3n0/tecnomade/new/main
 
 
